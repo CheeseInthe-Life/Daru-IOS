@@ -10,8 +10,6 @@
 		0351380C9A804DC0BE4272D0 /* Pods_Daru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6AC7BA26ADD9431DDE91DB /* Pods_Daru.framework */; };
 		AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7B280F97BE008EF53F /* AppDelegate.swift */; };
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
-		AEB46C80280F97BE008EF53F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7F280F97BE008EF53F /* ViewController.swift */; };
-		AEB46C83280F97BE008EF53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C81280F97BE008EF53F /* Main.storyboard */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
 		AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -23,8 +21,6 @@
 		AEB46C78280F97BE008EF53F /* Daru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB46C7B280F97BE008EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AEB46C7F280F97BE008EF53F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AEB46C82280F97BE008EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEB46C84280F97BF008EF53F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB46C87280F97BF008EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB46C89280F97BF008EF53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +44,6 @@
 				6F042F466EFB7020E9197E7E /* Pods-Daru.debug.xcconfig */,
 				1C46B0AD7157347C67E03D70 /* Pods-Daru.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,8 +70,6 @@
 			children = (
 				AEB46C7B280F97BE008EF53F /* AppDelegate.swift */,
 				AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */,
-				AEB46C7F280F97BE008EF53F /* ViewController.swift */,
-				AEB46C81280F97BE008EF53F /* Main.storyboard */,
 				AEB46C84280F97BF008EF53F /* Assets.xcassets */,
 				AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */,
 				AEB46C89280F97BF008EF53F /* Info.plist */,
@@ -154,7 +147,6 @@
 			files = (
 				AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */,
 				AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */,
-				AEB46C83280F97BE008EF53F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +199,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB46C80280F97BE008EF53F /* ViewController.swift in Sources */,
 				AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 			);
@@ -216,14 +207,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AEB46C81280F97BE008EF53F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AEB46C82280F97BE008EF53F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
