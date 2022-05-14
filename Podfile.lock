@@ -14,6 +14,9 @@ PODS:
     - Differentiator (~> 5.0)
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - RxFlow (2.13.0):
+    - RxCocoa (>= 6.0.0)
+    - RxSwift (>= 6.0.0)
   - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
@@ -21,6 +24,7 @@ PODS:
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SnapKit (5.0.1)
+  - Swinject (2.8.1)
   - Then (2.7.0)
   - WeakMapTable (1.2.0)
 
@@ -30,8 +34,10 @@ DEPENDENCIES:
   - RxAppState
   - RxCocoa (= 6.5.0)
   - RxDataSources (~> 5.0)
+  - RxFlow
   - RxGesture
   - SnapKit (~> 5.0.0)
+  - Swinject
   - Then
 
 SPEC REPOS:
@@ -42,10 +48,12 @@ SPEC REPOS:
     - RxAppState
     - RxCocoa
     - RxDataSources
+    - RxFlow
     - RxGesture
     - RxRelay
     - RxSwift
     - SnapKit
+    - Swinject
     - Then
     - WeakMapTable
 
@@ -56,13 +64,15 @@ SPEC CHECKSUMS:
   RxAppState: 9c34f951d4ff8b9034f84016fe766202365bceb2
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxFlow: 52f6f6379918392c1ea8cb62d8dcf2df9a5463dd
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 7a112d1394d0668b96039fc81c79a261cc260b3c
+PODFILE CHECKSUM: 92fb99944acd6771ae6506d71ef927d6a7d03369
 
 COCOAPODS: 1.11.2

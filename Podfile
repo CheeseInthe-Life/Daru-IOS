@@ -14,5 +14,7 @@ target 'Daru' do
   pod 'RxDataSources', '~> 5.0'
   pod 'Then'
   pod 'RxAppState'
+  pod 'RxFlow'
+  pod 'Swinject'
   
 end
