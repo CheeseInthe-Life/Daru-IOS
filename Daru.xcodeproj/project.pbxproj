@@ -47,6 +47,81 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AE1A7530283123AD000D8144 /* ReSources */ = {
+			isa = PBXGroup;
+			children = (
+				AEB46C84280F97BF008EF53F /* Assets.xcassets */,
+			);
+			path = ReSources;
+			sourceTree = "<group>";
+		};
+		AE1A7531283123B5000D8144 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A753A28312596000D8144 /* Data */,
+				AE1A753928312593000D8144 /* Domain */,
+				AE1A753428312445000D8144 /* Presentation */,
+				AE1A75332831242C000D8144 /* Application */,
+				AEB46C89280F97BF008EF53F /* Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AE1A75332831242C000D8144 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */,
+				AEB46C7B280F97BE008EF53F /* AppDelegate.swift */,
+				AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AE1A753428312445000D8144 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A753628312458000D8144 /* Coorinate */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AE1A753628312458000D8144 /* Coorinate */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A753828312569000D8144 /* Steps */,
+				AE1A753728312461000D8144 /* Flows */,
+			);
+			path = Coorinate;
+			sourceTree = "<group>";
+		};
+		AE1A753728312461000D8144 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		AE1A753828312569000D8144 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		AE1A753928312593000D8144 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AE1A753A28312596000D8144 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		AEB46C6F280F97BE008EF53F = {
 			isa = PBXGroup;
 			children = (
@@ -68,11 +143,8 @@
 		AEB46C7A280F97BE008EF53F /* Daru */ = {
 			isa = PBXGroup;
 			children = (
-				AEB46C7B280F97BE008EF53F /* AppDelegate.swift */,
-				AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */,
-				AEB46C84280F97BF008EF53F /* Assets.xcassets */,
-				AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */,
-				AEB46C89280F97BF008EF53F /* Info.plist */,
+				AE1A7531283123B5000D8144 /* Sources */,
+				AE1A7530283123AD000D8144 /* ReSources */,
 			);
 			path = Daru;
 			sourceTree = "<group>";
