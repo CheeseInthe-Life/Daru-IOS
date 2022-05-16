@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0351380C9A804DC0BE4272D0 /* Pods_Daru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6AC7BA26ADD9431DDE91DB /* Pods_Daru.framework */; };
+		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
+		AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F4834283259DE008404F1 /* DaruStep.swift */; };
+		AE3F483B283268EE008404F1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F483A283268EE008404F1 /* BaseViewController.swift */; };
+		AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F483C28326C38008404F1 /* HomeFlow.swift */; };
+		AE3F483F28326C4A008404F1 /* MyDaruFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F483E28326C4A008404F1 /* MyDaruFlow.swift */; };
+		AE3F484128326C5D008404F1 /* CommunityFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484028326C5D008404F1 /* CommunityFlow.swift */; };
+		AE3F484328326C6B008404F1 /* TeahouseMapFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484228326C6B008404F1 /* TeahouseMapFlow.swift */; };
+		AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484428326E1F008404F1 /* MainFlow.swift */; };
+		AE3F484828329A31008404F1 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484728329A31008404F1 /* TabViewController.swift */; };
+		AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484928329FFA008404F1 /* AppStepper.swift */; };
 		AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7B280F97BE008EF53F /* AppDelegate.swift */; };
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
@@ -18,6 +28,16 @@
 		1C46B0AD7157347C67E03D70 /* Pods-Daru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daru.release.xcconfig"; path = "Target Support Files/Pods-Daru/Pods-Daru.release.xcconfig"; sourceTree = "<group>"; };
 		3B6AC7BA26ADD9431DDE91DB /* Pods_Daru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F042F466EFB7020E9197E7E /* Pods-Daru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daru.debug.xcconfig"; path = "Target Support Files/Pods-Daru/Pods-Daru.debug.xcconfig"; sourceTree = "<group>"; };
+		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		AE3F4834283259DE008404F1 /* DaruStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaruStep.swift; sourceTree = "<group>"; };
+		AE3F483A283268EE008404F1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		AE3F483C28326C38008404F1 /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
+		AE3F483E28326C4A008404F1 /* MyDaruFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaruFlow.swift; sourceTree = "<group>"; };
+		AE3F484028326C5D008404F1 /* CommunityFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFlow.swift; sourceTree = "<group>"; };
+		AE3F484228326C6B008404F1 /* TeahouseMapFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseMapFlow.swift; sourceTree = "<group>"; };
+		AE3F484428326E1F008404F1 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
+		AE3F484728329A31008404F1 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		AE3F484928329FFA008404F1 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
 		AEB46C78280F97BE008EF53F /* Daru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB46C7B280F97BE008EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +100,7 @@
 		AE1A753428312445000D8144 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AE3F48392832619E008404F1 /* Common */,
 				AE1A753628312458000D8144 /* Coorinate */,
 			);
 			path = Presentation;
@@ -88,24 +109,16 @@
 		AE1A753628312458000D8144 /* Coorinate */ = {
 			isa = PBXGroup;
 			children = (
-				AE1A753828312569000D8144 /* Steps */,
-				AE1A753728312461000D8144 /* Flows */,
+				AE1A753B2831289A000D8144 /* AppFlow.swift */,
+				AE3F484928329FFA008404F1 /* AppStepper.swift */,
+				AE3F4834283259DE008404F1 /* DaruStep.swift */,
+				AE3F483C28326C38008404F1 /* HomeFlow.swift */,
+				AE3F483E28326C4A008404F1 /* MyDaruFlow.swift */,
+				AE3F484028326C5D008404F1 /* CommunityFlow.swift */,
+				AE3F484228326C6B008404F1 /* TeahouseMapFlow.swift */,
+				AE3F484428326E1F008404F1 /* MainFlow.swift */,
 			);
 			path = Coorinate;
-			sourceTree = "<group>";
-		};
-		AE1A753728312461000D8144 /* Flows */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Flows;
-			sourceTree = "<group>";
-		};
-		AE1A753828312569000D8144 /* Steps */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Steps;
 			sourceTree = "<group>";
 		};
 		AE1A753928312593000D8144 /* Domain */ = {
@@ -120,6 +133,15 @@
 			children = (
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		AE3F48392832619E008404F1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AE3F483A283268EE008404F1 /* BaseViewController.swift */,
+				AE3F484728329A31008404F1 /* TabViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		AEB46C6F280F97BE008EF53F = {
@@ -271,8 +293,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3F483B283268EE008404F1 /* BaseViewController.swift in Sources */,
+				AE3F483F28326C4A008404F1 /* MyDaruFlow.swift in Sources */,
+				AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */,
 				AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */,
+				AE3F484328326C6B008404F1 /* TeahouseMapFlow.swift in Sources */,
+				AE3F484128326C5D008404F1 /* CommunityFlow.swift in Sources */,
+				AE3F484828329A31008404F1 /* TabViewController.swift in Sources */,
+				AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */,
+				AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */,
+				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
+				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +451,6 @@
 				INFOPLIST_FILE = Daru/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -432,7 +463,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,7 +480,6 @@
 				INFOPLIST_FILE = Daru/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -462,7 +492,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

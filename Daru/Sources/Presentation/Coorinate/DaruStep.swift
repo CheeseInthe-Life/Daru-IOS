@@ -6,3 +6,22 @@
 //
 
 import Foundation
+import RxFlow
+
+enum DaruStep: Step {
+    
+    // MainTabbar
+    case mainIsRequired
+    
+    //Home
+    case homeIsRequired
+    
+    //MyDaru
+    case myPageIsRequired
+    
+    //Community
+    case communityIsRequired
+    
+    //teahouseMap
+    case teahouseMapIsRequired
+}

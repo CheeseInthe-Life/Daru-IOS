@@ -11,14 +11,36 @@ import RxFlow
 final class AppFlow: Flow {
     
     var root: Presentable {
-        return navigationController
+        return self.rootWindow
     }
     
-    private let navigationController = UINavigationController()
+    private let rootWindow: UIWindow
+    
+    init(window: UIWindow) {
+        self.rootWindow = window
+    }
+    
     
     func navigate(to step: Step) -> FlowContributors {
-        <#code#>
+        guard let step = step as? DaruStep else { return .none }
+        
+        switch step {
+        case .mainIsRequired:
+            return navigationToMainScene()
+        default:
+            return .none
+        }
+        
     }
     
-    
+}
+
+extension AppFlow {
+    func navigationToMainScene() -> FlowContributors {
+        let mainFlow = MainFlow()
+        Flows.use(mainFlow, when: .created) { [weak self] flowRoot in
+            self?.rootWindow.rootViewController = flowRoot
+        }
+        return .one(flowContributor: .contribute(withNextPresentable: mainFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.mainIsRequired)))
+    }
 }
