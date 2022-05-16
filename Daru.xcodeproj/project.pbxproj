@@ -18,6 +18,7 @@
 		AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484428326E1F008404F1 /* MainFlow.swift */; };
 		AE3F484828329A31008404F1 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484728329A31008404F1 /* TabViewController.swift */; };
 		AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484928329FFA008404F1 /* AppStepper.swift */; };
+		AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484E2832AF6D008404F1 /* UIColor+.swift */; };
 		AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7B280F97BE008EF53F /* AppDelegate.swift */; };
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		AE3F484428326E1F008404F1 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		AE3F484728329A31008404F1 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		AE3F484928329FFA008404F1 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
+		AE3F484E2832AF6D008404F1 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		AEB46C78280F97BE008EF53F /* Daru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB46C7B280F97BE008EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,10 +140,19 @@
 		AE3F48392832619E008404F1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AE3F484D2832AF66008404F1 /* Extensions */,
 				AE3F483A283268EE008404F1 /* BaseViewController.swift */,
 				AE3F484728329A31008404F1 /* TabViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		AE3F484D2832AF66008404F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE3F484E2832AF6D008404F1 /* UIColor+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AEB46C6F280F97BE008EF53F = {
@@ -302,6 +313,7 @@
 				AE3F484828329A31008404F1 /* TabViewController.swift in Sources */,
 				AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */,
 				AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */,
+				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
