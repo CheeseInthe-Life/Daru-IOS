@@ -1,6 +1,7 @@
 PODS:
   - Differentiator (5.0.0)
   - Kingfisher (7.2.0)
+  - Pageboy (3.6.2)
   - ReactorKit (3.2.0):
     - RxSwift (~> 6.0)
     - WeakMapTable (~> 1.1)
@@ -25,6 +26,8 @@ PODS:
   - RxSwift (6.5.0)
   - SnapKit (5.0.1)
   - Swinject (2.8.1)
+  - Tabman (2.12.0):
+    - Pageboy (~> 3.6.0)
   - Then (2.7.0)
   - WeakMapTable (1.2.0)
 
@@ -38,12 +41,14 @@ DEPENDENCIES:
   - RxGesture
   - SnapKit (~> 5.0.0)
   - Swinject
+  - Tabman (~> 2.12)
   - Then
 
 SPEC REPOS:
   trunk:
     - Differentiator
     - Kingfisher
+    - Pageboy
     - ReactorKit
     - RxAppState
     - RxCocoa
@@ -54,12 +59,14 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - Swinject
+    - Tabman
     - Then
     - WeakMapTable
 
 SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
   RxAppState: 9c34f951d4ff8b9034f84016fe766202365bceb2
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -70,9 +77,10 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
+  Tabman: 447a50447ed2869c39ab3b1a779327e43e067c4e
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 92fb99944acd6771ae6506d71ef927d6a7d03369
+PODFILE CHECKSUM: 5bb4033645f33fac637ad8be10d8283b6a1845c8
 
 COCOAPODS: 1.11.2

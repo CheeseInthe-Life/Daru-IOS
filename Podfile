@@ -16,5 +16,6 @@ target 'Daru' do
   pod 'RxAppState'
   pod 'RxFlow'
   pod 'Swinject'
+  pod 'Tabman', '~> 2.12'
   
 end
