@@ -26,7 +26,7 @@ extension UIFont {
            }
        }
 
-       static func NotoSansKR(_ type: NotoSansKRType, size: CGFloat) -> UIFont {
+       static func notoSansKR(_ type: NotoSansKRType, size: CGFloat) -> UIFont {
            return UIFont(name: type.name, size: size)!
        }
 }
