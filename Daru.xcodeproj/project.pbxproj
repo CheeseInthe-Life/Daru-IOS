@@ -19,6 +19,11 @@
 		AE3F484828329A31008404F1 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484728329A31008404F1 /* TabViewController.swift */; };
 		AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484928329FFA008404F1 /* AppStepper.swift */; };
 		AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484E2832AF6D008404F1 /* UIColor+.swift */; };
+		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
+		AE9A0AE928339DD200FCEC1C /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */; };
+		AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */; };
+		AE9A0AED28339FAE00FCEC1C /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE728339DD200FCEC1C /* NotoSansKR-Regular.otf */; };
+		AE9A0AF02833A0F000FCEC1C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C89280F97BF008EF53F /* Info.plist */; };
 		AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7B280F97BE008EF53F /* AppDelegate.swift */; };
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
@@ -40,6 +45,10 @@
 		AE3F484728329A31008404F1 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		AE3F484928329FFA008404F1 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
 		AE3F484E2832AF6D008404F1 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		AE9A0AE728339DD200FCEC1C /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		AEB46C78280F97BE008EF53F /* Daru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB46C7B280F97BE008EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 		AE1A7530283123AD000D8144 /* ReSources */ = {
 			isa = PBXGroup;
 			children = (
+				AE9A0AEE2833A01700FCEC1C /* Font */,
 				AEB46C84280F97BF008EF53F /* Assets.xcassets */,
 			);
 			path = ReSources;
@@ -151,8 +161,19 @@
 			isa = PBXGroup;
 			children = (
 				AE3F484E2832AF6D008404F1 /* UIColor+.swift */,
+				AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE9A0AEE2833A01700FCEC1C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */,
+				AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */,
+				AE9A0AE728339DD200FCEC1C /* NotoSansKR-Regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		AEB46C6F280F97BE008EF53F = {
@@ -250,8 +271,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9A0AE928339DD200FCEC1C /* NotoSansKR-Medium.otf in Resources */,
 				AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */,
+				AE9A0AF02833A0F000FCEC1C /* Info.plist in Resources */,
+				AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */,
 				AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */,
+				AE9A0AED28339FAE00FCEC1C /* NotoSansKR-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +339,7 @@
 				AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */,
 				AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */,
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
+				AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */,
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
