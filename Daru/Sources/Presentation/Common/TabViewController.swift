@@ -10,15 +10,15 @@ import Tabman
 import Pageboy
 
 final class TabViewController: TabmanViewController {
-    private let viewControllers: [UIViewController]
+    private let tabs: [(name: String, viewController: UIViewController)]
     
-    init(viewControllers: [UIViewController]) {
-        self.viewControllers = viewControllers
+    init(tabs: [(name: String, viewController: UIViewController)]) {
+        self.tabs = tabs
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.viewControllers = []
+        self.tabs = []
         super.init(coder: aDecoder)
     }
     
@@ -45,12 +45,12 @@ final class TabViewController: TabmanViewController {
 
 extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-        return viewControllers.count
+        return tabs.count
     }
     
     func viewController(for pageboyViewController: PageboyViewController,
                         at index: PageboyViewController.PageIndex) -> UIViewController? {
-        return viewControllers[index]
+        return tabs[index].viewController
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
@@ -58,7 +58,6 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
     }
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-        let title = "Page \(index)"
-        return TMBarItem(title: title)
+        return TMBarItem(title: tabs[index].name)
     }
 }

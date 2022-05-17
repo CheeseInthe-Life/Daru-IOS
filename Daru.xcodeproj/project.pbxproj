@@ -122,12 +122,12 @@
 			children = (
 				AE1A753B2831289A000D8144 /* AppFlow.swift */,
 				AE3F484928329FFA008404F1 /* AppStepper.swift */,
+				AE3F484428326E1F008404F1 /* MainFlow.swift */,
 				AE3F4834283259DE008404F1 /* DaruStep.swift */,
 				AE3F483C28326C38008404F1 /* HomeFlow.swift */,
 				AE3F483E28326C4A008404F1 /* MyDaruFlow.swift */,
 				AE3F484028326C5D008404F1 /* CommunityFlow.swift */,
 				AE3F484228326C6B008404F1 /* TeahouseMapFlow.swift */,
-				AE3F484428326E1F008404F1 /* MainFlow.swift */,
 			);
 			path = Coorinate;
 			sourceTree = "<group>";

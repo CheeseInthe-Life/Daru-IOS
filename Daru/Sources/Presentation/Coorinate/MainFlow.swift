@@ -34,8 +34,14 @@ extension MainFlow {
         let myDaruFlow = MyDaruFlow()
         let communityFlow = CommunityFlow()
         let teaHouseMapFlow = TeahouseMapFlow()
-        Flows.use([homeFlow, myDaruFlow, communityFlow, teaHouseMapFlow], when: .created) { [unowned self] roots in
-            let tabVC = TabViewController(viewControllers: roots)
+        Flows.use(homeFlow, myDaruFlow, communityFlow, teaHouseMapFlow, when: .created) {
+            [unowned self] homeRoot, myDaruRoot, communityRoot, teaHouseMapRoot in
+            let tabVC = TabViewController(tabs: [
+                ("홈", homeRoot),
+                ("나의 다루", myDaruRoot),
+                ("커뮤니티", communityRoot),
+                ("찻집 지도", teaHouseMapRoot)
+            ])
             self.navigationController.pushViewController(tabVC, animated: false)
         }
         return .multiple(flowContributors: [
