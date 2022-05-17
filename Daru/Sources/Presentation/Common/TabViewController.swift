@@ -30,6 +30,13 @@ final class TabViewController: TabmanViewController {
         // Create bar
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap // Customize
+        bar.layout.contentMode = .fit
+        bar.indicator.tintColor = .yellowGreen1
+        bar.buttons.customize { button in
+            button.selectedFont = .notoSansKR(.bold, size: 16.0)
+            button.selectedTintColor = .black
+            button.font = .notoSansKR(.regular, size: 16.0)
+        }
         
         // Add to view
         addBar(bar, dataSource: self, at: .top)

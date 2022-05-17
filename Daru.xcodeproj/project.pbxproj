@@ -23,7 +23,6 @@
 		AE9A0AE928339DD200FCEC1C /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */; };
 		AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */; };
 		AE9A0AED28339FAE00FCEC1C /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE728339DD200FCEC1C /* NotoSansKR-Regular.otf */; };
-		AE9A0AF02833A0F000FCEC1C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C89280F97BF008EF53F /* Info.plist */; };
 		AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7B280F97BE008EF53F /* AppDelegate.swift */; };
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
@@ -273,7 +272,6 @@
 			files = (
 				AE9A0AE928339DD200FCEC1C /* NotoSansKR-Medium.otf in Resources */,
 				AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */,
-				AE9A0AF02833A0F000FCEC1C /* Info.plist in Resources */,
 				AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */,
 				AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */,
 				AE9A0AED28339FAE00FCEC1C /* NotoSansKR-Regular.otf in Resources */,
