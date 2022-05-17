@@ -16,7 +16,7 @@ final class HomeFlow: Flow {
     }
     
     private let navigationController = UINavigationController().then {
-        $0.isNavigationBarHidden = false
+        $0.isNavigationBarHidden = true
     }
     
     func navigate(to step: Step) -> FlowContributors {
@@ -33,7 +33,8 @@ final class HomeFlow: Flow {
 
 extension HomeFlow {
     func navigateToHomeScene() -> FlowContributors {
-        let homeVC = HomeViewController()
+        let homeReactor = HomeReactor()
+        let homeVC = HomeViewController(reactor: homeReactor)
         navigationController.pushViewController(homeVC, animated: false)
         return .one(flowContributor: .contribute(withNext: homeVC))
     }
