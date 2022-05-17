@@ -16,13 +16,25 @@ final class HomeFlow: Flow {
     }
     
     private let navigationController = UINavigationController().then {
-        $0.isNavigationBarHidden = true
+        $0.isNavigationBarHidden = false
     }
     
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DaruStep else { return .none }
         
-        return .none
+        switch step {
+        case .homeIsRequired:
+            return navigateToHomeScene()
+        default:
+            return .none
+        }
     }
-    
+}
+
+extension HomeFlow {
+    func navigateToHomeScene() -> FlowContributors {
+        let homeVC = HomeViewController()
+        navigationController.pushViewController(homeVC, animated: false)
+        return .one(flowContributor: .contribute(withNext: homeVC))
+    }
 }
