@@ -17,5 +17,6 @@ target 'Daru' do
   pod 'RxFlow'
   pod 'Swinject'
   pod 'Tabman', '~> 2.12'
+  pod 'ImageSlideshow', '~> 1.9.0'
   
 end
