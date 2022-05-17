@@ -1,5 +1,8 @@
 PODS:
   - Differentiator (5.0.0)
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
   - Kingfisher (7.2.0)
   - Pageboy (3.6.2)
   - ReactorKit (3.2.0):
@@ -32,6 +35,7 @@ PODS:
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
+  - ImageSlideshow (~> 1.9.0)
   - Kingfisher (~> 7.0)
   - ReactorKit
   - RxAppState
@@ -47,6 +51,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Differentiator
+    - ImageSlideshow
     - Kingfisher
     - Pageboy
     - ReactorKit
@@ -65,6 +70,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
@@ -81,6 +87,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 5bb4033645f33fac637ad8be10d8283b6a1845c8
+PODFILE CHECKSUM: 8b3822f93e98d4b4f7a5fc1b6fc9a6b84c504db0
 
 COCOAPODS: 1.11.2
