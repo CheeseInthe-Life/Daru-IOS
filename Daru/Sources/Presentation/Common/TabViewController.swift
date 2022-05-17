@@ -31,6 +31,7 @@ final class TabViewController: TabmanViewController {
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap // Customize
         bar.layout.contentMode = .fit
+        bar.backgroundView.style = .blur(style: .regular)
         bar.indicator.tintColor = .yellowGreen1
         bar.buttons.customize { button in
             button.selectedFont = .notoSansKR(.bold, size: 16.0)
