@@ -44,6 +44,7 @@ final class RecommendTeaHouseCell: UICollectionViewCell {
     
     private let distanceImageView = UIImageView().then {
         $0.image = Constant.distanceIcon
+        $0.contentMode = .scaleAspectFit
     }
     
     private let ratingLabel = UILabel().then {
@@ -94,51 +95,52 @@ final class RecommendTeaHouseCell: UICollectionViewCell {
             ratingStackView.addArrangedSubview(imageView)
         }
         
-        teaHouseImageView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(10.0)
-            make.top.equalToSuperview().inset(12.0)
-        }
-        
-        teaHouseImageView.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
-        
-        nameLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(11.0)
-            make.top.equalTo(teaHouseImageView.snp.bottom).offset(11.0)
-        }
-        
-        tagLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(nameLabel)
-            make.top.equalTo(nameLabel.snp.bottom).offset(4.0)
-        }
-        
-        locationLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(nameLabel)
-            make.top.equalTo(tagLabel.snp.bottom).offset(8.0)
-        }
-        
-        distanceLabel.snp.makeConstraints { make in
-            make.leading.equalTo(nameLabel)
-            make.top.equalTo(locationLabel.snp.bottom).offset(5.0)
-            make.width.equalTo(distanceLabel.intrinsicContentSize.width)
-        }
-        
-        distanceImageView.snp.makeConstraints { make in
-            make.leading.equalTo(distanceLabel.snp.trailing).offset(2.0)
-            make.top.bottom.equalTo(distanceLabel)
-        }
-        
-        ratingLabel.snp.makeConstraints { make in
-            make.leading.equalTo(nameLabel)
-            make.top.equalTo(distanceLabel.snp.bottom).offset(5.0)
-            make.width.equalTo(ratingLabel.intrinsicContentSize.width)
-            make.bottom.equalToSuperview().inset(14.0)
-        }
-        
         ratingStackView.snp.makeConstraints { make in
             make.leading.equalTo(ratingLabel.snp.trailing).offset(2.0)
             make.top.bottom.equalTo(ratingLabel)
             make.trailing.equalToSuperview().inset(55.0)
         }
         
+        ratingLabel.snp.makeConstraints { make in
+            make.leading.equalTo(nameLabel)
+            make.width.equalTo(ratingLabel.intrinsicContentSize.width)
+            make.bottom.equalToSuperview().inset(14.0)
+        }
+        
+        distanceLabel.snp.makeConstraints { make in
+            make.leading.equalTo(nameLabel)
+            make.bottom.equalTo(ratingLabel.snp.top).offset(-5.0)
+            make.width.equalTo(distanceLabel.intrinsicContentSize.width)
+        }
+        
+        distanceImageView.snp.makeConstraints { make in
+            make.leading.equalTo(distanceLabel.snp.trailing).offset(2.0)
+            make.top.bottom.equalTo(distanceLabel)
+            make.width.equalTo(10.0)
+        }
+        
+        locationLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(nameLabel)
+            make.bottom.equalTo(distanceLabel.snp.top).offset(-5.0)
+        }
+        
+        tagLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(nameLabel)
+            make.bottom.equalTo(locationLabel.snp.top).offset(-8.0)
+        }
+        
+        nameLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(11.0)
+            make.bottom.equalTo(tagLabel.snp.top).offset(-4.0)
+        }
+        
+        teaHouseImageView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(10.0)
+            make.top.equalToSuperview().inset(12.0)
+            make.bottom.equalTo(nameLabel.snp.top).offset(-11.0)
+        }
+        
+        teaHouseImageView.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
+        teaHouseImageView.setContentCompressionResistancePriority(.fittingSizeLevel, for: .vertical)
     }
 }
