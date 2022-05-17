@@ -8,10 +8,80 @@
 import UIKit
 import RxFlow
 import RxCocoa
+import ReactorKit
+import RxDataSources
 
-final class HomeViewController: BaseViewController, Stepper {
+final class HomeViewController: BaseViewController, Stepper, View {
     
     var steps: PublishRelay<Step> = .init()
+    
+    private let mainCollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewLayout()
+    ).then {
+        $0.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
+        $0.register(RecommendTeaHouseCell.self, forCellWithReuseIdentifier: RecommendTeaHouseCell.identifier)
+        $0.register(
+            RecommendTeaHouseHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: RecommendTeaHouseHeaderView.identifier
+        )
+        $0.register(
+            RecommendTeaHouseFooterView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: RecommendTeaHouseFooterView.identifier
+        )
+        $0.showsVerticalScrollIndicator = false
+    }
+    
+    private let dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel<String,String>> {
+        datasource, collectionView, indexPath, item in
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: BannerCell.identifier,
+                for: indexPath
+            ) as! BannerCell
+            cell.update(with: [Constant.banner!, Constant.banner!, Constant.banner!])
+            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: RecommendTeaHouseCell.identifier,
+                for: indexPath
+            ) as! RecommendTeaHouseCell
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
+    }configureSupplementaryView: { dataSource, collectionView, type, indexPath in
+        if indexPath.section == 1 {
+            if type == UICollectionView.elementKindSectionHeader {
+                let view = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: type,
+                    withReuseIdentifier: RecommendTeaHouseHeaderView.identifier,
+                    for: indexPath
+                ) as! RecommendTeaHouseHeaderView
+                return view
+            } else {
+                let view = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: type,
+                    withReuseIdentifier: RecommendTeaHouseFooterView.identifier,
+                    for: indexPath
+                ) as! RecommendTeaHouseFooterView
+                return view
+            }
+        }
+        return UICollectionReusableView()
+    }
+    
+    init(reactor: HomeReactor) {
+        super.init(nibName: nil, bundle: nil)
+        self.reactor = reactor
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +89,100 @@ final class HomeViewController: BaseViewController, Stepper {
     
     override func configureUI() {
         super.configureUI()
+        
+        view.addSubview(mainCollectionView)
+        
+        let layout = createLayout()
+        mainCollectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        mainCollectionView.collectionViewLayout = layout
     }
     
-    override func bindAction() {
-        super.bindAction()
+    func bind(reactor: HomeReactor) {
+        let sections = [
+            SectionModel(model: "", items: ["dfasfds"]),
+            SectionModel(model: "", items: ["afsd","Fsdaf","fdsafdsa","fdsafdsa","Fsadfsda"])
+        ]
+        
+        Observable.just(sections)
+            .bind(to: mainCollectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
     
-    override func bindState() {
-        super.bindState()
+}
+
+private extension HomeViewController {
+    func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { [weak self] section, environment -> NSCollectionLayoutSection? in
+            switch section {
+            case 0:
+                return self?.createBannerSection()
+            case 1:
+                return self?.createRecommendTeaHouseSection()
+            default:
+                return nil
+            }
+        }
     }
+    
+    func createBannerSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //item.contentInsets = .init(top: 0, leading: 0.0, bottom: 0, trailing: 0.0)
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.203))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 42.0, leading: 0, bottom: 20.0, trailing: 0)
+        
+        return section
+    }
+    
+    func createRecommendTeaHouseSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //item.contentInsets = .init(top: 0, leading: 20.0, bottom: 0, trailing: 20.0)
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(0.298))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        group.interItemSpacing = .fixed(10.0)
+        group.contentInsets = .init(top: 0.0, leading: 10.0, bottom: 0.0, trailing: 0.0)
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [
+            createRecommendTeaHouseSectionHeader(),
+            createRecommendTeaHouseSectionFooter()
+        ]
+        section.contentInsets = .init(top: 18.0, leading: 10.0, bottom: 15.0, trailing: 0)
+        
+        return section
+    }
+    
+    private func createRecommendTeaHouseSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        //Section Header 사이즈
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
+        
+        //Section Header layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        //sectionHeader.contentInsets = .init(top: 0, leading: 20.0, bottom: 0, trailing: 0)
+        return sectionHeader
+    }
+    
+    private func createRecommendTeaHouseSectionFooter() -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        //Section Header 사이즈
+        let layoutSectionFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(10.0))
+        
+        //Section Header layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionFooterSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottomLeading)
+        //sectionHeader.contentInsets = .init(top: 15.0, leading: 0.0, bottom: 0, trailing: 0)
+        return sectionHeader
+    }
+    
 }

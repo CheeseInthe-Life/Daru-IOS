@@ -9,25 +9,16 @@ import UIKit
 import RxSwift
 
 class BaseViewController: UIViewController {
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
-        bindAction()
-        bindState()
     }
     
     func configureUI() {
         
     }
-    
-    func bindAction() {
-        
-    }
-    
-    func bindState() {
-        
-    }
+
 }
