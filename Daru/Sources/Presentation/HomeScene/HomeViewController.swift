@@ -20,7 +20,7 @@ final class HomeViewController: BaseViewController, Stepper, View {
         collectionViewLayout: UICollectionViewLayout()
     ).then {
         $0.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
-        $0.register(RecommendTeaHouseCell.self, forCellWithReuseIdentifier: RecommendTeaHouseCell.identifier)
+        $0.register(TeaHouseCell.self, forCellWithReuseIdentifier: TeaHouseCell.identifier)
         $0.register(
             RecommendTeaHouseHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -30,6 +30,11 @@ final class HomeViewController: BaseViewController, Stepper, View {
             RecommendTeaHouseFooterView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
             withReuseIdentifier: RecommendTeaHouseFooterView.identifier
+        )
+        $0.register(
+            NearTeaHouseHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: NearTeaHouseHeaderView.identifier
         )
         $0.showsVerticalScrollIndicator = false
     }
@@ -44,11 +49,11 @@ final class HomeViewController: BaseViewController, Stepper, View {
             ) as! BannerCell
             cell.update(with: [Constant.banner!, Constant.banner!, Constant.banner!])
             return cell
-        case 1:
+        case 1, 2:
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: RecommendTeaHouseCell.identifier,
+                withReuseIdentifier: TeaHouseCell.identifier,
                 for: indexPath
-            ) as! RecommendTeaHouseCell
+            ) as! TeaHouseCell
             return cell
         default:
             return UICollectionViewCell()
@@ -68,6 +73,15 @@ final class HomeViewController: BaseViewController, Stepper, View {
                     withReuseIdentifier: RecommendTeaHouseFooterView.identifier,
                     for: indexPath
                 ) as! RecommendTeaHouseFooterView
+                return view
+            }
+        } else if indexPath.section == 2 {
+            if type == UICollectionView.elementKindSectionHeader {
+                let view = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: type,
+                    withReuseIdentifier: NearTeaHouseHeaderView.identifier,
+                    for: indexPath
+                ) as! NearTeaHouseHeaderView
                 return view
             }
         }
@@ -102,7 +116,8 @@ final class HomeViewController: BaseViewController, Stepper, View {
     func bind(reactor: HomeReactor) {
         let sections = [
             SectionModel(model: "", items: ["dfasfds"]),
-            SectionModel(model: "", items: ["afsd","Fsdaf","fdsafdsa","fdsafdsa","Fsadfsda"])
+            SectionModel(model: "", items: ["afsd","Fsdaf","fdsafdsa","fdsafdsa","Fsadfsda"]),
+            SectionModel(model: "", items: ["fdasf","Fsadf","Fsdafasd","fsdafa",])
         ]
         
         Observable.just(sections)
@@ -120,6 +135,8 @@ private extension HomeViewController {
                 return self?.createBannerSection()
             case 1:
                 return self?.createRecommendTeaHouseSection()
+            case 2:
+                return self?.createNearTeaHouseSection()
             default:
                 return nil
             }
@@ -181,8 +198,37 @@ private extension HomeViewController {
         
         //Section Header layout
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionFooterSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottomLeading)
-        //sectionHeader.contentInsets = .init(top: 15.0, leading: 0.0, bottom: 0, trailing: 0)
         return sectionHeader
     }
     
+    func createNearTeaHouseSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //item.contentInsets = .init(top: 0, leading: 20.0, bottom: 0, trailing: 20.0)
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(0.298))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        group.interItemSpacing = .fixed(10.0)
+        group.contentInsets = .init(top: 0.0, leading: 10.0, bottom: 0.0, trailing: 0.0)
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [
+            createNearTeaHouseSectionHeader()
+        ]
+        section.contentInsets = .init(top: 18.0, leading: 10.0, bottom: 15.0, trailing: 0)
+        
+        return section
+    }
+    
+    private func createNearTeaHouseSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        //Section Header 사이즈
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
+        
+        //Section Header layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        return sectionHeader
+    }
 }
