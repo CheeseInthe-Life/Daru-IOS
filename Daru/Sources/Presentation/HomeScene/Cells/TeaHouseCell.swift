@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class RecommendTeaHouseCell: UICollectionViewCell {
+final class TeaHouseCell: UICollectionViewCell {
     
-    static let identifier = "RecommendTeaHouseCell"
+    static let identifier = "TeaHouseCell"
     
     private let teaHouseImageView = UIImageView().then {
         $0.contentMode = .scaleToFill
