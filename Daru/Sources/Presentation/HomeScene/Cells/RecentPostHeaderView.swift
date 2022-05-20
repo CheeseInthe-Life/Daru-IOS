@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-final class CommunityHeaderView: UICollectionReusableView {
-    static let identifier = "CommunityHeaderView"
+final class RecentPostHeaderView: UICollectionReusableView {
+    static let identifier = "RecentPostHeaderView"
     
     private let titleLabel = UILabel().then {
         $0.font = .notoSansKR(.bold, size: 18.0)
