@@ -38,9 +38,9 @@ final class HomeViewController: BaseViewController, Stepper, View {
         )
         $0.register(RecentPostCell.self,forCellWithReuseIdentifier: RecentPostCell.identifier)
         $0.register(
-            CommunityHeaderView.self,
+            RecentPostHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: CommunityHeaderView.identifier
+            withReuseIdentifier: RecentPostHeaderView.identifier
         )
         $0.showsVerticalScrollIndicator = false
     }
@@ -100,9 +100,9 @@ final class HomeViewController: BaseViewController, Stepper, View {
             if type == UICollectionView.elementKindSectionHeader {
                 let view = collectionView.dequeueReusableSupplementaryView(
                     ofKind: type,
-                    withReuseIdentifier: CommunityHeaderView.identifier,
+                    withReuseIdentifier: RecentPostHeaderView.identifier,
                     for: indexPath
-                ) as! CommunityHeaderView
+                ) as! RecentPostHeaderView
                 return view
             }
         }
