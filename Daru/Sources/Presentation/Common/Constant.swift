@@ -16,6 +16,11 @@ struct Constant {
     static let distanceIcon: UIImage? = UIImage(named: "Distance_icon")?.withRenderingMode(.alwaysOriginal)
     static let curLocationIcon: UIImage? = UIImage(named: "CurLocation_icon")?.withRenderingMode(.alwaysOriginal)
     static let arrowIcon: UIImage? = UIImage(named: "Arrow_icon")?.withRenderingMode(.alwaysOriginal)
+    static let likeIcon: UIImage? = UIImage(named: "Like_icon")?.withRenderingMode(.alwaysOriginal)
+    static let commentIcon: UIImage? = UIImage(named: "Comment_icon")?.withRenderingMode(.alwaysOriginal)
+    static let scrapIcon: UIImage? = UIImage(named: "Scrap_icon")?.withRenderingMode(.alwaysOriginal)
+    static let profileDefaultImage: UIImage? = UIImage(named: "개구리2_icon")?.withRenderingMode(.alwaysOriginal)
+    
     //banner
     static let banner: UIImage? = UIImage(named: "Banner")?.withRenderingMode(.alwaysOriginal)
     

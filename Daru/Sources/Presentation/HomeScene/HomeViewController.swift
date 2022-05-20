@@ -36,6 +36,12 @@ final class HomeViewController: BaseViewController, Stepper, View {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: NearTeaHouseHeaderView.identifier
         )
+        $0.register(RecentPostCell.self,forCellWithReuseIdentifier: RecentPostCell.identifier)
+        $0.register(
+            CommunityHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: CommunityHeaderView.identifier
+        )
         $0.showsVerticalScrollIndicator = false
     }
     
@@ -54,6 +60,12 @@ final class HomeViewController: BaseViewController, Stepper, View {
                 withReuseIdentifier: TeaHouseCell.identifier,
                 for: indexPath
             ) as! TeaHouseCell
+            return cell
+        case 3:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: RecentPostCell.identifier,
+                for: indexPath
+            ) as! RecentPostCell
             return cell
         default:
             return UICollectionViewCell()
@@ -82,6 +94,15 @@ final class HomeViewController: BaseViewController, Stepper, View {
                     withReuseIdentifier: NearTeaHouseHeaderView.identifier,
                     for: indexPath
                 ) as! NearTeaHouseHeaderView
+                return view
+            }
+        } else if indexPath.section == 3 {
+            if type == UICollectionView.elementKindSectionHeader {
+                let view = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: type,
+                    withReuseIdentifier: CommunityHeaderView.identifier,
+                    for: indexPath
+                ) as! CommunityHeaderView
                 return view
             }
         }
@@ -117,7 +138,8 @@ final class HomeViewController: BaseViewController, Stepper, View {
         let sections = [
             SectionModel(model: "", items: ["dfasfds"]),
             SectionModel(model: "", items: ["afsd","Fsdaf","fdsafdsa","fdsafdsa","Fsadfsda"]),
-            SectionModel(model: "", items: ["fdasf","Fsadf","Fsdafasd","fsdafa",])
+            SectionModel(model: "", items: ["fdasf","Fsadf","Fsdafasd","fsdafa",]),
+            SectionModel(model: "", items: ["fdasf","Fsadf"])
         ]
         
         Observable.just(sections)
@@ -137,6 +159,8 @@ private extension HomeViewController {
                 return self?.createRecommendTeaHouseSection()
             case 2:
                 return self?.createNearTeaHouseSection()
+            case 3:
+                return self?.createRecentPostSection()
             default:
                 return nil
             }
@@ -223,6 +247,34 @@ private extension HomeViewController {
     }
     
     private func createNearTeaHouseSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        //Section Header 사이즈
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
+        
+        //Section Header layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        return sectionHeader
+    }
+    
+    func createRecentPostSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 0, leading: 0.0, bottom: 20.0, trailing: 0.0)
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.3386))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [
+            createRecentPostSectionHeader()
+        ]
+        section.contentInsets = .init(top: 18.0, leading: 20.0, bottom: 15.0, trailing: 20.0)
+        
+        return section
+    }
+    
+    private func createRecentPostSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         
         //Section Header 사이즈
         let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
