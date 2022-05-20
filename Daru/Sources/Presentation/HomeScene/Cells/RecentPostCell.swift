@@ -140,6 +140,9 @@ final class RecentPostCell: UICollectionViewCell {
             make.trailing.equalToSuperview().inset(15.0)
         }
         
+        contentLabel.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
+        contentLabel.setContentCompressionResistancePriority(.fittingSizeLevel, for: .vertical)
+        
         dividingLine.snp.makeConstraints { make in
             make.top.equalTo(contentLabel.snp.bottom).offset(10.0)
             make.leading.trailing.equalToSuperview().inset(15.0)
@@ -158,7 +161,6 @@ final class RecentPostCell: UICollectionViewCell {
         }
 
         scrapCountLabel.snp.makeConstraints { make in
-            //make.leading.equalTo(scrapImageView.snp.trailing).offset(6.0)
             make.trailing.equalToSuperview().inset(23.0)
             make.centerY.equalTo(scrapImageView)
         }
@@ -166,12 +168,10 @@ final class RecentPostCell: UICollectionViewCell {
         scrapImageView.snp.makeConstraints { make in
             make.trailing.equalTo(scrapCountLabel.snp.leading).offset(-6.0)
             make.top.bottom.equalTo(likeImageView)
-
         }
         
         
         commentCountLabel.snp.makeConstraints { make in
-            //make.leading.equalTo(commentImageView.snp.trailing).offset(6.0)
             make.trailing.equalTo(scrapImageView.snp.leading).offset(-37.0)
             make.centerY.equalTo(commentImageView)
         }
