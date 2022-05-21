@@ -19,6 +19,8 @@
 		AE3F484828329A31008404F1 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484728329A31008404F1 /* TabViewController.swift */; };
 		AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484928329FFA008404F1 /* AppStepper.swift */; };
 		AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484E2832AF6D008404F1 /* UIColor+.swift */; };
+		AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */; };
+		AE4EB7CB2838C75300D556CA /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
 		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
@@ -56,6 +58,8 @@
 		AE3F484728329A31008404F1 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		AE3F484928329FFA008404F1 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
 		AE3F484E2832AF6D008404F1 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterCell.swift; sourceTree = "<group>"; };
+		AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
 		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			children = (
 				AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */,
 				AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */,
+				AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */,
 				AE9A0AE728339DD200FCEC1C /* NotoSansKR-Regular.otf */,
 			);
 			path = Font;
@@ -223,6 +228,7 @@
 				AE9F74762834C9D900C31F53 /* RecentPostCell.swift */,
 				AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */,
 				AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */,
+				AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE4EB7CB2838C75300D556CA /* NanumGothic.ttf in Resources */,
 				AE9A0AE928339DD200FCEC1C /* NotoSansKR-Medium.otf in Resources */,
 				AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */,
 				AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */,
@@ -399,6 +406,7 @@
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
 				AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */,
+				AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */,
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,

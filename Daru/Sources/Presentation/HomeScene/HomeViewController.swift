@@ -48,6 +48,7 @@ final class HomeViewController: BaseViewController, Stepper, View {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: RegionCategoryHeaderView.identifier
         )
+        $0.register(HomeFooterCell.self, forCellWithReuseIdentifier: HomeFooterCell.identifier)
         $0.showsVerticalScrollIndicator = false
     }
     
@@ -78,6 +79,12 @@ final class HomeViewController: BaseViewController, Stepper, View {
                 withReuseIdentifier: RegionCategoryCell.identifier,
                 for: indexPath
             ) as! RegionCategoryCell
+            return cell
+        case 5:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: HomeFooterCell.identifier,
+                for: indexPath
+            ) as! HomeFooterCell
             return cell
         default:
             return UICollectionViewCell()
@@ -161,7 +168,8 @@ final class HomeViewController: BaseViewController, Stepper, View {
             SectionModel(model: "", items: ["afsd","Fsdaf","fdsafdsa","fdsafdsa","Fsadfsda"]),
             SectionModel(model: "", items: ["fdasf","Fsadf","Fsdafasd","fsdafa",]),
             SectionModel(model: "", items: ["fdasf","Fsadf"]),
-            SectionModel(model: "", items: ["fdasf","Fsadf","FADS","dfa","Fadsfasd","fads","DFas","Adsf","ASDf"])
+            SectionModel(model: "", items: ["fdasf","Fsadf","FADS","dfa","Fadsfasd","fads","DFas","Adsf","ASDf"]),
+            SectionModel(model: "", items: ["fasd"])
         ]
         
         Observable.just(sections)
@@ -185,6 +193,8 @@ private extension HomeViewController {
                 return self?.createRecentPostSection()
             case 4:
                 return self?.createRegionCategorySection()
+            case 5:
+                return self?.createHoomFooterSection()
             default:
                 return nil
             }
@@ -327,7 +337,7 @@ private extension HomeViewController {
         return section
     }
     
-    private func createRegionCategorySectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+     func createRegionCategorySectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         
         //Section Header 사이즈
         let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
@@ -335,5 +345,18 @@ private extension HomeViewController {
         //Section Header layout
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
         return sectionHeader
+    }
+    
+    func createHoomFooterSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.195))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        return section
     }
 }
