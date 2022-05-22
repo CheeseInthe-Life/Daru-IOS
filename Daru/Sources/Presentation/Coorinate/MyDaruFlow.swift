@@ -22,7 +22,34 @@ final class MyDaruFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DaruStep else { return .none }
         
-        return .none
+        switch step {
+        case .myPageIsRequired:
+            return navigateToMyDaruScene()
+        default:
+            return .none
+        }
     }
-    
+}
+
+private extension MyDaruFlow {
+    func navigateToMyDaruScene() -> FlowContributors{
+        let mbteaiFlow = MBTeaIFlow()
+        let favoriteTeaHouseFlow = FavoriteTeaHouseFlow()
+        
+        Flows.use(
+            mbteaiFlow,
+            favoriteTeaHouseFlow,
+            when: .created) { [unowned self] flow1Root, flow2Root in
+                let myDaruTabVC = MyDaruTabViewController(tabs: [
+                    ("MB.Tea.I", flow1Root),
+                    ("내가 좋아하는 찻집", flow2Root)
+                ])
+                self.navigationController.pushViewController(myDaruTabVC, animated: false)
+            }
+        
+        return .multiple(flowContributors: [
+            .contribute(withNextPresentable: mbteaiFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.mbteaiIsRequired)),
+            .contribute(withNextPresentable: favoriteTeaHouseFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.favoriteTeaHouseRequired))
+        ])
+    }
 }

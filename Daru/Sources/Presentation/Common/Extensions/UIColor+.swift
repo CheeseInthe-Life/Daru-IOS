@@ -29,6 +29,9 @@ extension UIColor {
     
     class var navy1: UIColor? { return UIColor(named: "Navy1") }
     class var navy2: UIColor? { return UIColor(named: "Navy2") }
+    
+    class var lineBrown: UIColor? { return UIColor(named: "Line_Brown") }
+    class var tit_brwon: UIColor? { return UIColor(named: "TitBrown") }
 }
 
 extension UIColor {

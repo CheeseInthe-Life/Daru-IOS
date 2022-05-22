@@ -18,6 +18,8 @@ enum DaruStep: Step {
     
     //MyDaru
     case myPageIsRequired
+    case mbteaiIsRequired
+    case favoriteTeaHouseRequired
     
     //Community
     case communityIsRequired
