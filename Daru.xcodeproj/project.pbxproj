@@ -46,6 +46,7 @@
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
 		AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */; };
+		AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		AEB46C84280F97BF008EF53F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB46C87280F97BF008EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB46C89280F97BF008EF53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTeaIExplainationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 		AE4EB7CD2838D56700D556CA /* MyDaruScene */ = {
 			isa = PBXGroup;
 			children = (
+				AEF40C102839D24100E629AD /* Cells */,
 				AE4EB7CE2838DF6900D556CA /* MyDaruTabViewController.swift */,
 				AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */,
 				AE4EB7D72839B7E800D556CA /* FavoriteTeaHousesViewController.swift */,
@@ -281,6 +284,14 @@
 				AE1A7530283123AD000D8144 /* ReSources */,
 			);
 			path = Daru;
+			sourceTree = "<group>";
+		};
+		AEF40C102839D24100E629AD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D25C7C34924EC672CCF3C666 /* Frameworks */ = {
@@ -429,6 +440,7 @@
 				AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */,
 				AE9A0AF92833D94400FCEC1C /* HomeReactor.swift in Sources */,
 				AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */,
+				AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */,
 				AE9F74732834B93600C31F53 /* NearTeaHouseHeaderView.swift in Sources */,
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
