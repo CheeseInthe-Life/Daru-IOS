@@ -12,7 +12,7 @@ import Then
 final class MBTeaIExplainationCell: UICollectionViewCell {
     static let identifier = "MBTeaIExplainationCell"
     
-    private let mainLabel = UILabel().then {
+    private let mainLabel = UnderLineLabel(color: .brown3!, weight: 10.0).then {
         $0.font = .notoSansKR(.bold, size: 20.0)
         $0.text = "MB.Tea.I란?"
         $0.textAlignment = .center
@@ -61,11 +61,13 @@ final class MBTeaIExplainationCell: UICollectionViewCell {
         contentView.backgroundColor = .brown3?.withAlphaComponent(0.15)
         
         mainLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(20.0)
+            make.top.equalToSuperview().inset(20.0)
+            make.width.equalTo(mainLabel.intrinsicContentSize)
+            make.centerX.equalToSuperview()
         }
         
         secondaryLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(mainLabel)
+            make.leading.trailing.equalToSuperview().inset(20.0)
             make.top.equalTo(mainLabel.snp.bottom).offset(20.0)
             make.bottom.equalToSuperview().inset(25.0)
         }
