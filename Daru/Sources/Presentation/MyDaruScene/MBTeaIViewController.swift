@@ -20,6 +20,12 @@ final class MBTeaIViewController: BaseViewController, Stepper {
         collectionViewLayout: UICollectionViewLayout()
     ).then {
         $0.register(MBTeaIExplainationCell.self, forCellWithReuseIdentifier: MBTeaIExplainationCell.identifier)
+        $0.register(MyMBTeaICell.self, forCellWithReuseIdentifier: MyMBTeaICell.identifier)
+        $0.register(
+            MyMBTeaIHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: MyMBTeaIHeaderView.identifier
+        )
         $0.showsVerticalScrollIndicator = false
     }
     
@@ -31,8 +37,26 @@ final class MBTeaIViewController: BaseViewController, Stepper {
                 for: indexPath
             ) as! MBTeaIExplainationCell
             return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: MyMBTeaICell.identifier,
+                for: indexPath
+            ) as! MyMBTeaICell
+            return cell
         default:
             return UICollectionViewCell()
+        }
+    }configureSupplementaryView: { dataSource, collectionView, type, indexPath in
+        switch indexPath.section {
+        case 1:
+            let view = collectionView.dequeueReusableSupplementaryView(
+             ofKind: type,
+             withReuseIdentifier: MyMBTeaIHeaderView.identifier,
+             for: indexPath
+            ) as! MyMBTeaIHeaderView
+            return view
+        default:
+            return UICollectionReusableView()
         }
     }
     
@@ -52,6 +76,7 @@ final class MBTeaIViewController: BaseViewController, Stepper {
         }
         
         let sectionModels = [
+            SectionModel<String,String>(model: "", items: ["d"]),
             SectionModel<String,String>(model: "", items: ["d"])
         ]
         
@@ -71,6 +96,8 @@ private extension MBTeaIViewController {
             switch section {
             case 0:
                 return self?.createMBteaIExplainationSection()
+            case 1:
+                return self?.createMyMBTeaISection()
             default:
                 return nil
             }
@@ -91,5 +118,27 @@ private extension MBTeaIViewController {
         //section.contentInsets = .init(top: 42.0, leading: 0, bottom: 20.0, trailing: 0)
         
         return section
+    }
+    
+    func createMyMBTeaISection() -> NSCollectionLayoutSection {
+        
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(100.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(100.0))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [ createMyMBTeaISectionHeader() ]
+        return section
+    }
+    
+    func createMyMBTeaISectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        //Section Header 사이즈
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50.0))
+        //Section Header layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        return sectionHeader
     }
 }
