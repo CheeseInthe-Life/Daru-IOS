@@ -34,6 +34,8 @@
 		AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */; };
 		AE52F698283D0CB9000475EF /* SecondaryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */; };
 		AE52F69C283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F69B283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift */; };
+		AE52F69F283D3054000475EF /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F69E283D3054000475EF /* CommunityViewController.swift */; };
+		AE52F6A1283D3175000475EF /* ManagePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F6A0283D3175000475EF /* ManagePostViewController.swift */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
 		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
@@ -87,6 +89,8 @@
 		AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaFooterView.swift; sourceTree = "<group>"; };
 		AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTabViewController.swift; sourceTree = "<group>"; };
 		AE52F69B283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTeahouseHeaderView.swift; sourceTree = "<group>"; };
+		AE52F69E283D3054000475EF /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		AE52F6A0283D3175000475EF /* ManagePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostViewController.swift; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
 		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 		AE1A753428312445000D8144 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AE52F69D283D3037000475EF /* CommunityScene */,
 				AE4EB7CD2838D56700D556CA /* MyDaruScene */,
 				AE9A0AF12833AAF100FCEC1C /* HomeScene */,
 				AE3F48392832619E008404F1 /* Common */,
@@ -239,6 +244,15 @@
 				AE4EB7D72839B7E800D556CA /* FavoriteTeaHousesViewController.swift */,
 			);
 			path = MyDaruScene;
+			sourceTree = "<group>";
+		};
+		AE52F69D283D3037000475EF /* CommunityScene */ = {
+			isa = PBXGroup;
+			children = (
+				AE52F69E283D3054000475EF /* CommunityViewController.swift */,
+				AE52F6A0283D3175000475EF /* ManagePostViewController.swift */,
+			);
+			path = CommunityScene;
 			sourceTree = "<group>";
 		};
 		AE9A0AEE2833A01700FCEC1C /* Font */ = {
@@ -449,6 +463,7 @@
 				AE3F483B283268EE008404F1 /* BaseViewController.swift in Sources */,
 				AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */,
 				AE3F483F28326C4A008404F1 /* MyDaruFlow.swift in Sources */,
+				AE52F6A1283D3175000475EF /* ManagePostViewController.swift in Sources */,
 				AE52F694283CE06B000475EF /* MyFavoriteTeaCell.swift in Sources */,
 				AE52F698283D0CB9000475EF /* SecondaryTabViewController.swift in Sources */,
 				AE9A0B002833E3F200FCEC1C /* TeaHouseCell.swift in Sources */,
@@ -464,6 +479,7 @@
 				AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */,
 				AE4EB7DA2839B8F200D556CA /* MBTeaIFlow.swift in Sources */,
 				AE3F484828329A31008404F1 /* TabViewController.swift in Sources */,
+				AE52F69F283D3054000475EF /* CommunityViewController.swift in Sources */,
 				AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */,
 				AE4EB7D82839B7E800D556CA /* FavoriteTeaHousesViewController.swift in Sources */,
 				AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */,
