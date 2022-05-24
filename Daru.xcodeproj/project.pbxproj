@@ -214,6 +214,7 @@
 				AE9A0AF52833C06B00FCEC1C /* Constant.swift */,
 				AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */,
 				AE52F68F283CD3F3000475EF /* PrimaryButton.swift */,
+				AE9A0AFF2833E3F200FCEC1C /* TeaHouseCell.swift */,
 				AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */,
 			);
 			path = Common;
@@ -263,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				AE9A0AFB2833DB7700FCEC1C /* BannerCell.swift */,
-				AE9A0AFF2833E3F200FCEC1C /* TeaHouseCell.swift */,
 				AE9A0AFD2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift */,
 				AE9A0B012833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift */,
 				AE9F74722834B93600C31F53 /* NearTeaHouseHeaderView.swift */,
