@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-final class PostCell: UICollectionViewCell {
-    static let identifier = "PostCell"
+final class PostCollectionViewCell: UICollectionViewCell {
+    static let identifier = "PostCollectionViewCell"
     
     private let writerImageView = UIImageView().then {
         $0.image = Constant.profileDefaultImage
