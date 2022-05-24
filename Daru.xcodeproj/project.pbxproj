@@ -33,6 +33,7 @@
 		AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F691283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift */; };
 		AE52F694283CE06B000475EF /* MyFavoriteTeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F693283CE06B000475EF /* MyFavoriteTeaCell.swift */; };
 		AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */; };
+		AE52F69A283D150F000475EF /* FavoriteTeaHouseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F699283D150F000475EF /* FavoriteTeaHouseHeaderView.swift */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
 		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
@@ -85,6 +86,7 @@
 		AE52F691283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaHeaderView.swift; sourceTree = "<group>"; };
 		AE52F693283CE06B000475EF /* MyFavoriteTeaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaCell.swift; sourceTree = "<group>"; };
 		AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaFooterView.swift; sourceTree = "<group>"; };
+		AE52F699283D150F000475EF /* FavoriteTeaHouseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTeaHouseHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
 		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				AE52F691283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift */,
 				AE52F693283CE06B000475EF /* MyFavoriteTeaCell.swift */,
 				AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */,
+				AE52F699283D150F000475EF /* FavoriteTeaHouseHeaderView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
 				AE9A0B022833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift in Sources */,
 				AE9F74772834C9D900C31F53 /* RecentPostCell.swift in Sources */,
+				AE52F69A283D150F000475EF /* FavoriteTeaHouseHeaderView.swift in Sources */,
 				AE52F690283CD3F3000475EF /* PrimaryButton.swift in Sources */,
 				AE9A0AFC2833DB7700FCEC1C /* BannerCell.swift in Sources */,
 			);
