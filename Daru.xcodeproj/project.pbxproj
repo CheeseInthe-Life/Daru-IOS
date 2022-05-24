@@ -255,10 +255,18 @@
 		AE52F69D283D3037000475EF /* CommunityScene */ = {
 			isa = PBXGroup;
 			children = (
+				AE52F6A6283D3BFD000475EF /* Cells */,
 				AE52F69E283D3054000475EF /* PostListViewController.swift */,
 				AE52F6A0283D3175000475EF /* ManagePostViewController.swift */,
 			);
 			path = CommunityScene;
+			sourceTree = "<group>";
+		};
+		AE52F6A6283D3BFD000475EF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		AE9A0AEE2833A01700FCEC1C /* Font */ = {
