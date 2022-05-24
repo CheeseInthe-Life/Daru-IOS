@@ -40,7 +40,7 @@ private extension MyDaruFlow {
             mbteaiFlow,
             favoriteTeaHouseFlow,
             when: .created) { [unowned self] flow1Root, flow2Root in
-                let myDaruTabVC = MyDaruTabViewController(tabs: [
+                let myDaruTabVC = SecondaryTabViewController(tabs: [
                     ("MB.Tea.I", flow1Root),
                     ("내가 좋아하는 찻집", flow2Root)
                 ])

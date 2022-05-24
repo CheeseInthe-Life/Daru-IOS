@@ -1,8 +1,8 @@
 //
-//  MyDaruTabViewController.swift
+//  SecondaryTabViewController.swift
 //  Daru
 //
-//  Created by 재영신 on 2022/05/21.
+//  Created by 재영신 on 2022/05/24.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import Then
 import Tabman
 import Pageboy
 
-final class MyDaruTabViewController: TabmanViewController {
+final class SecondaryTabViewController: TabmanViewController {
     
     private let tabs: [(name: String, viewController: UIViewController)]
     
@@ -50,7 +50,7 @@ final class MyDaruTabViewController: TabmanViewController {
     }
 }
 
-extension MyDaruTabViewController: PageboyViewControllerDataSource, TMBarDataSource {
+extension SecondaryTabViewController: PageboyViewControllerDataSource, TMBarDataSource {
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return tabs.count
     }
