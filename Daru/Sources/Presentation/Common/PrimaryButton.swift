@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class PrimaryButton: UIButton {
     
@@ -23,6 +24,10 @@ class PrimaryButton: UIButton {
         setTitleColor(.white, for: .normal)
         titleLabel?.font = .notoSansKR(.bold, size: 16.0)
         layer.cornerRadius = 6.0
+        
+        snp.makeConstraints { make in
+            make.height.equalTo(50.0)
+        }
     }
     
 }
