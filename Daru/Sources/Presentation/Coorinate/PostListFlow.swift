@@ -14,7 +14,9 @@ final class PostListFlow: Flow {
         return self.rootViewController
     }
     
-    private let rootViewController: UINavigationController = .init()
+    private let rootViewController = UINavigationController().then {
+        $0.isNavigationBarHidden = true
+    }
     
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DaruStep else { return .none }

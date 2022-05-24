@@ -12,6 +12,12 @@ import Then
 final class PostTableViewCell: UITableViewCell {
     static let identifier = "PostTableViewCell"
     
+    private let outerView = UIView().then {
+        $0.layer.borderWidth = 1.0
+        $0.layer.borderColor = UIColor.brown3?.cgColor
+        $0.layer.cornerRadius = 12.0
+    }
+    
     private let writerImageView = UIImageView().then {
         $0.image = Constant.profileDefaultImage
         $0.contentMode = .scaleAspectFit
@@ -104,12 +110,10 @@ final class PostTableViewCell: UITableViewCell {
             scrapImageView,
             scrapCountLabel
         ].forEach{
-            contentView.addSubview($0)
+            outerView.addSubview($0)
         }
         
-        contentView.layer.borderWidth = 1.0
-        contentView.layer.borderColor = UIColor.brown3?.cgColor
-        contentView.layer.cornerRadius = 12.0
+        contentView.addSubview(outerView)
         
         writerImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(15.0)
@@ -141,7 +145,7 @@ final class PostTableViewCell: UITableViewCell {
         }
         
         contentLabel.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
-        contentLabel.setContentCompressionResistancePriority(.fittingSizeLevel, for: .vertical)
+        //contentLabel.setContentCompressionResistancePriority(.fittingSizeLevel, for: .vertical)
         
         dividingLine.snp.makeConstraints { make in
             make.top.equalTo(contentLabel.snp.bottom).offset(10.0)
@@ -181,7 +185,12 @@ final class PostTableViewCell: UITableViewCell {
             make.trailing.equalTo(commentCountLabel.snp.leading).offset(-6.0)
         }
         
-
+        //Cell간 간격을 위한 outerView
+        outerView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20.0)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview().inset(20.0)
+        }
     }
     
 }

@@ -18,11 +18,13 @@ final class PostListViewController: BaseViewController, Stepper {
         $0.backgroundColor = .brown2
         $0.layer.cornerRadius = 4.0
         $0.setTitle("글 작성하기", for: .normal)
+        $0.titleLabel?.font = .notoSansKR(.regular, size: 12.0)
         $0.setTitleColor(.white, for: .normal)
     }
     
     private let postListTableView = UITableView().then {
         $0.showsVerticalScrollIndicator = false
+        $0.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
     }
     
     var steps: PublishRelay<Step> = .init()
@@ -43,7 +45,7 @@ final class PostListViewController: BaseViewController, Stepper {
         
         writeButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(20.0)
-            make.top.equalToSuperview().inset(15.0)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(15.0)
             make.width.equalTo(88.0)
             make.height.equalTo(25.0)
         }
@@ -52,5 +54,13 @@ final class PostListViewController: BaseViewController, Stepper {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(writeButton.snp.bottom).offset(14.0)
         }
+        
+        Observable.just([
+            "a","b","c","d","e","f","g"
+        ]).bind(to: postListTableView.rx.items(
+            cellIdentifier: PostTableViewCell.identifier,
+            cellType: PostTableViewCell.self
+        )) { (index: Int, element: String, cell: PostTableViewCell) in
+        }.disposed(by: self.disposeBag)
     }
 }
