@@ -27,4 +27,7 @@ struct Constant {
     //Dummy
     static let dummyTeaHouseImage: UIImage? = UIImage(named: "더미찻집이미지")?.withRenderingMode(.alwaysOriginal)
     static let dummyRegionImage: UIImage? = UIImage(named: "더미서울이미지")?.withRenderingMode(.alwaysOriginal)
+    
+    //MBTeaI Image
+    static let rabbitTypeImage: UIImage? = UIImage(named: "Rabbit_image")?.withRenderingMode(.alwaysOriginal)
 }
