@@ -22,7 +22,40 @@ final class CommunityFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DaruStep else { return .none }
         
-        return .none
+        switch step {
+        case .communityIsRequired:
+            return navigateToCommunityScene()
+        default:
+            return .none
+        }
     }
-    
+}
+
+private extension CommunityFlow {
+    func navigateToCommunityScene() -> FlowContributors {
+        let postListFlow = PostListFlow()
+        let managePostFlow = ManagePostFlow()
+        
+        Flows.use(
+            postListFlow,
+            managePostFlow,
+            when: .created) { [unowned self] flow1Root, flow2Root in
+                let commnityTapVC = SecondaryTabViewController(tabs: [
+                    ("커뮤니티", flow1Root),
+                    ("내 글 관리", flow2Root)
+                ])
+                self.navigationController.pushViewController(commnityTapVC, animated: false)
+            }
+        
+        return .multiple(flowContributors: [
+            .contribute(
+                withNextPresentable: postListFlow,
+                withNextStepper: OneStepper(withSingleStep: DaruStep.postListIsRequired)
+            ),
+            .contribute(
+                withNextPresentable: managePostFlow,
+                withNextStepper: OneStepper(withSingleStep: DaruStep.managePostIsRequired)
+            )
+        ])
+    }
 }

@@ -36,7 +36,7 @@ final class HomeViewController: BaseViewController, Stepper, View {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: NearTeaHouseHeaderView.identifier
         )
-        $0.register(PostCell.self,forCellWithReuseIdentifier: PostCell.identifier)
+        $0.register(PostCollectionViewCell.self,forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
         $0.register(
             RecentPostHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -70,9 +70,9 @@ final class HomeViewController: BaseViewController, Stepper, View {
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: PostCell.identifier,
+                withReuseIdentifier: PostCollectionViewCell.identifier,
                 for: indexPath
-            ) as! PostCell
+            ) as! PostCollectionViewCell
             return cell
         case 4:
             let cell = collectionView.dequeueReusableCell(
