@@ -33,6 +33,7 @@
 		AE52F694283CE06B000475EF /* MyFavoriteTeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F693283CE06B000475EF /* MyFavoriteTeaCell.swift */; };
 		AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */; };
 		AE52F698283D0CB9000475EF /* SecondaryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */; };
+		AE52F69C283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F69B283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
 		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
@@ -85,6 +86,7 @@
 		AE52F693283CE06B000475EF /* MyFavoriteTeaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaCell.swift; sourceTree = "<group>"; };
 		AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaFooterView.swift; sourceTree = "<group>"; };
 		AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTabViewController.swift; sourceTree = "<group>"; };
+		AE52F69B283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTeahouseHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
 		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				AE52F691283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift */,
 				AE52F693283CE06B000475EF /* MyFavoriteTeaCell.swift */,
 				AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */,
+				AE52F69B283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */,
 				AE9A0AF62833C06B00FCEC1C /* Constant.swift in Sources */,
 				AE9A0AFE2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift in Sources */,
+				AE52F69C283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift in Sources */,
 				AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */,
 				AE3F484328326C6B008404F1 /* TeahouseMapFlow.swift in Sources */,
 				AE9A0AF42833AB2D00FCEC1C /* HomeViewController.swift in Sources */,
