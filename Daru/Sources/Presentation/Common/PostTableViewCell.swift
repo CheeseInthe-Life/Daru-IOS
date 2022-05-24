@@ -78,8 +78,8 @@ final class PostTableViewCell: UITableViewCell {
         $0.backgroundColor = .brown3
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
     }
     
