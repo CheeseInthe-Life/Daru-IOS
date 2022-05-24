@@ -22,7 +22,6 @@
 		AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484E2832AF6D008404F1 /* UIColor+.swift */; };
 		AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */; };
 		AE4EB7CB2838C75300D556CA /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */; };
-		AE4EB7CF2838DF6900D556CA /* MyDaruTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7CE2838DF6900D556CA /* MyDaruTabViewController.swift */; };
 		AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */; };
 		AE4EB7D82839B7E800D556CA /* FavoriteTeaHousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7D72839B7E800D556CA /* FavoriteTeaHousesViewController.swift */; };
 		AE4EB7DA2839B8F200D556CA /* MBTeaIFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7D92839B8F200D556CA /* MBTeaIFlow.swift */; };
@@ -33,6 +32,7 @@
 		AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F691283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift */; };
 		AE52F694283CE06B000475EF /* MyFavoriteTeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F693283CE06B000475EF /* MyFavoriteTeaCell.swift */; };
 		AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */; };
+		AE52F698283D0CB9000475EF /* SecondaryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
 		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
@@ -48,7 +48,7 @@
 		AE9A0B022833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0B012833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift */; };
 		AE9F74732834B93600C31F53 /* NearTeaHouseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F74722834B93600C31F53 /* NearTeaHouseHeaderView.swift */; };
 		AE9F74752834C65900C31F53 /* RecentPostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F74742834C65900C31F53 /* RecentPostHeaderView.swift */; };
-		AE9F74772834C9D900C31F53 /* RecentPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F74762834C9D900C31F53 /* RecentPostCell.swift */; };
+		AE9F74772834C9D900C31F53 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F74762834C9D900C31F53 /* PostCell.swift */; };
 		AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7B280F97BE008EF53F /* AppDelegate.swift */; };
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
@@ -74,7 +74,6 @@
 		AE3F484E2832AF6D008404F1 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterCell.swift; sourceTree = "<group>"; };
 		AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
-		AE4EB7CE2838DF6900D556CA /* MyDaruTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDaruTabViewController.swift; sourceTree = "<group>"; };
 		AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTeaIViewController.swift; sourceTree = "<group>"; };
 		AE4EB7D72839B7E800D556CA /* FavoriteTeaHousesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTeaHousesViewController.swift; sourceTree = "<group>"; };
 		AE4EB7D92839B8F200D556CA /* MBTeaIFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTeaIFlow.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		AE52F691283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaHeaderView.swift; sourceTree = "<group>"; };
 		AE52F693283CE06B000475EF /* MyFavoriteTeaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaCell.swift; sourceTree = "<group>"; };
 		AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaFooterView.swift; sourceTree = "<group>"; };
+		AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTabViewController.swift; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
 		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		AE9A0B012833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTeaHouseFooterView.swift; sourceTree = "<group>"; };
 		AE9F74722834B93600C31F53 /* NearTeaHouseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeaHouseHeaderView.swift; sourceTree = "<group>"; };
 		AE9F74742834C65900C31F53 /* RecentPostHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPostHeaderView.swift; sourceTree = "<group>"; };
-		AE9F74762834C9D900C31F53 /* RecentPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPostCell.swift; sourceTree = "<group>"; };
+		AE9F74762834C9D900C31F53 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		AEB46C78280F97BE008EF53F /* Daru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB46C7B280F97BE008EF53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,11 +208,14 @@
 			isa = PBXGroup;
 			children = (
 				AE3F484D2832AF66008404F1 /* Extensions */,
+				AE9F74762834C9D900C31F53 /* PostCell.swift */,
 				AE3F483A283268EE008404F1 /* BaseViewController.swift */,
 				AE3F484728329A31008404F1 /* TabViewController.swift */,
 				AE9A0AF52833C06B00FCEC1C /* Constant.swift */,
 				AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */,
 				AE52F68F283CD3F3000475EF /* PrimaryButton.swift */,
+				AE9A0AFF2833E3F200FCEC1C /* TeaHouseCell.swift */,
+				AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -230,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				AEF40C102839D24100E629AD /* Cells */,
-				AE4EB7CE2838DF6900D556CA /* MyDaruTabViewController.swift */,
 				AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */,
 				AE4EB7D72839B7E800D556CA /* FavoriteTeaHousesViewController.swift */,
 			);
@@ -262,12 +264,10 @@
 			isa = PBXGroup;
 			children = (
 				AE9A0AFB2833DB7700FCEC1C /* BannerCell.swift */,
-				AE9A0AFF2833E3F200FCEC1C /* TeaHouseCell.swift */,
 				AE9A0AFD2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift */,
 				AE9A0B012833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift */,
 				AE9F74722834B93600C31F53 /* NearTeaHouseHeaderView.swift */,
 				AE9F74742834C65900C31F53 /* RecentPostHeaderView.swift */,
-				AE9F74762834C9D900C31F53 /* RecentPostCell.swift */,
 				AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */,
 				AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */,
 				AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */,
@@ -447,6 +447,7 @@
 				AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */,
 				AE3F483F28326C4A008404F1 /* MyDaruFlow.swift in Sources */,
 				AE52F694283CE06B000475EF /* MyFavoriteTeaCell.swift in Sources */,
+				AE52F698283D0CB9000475EF /* SecondaryTabViewController.swift in Sources */,
 				AE9A0B002833E3F200FCEC1C /* TeaHouseCell.swift in Sources */,
 				AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */,
 				AE9A0AF62833C06B00FCEC1C /* Constant.swift in Sources */,
@@ -471,14 +472,13 @@
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
 				AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */,
 				AE52F68E283CD0FE000475EF /* MyMBTeaIHeaderView.swift in Sources */,
-				AE4EB7CF2838DF6900D556CA /* MyDaruTabViewController.swift in Sources */,
 				AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */,
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 				AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */,
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
 				AE9A0B022833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift in Sources */,
-				AE9F74772834C9D900C31F53 /* RecentPostCell.swift in Sources */,
+				AE9F74772834C9D900C31F53 /* PostCell.swift in Sources */,
 				AE52F690283CD3F3000475EF /* PrimaryButton.swift in Sources */,
 				AE9A0AFC2833DB7700FCEC1C /* BannerCell.swift in Sources */,
 			);
