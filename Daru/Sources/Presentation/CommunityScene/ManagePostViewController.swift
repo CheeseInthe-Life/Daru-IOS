@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 import Then
 import RxFlow
+import RxCocoa
+import RxSwift
 
 final class ManagePostViewController: BaseViewController, Stepper {
     

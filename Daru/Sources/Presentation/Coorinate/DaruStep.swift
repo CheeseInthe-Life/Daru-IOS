@@ -23,6 +23,8 @@ enum DaruStep: Step {
     
     //Community
     case communityIsRequired
+    case postListIsRequired
+    case managePostIsRequired
     
     //teahouseMap
     case teahouseMapIsRequired
