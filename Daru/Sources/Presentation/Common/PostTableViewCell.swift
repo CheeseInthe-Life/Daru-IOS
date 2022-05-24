@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class PostTableViewCell: UICollectionViewCell {
+final class PostTableViewCell: UITableViewCell {
     static let identifier = "PostTableViewCell"
     
     private let writerImageView = UIImageView().then {
