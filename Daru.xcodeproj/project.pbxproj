@@ -34,7 +34,7 @@
 		AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */; };
 		AE52F698283D0CB9000475EF /* SecondaryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */; };
 		AE52F69C283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F69B283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift */; };
-		AE52F69F283D3054000475EF /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F69E283D3054000475EF /* CommunityViewController.swift */; };
+		AE52F69F283D3054000475EF /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F69E283D3054000475EF /* PostListViewController.swift */; };
 		AE52F6A1283D3175000475EF /* ManagePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F6A0283D3175000475EF /* ManagePostViewController.swift */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
@@ -89,7 +89,7 @@
 		AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTeaFooterView.swift; sourceTree = "<group>"; };
 		AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTabViewController.swift; sourceTree = "<group>"; };
 		AE52F69B283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTeahouseHeaderView.swift; sourceTree = "<group>"; };
-		AE52F69E283D3054000475EF /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		AE52F69E283D3054000475EF /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		AE52F6A0283D3175000475EF /* ManagePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostViewController.swift; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		AE52F69D283D3037000475EF /* CommunityScene */ = {
 			isa = PBXGroup;
 			children = (
-				AE52F69E283D3054000475EF /* CommunityViewController.swift */,
+				AE52F69E283D3054000475EF /* PostListViewController.swift */,
 				AE52F6A0283D3175000475EF /* ManagePostViewController.swift */,
 			);
 			path = CommunityScene;
@@ -479,7 +479,7 @@
 				AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */,
 				AE4EB7DA2839B8F200D556CA /* MBTeaIFlow.swift in Sources */,
 				AE3F484828329A31008404F1 /* TabViewController.swift in Sources */,
-				AE52F69F283D3054000475EF /* CommunityViewController.swift in Sources */,
+				AE52F69F283D3054000475EF /* PostListViewController.swift in Sources */,
 				AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */,
 				AE4EB7D82839B7E800D556CA /* FavoriteTeaHousesViewController.swift in Sources */,
 				AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */,

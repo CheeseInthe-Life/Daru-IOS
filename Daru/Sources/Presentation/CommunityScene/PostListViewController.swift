@@ -12,7 +12,7 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
-final class CommunityViewController: BaseViewController, Stepper {
+final class PostListViewController: BaseViewController, Stepper {
     
     var steps: PublishRelay<Step> = .init()
     
