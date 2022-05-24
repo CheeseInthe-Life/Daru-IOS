@@ -17,7 +17,6 @@ final class MyDaruTabViewController: TabmanViewController {
     
     init(tabs: [(name: String, viewController: UIViewController)]) {
         self.tabs = tabs
-        print(tabs)
         super.init(nibName: nil, bundle: nil)
     }
     
