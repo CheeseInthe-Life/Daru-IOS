@@ -46,11 +46,12 @@ final class PostTableViewCell: UITableViewCell {
         $0.text = """
                     본문본문본문본문본문본문본문본문본문본문본문본문본문본문본본문본문본문본문본문본문본문본문본문본문 본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문
                     """
-        $0.numberOfLines = 0
+        $0.numberOfLines = 2
     }
     
     private let likeImageView = UIImageView().then {
         $0.image = Constant.likeIcon
+        $0.contentMode = .scaleAspectFit
     }
     
     private let likeCountLabel = UILabel().then {
@@ -61,6 +62,7 @@ final class PostTableViewCell: UITableViewCell {
     
     private let commentImageView = UIImageView().then {
         $0.image = Constant.commentIcon
+        $0.contentMode = .scaleAspectFit
     }
     
     private let commentCountLabel = UILabel().then {
@@ -72,6 +74,7 @@ final class PostTableViewCell: UITableViewCell {
     
     private let scrapImageView = UIImageView().then {
         $0.image = Constant.scrapIcon
+        $0.contentMode = .scaleAspectFit
     }
     
     private let scrapCountLabel = UILabel().then {
@@ -84,6 +87,10 @@ final class PostTableViewCell: UITableViewCell {
         $0.backgroundColor = .brown3
     }
     
+    private let thumbnailImageView = UIImageView().then {
+        $0.image = Constant.dummyTeaHouseImage
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
@@ -93,7 +100,7 @@ final class PostTableViewCell: UITableViewCell {
         super.init(coder: coder)
         configureUI()
     }
-    
+        
     private func configureUI() {
         
         [
@@ -108,7 +115,8 @@ final class PostTableViewCell: UITableViewCell {
             commentImageView,
             commentCountLabel,
             scrapImageView,
-            scrapCountLabel
+            scrapCountLabel,
+            thumbnailImageView
         ].forEach{
             outerView.addSubview($0)
         }
@@ -141,7 +149,7 @@ final class PostTableViewCell: UITableViewCell {
         contentLabel.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel)
             make.top.equalTo(titleLabel.snp.bottom).offset(5.0)
-            make.trailing.equalToSuperview().inset(15.0)
+            make.trailing.equalTo(thumbnailImageView.snp.leading).inset(-15.0)
         }
         
         contentLabel.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
@@ -154,9 +162,9 @@ final class PostTableViewCell: UITableViewCell {
         }
             
         likeImageView.snp.makeConstraints { make in
-            make.top.equalTo(dividingLine.snp.bottom).offset(10.0)
+            make.top.equalTo(dividingLine.snp.bottom).offset(12.0)
             make.leading.equalToSuperview().inset(24.0)
-            make.bottom.equalToSuperview().inset(23.0)
+            make.bottom.equalToSuperview().inset(10.0)
         }
         
         likeCountLabel.snp.makeConstraints { make in
@@ -191,6 +199,14 @@ final class PostTableViewCell: UITableViewCell {
             make.top.equalToSuperview()
             make.bottom.equalToSuperview().inset(20.0)
         }
+        
+        thumbnailImageView.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(10.0)
+            make.top.equalTo(titleLabel)
+            make.bottom.equalTo(dividingLine.snp.top).offset(-10.0)
+            make.width.equalTo(thumbnailImageView.snp.height)
+        }
+
     }
     
 }

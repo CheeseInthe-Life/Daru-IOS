@@ -40,7 +40,7 @@ final class PostCollectionViewCell: UICollectionViewCell {
         $0.text = """
                     본문본문본문본문본문본문본문본문본문본문본문본문본문본문본본문본문본문본문본문본문본문본문본문본문 본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문본문
                     """
-        $0.numberOfLines = 0
+        $0.numberOfLines = 2
     }
     
     private let likeImageView = UIImageView().then {
@@ -78,6 +78,10 @@ final class PostCollectionViewCell: UICollectionViewCell {
         $0.backgroundColor = .brown3
     }
     
+    private let thumbnailImageView = UIImageView().then {
+        $0.image = Constant.dummyTeaHouseImage
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -102,7 +106,8 @@ final class PostCollectionViewCell: UICollectionViewCell {
             commentImageView,
             commentCountLabel,
             scrapImageView,
-            scrapCountLabel
+            scrapCountLabel,
+            thumbnailImageView
         ].forEach{
             contentView.addSubview($0)
         }
@@ -137,7 +142,7 @@ final class PostCollectionViewCell: UICollectionViewCell {
         contentLabel.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel)
             make.top.equalTo(titleLabel.snp.bottom).offset(5.0)
-            make.trailing.equalToSuperview().inset(15.0)
+            make.trailing.equalTo(thumbnailImageView.snp.leading).inset(-15.0)
         }
         
         contentLabel.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
@@ -150,9 +155,9 @@ final class PostCollectionViewCell: UICollectionViewCell {
         }
             
         likeImageView.snp.makeConstraints { make in
-            make.top.equalTo(dividingLine.snp.bottom).offset(10.0)
+            make.top.equalTo(dividingLine.snp.bottom).offset(12.0)
             make.leading.equalToSuperview().inset(24.0)
-            make.bottom.equalToSuperview().inset(23.0)
+            make.bottom.equalToSuperview().inset(10.0)
         }
         
         likeCountLabel.snp.makeConstraints { make in
@@ -181,7 +186,12 @@ final class PostCollectionViewCell: UICollectionViewCell {
             make.trailing.equalTo(commentCountLabel.snp.leading).offset(-6.0)
         }
         
-
+        thumbnailImageView.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(10.0)
+            make.top.equalTo(titleLabel)
+            make.bottom.equalTo(dividingLine.snp.top).offset(-10.0)
+            make.width.equalTo(thumbnailImageView.snp.height)
+        }
     }
     
 }

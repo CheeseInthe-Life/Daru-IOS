@@ -25,6 +25,7 @@ final class PostListViewController: BaseViewController, Stepper {
     private let postListTableView = UITableView().then {
         $0.showsVerticalScrollIndicator = false
         $0.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+        $0.rowHeight = 172.0 + 20.0
     }
     
     var steps: PublishRelay<Step> = .init()
