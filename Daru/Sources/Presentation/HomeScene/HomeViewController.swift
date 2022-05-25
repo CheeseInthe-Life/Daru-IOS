@@ -296,14 +296,14 @@ private extension HomeViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 0, leading: 0.0, bottom: 20.0, trailing: 0.0)
         //group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.3386))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(192.0))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
         //section
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [
             createRecentPostSectionHeader()
         ]
-        section.contentInsets = .init(top: 18.0, leading: 20.0, bottom: 15.0, trailing: 20.0)
+        section.contentInsets = .init(top: 18.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
         
         return section
     }
