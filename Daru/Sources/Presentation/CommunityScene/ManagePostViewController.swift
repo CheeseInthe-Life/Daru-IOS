@@ -14,9 +14,25 @@ import RxSwift
 
 final class ManagePostViewController: BaseViewController, Stepper {
     
+    private let mainCollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewLayout()
+    ).then {
+        $0.showsVerticalScrollIndicator = false
+    }
+    
     var steps: PublishRelay<Step> = .init()
         
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func configureUI() {
+        
+        view.addSubview(mainCollectionView)
+        
+        mainCollectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
