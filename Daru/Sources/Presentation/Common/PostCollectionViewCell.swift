@@ -65,7 +65,7 @@ final class PostCollectionViewCell: UICollectionViewCell {
     }
     
     private let scrapImageView = UIImageView().then {
-        $0.image = Constant.scrapIcon
+        $0.image = Constant.scrapCountIcon
     }
     
     private let scrapCountLabel = UILabel().then {

@@ -73,7 +73,7 @@ final class PostTableViewCell: UITableViewCell {
     }
     
     private let scrapImageView = UIImageView().then {
-        $0.image = Constant.scrapIcon
+        $0.image = Constant.scrapCountIcon
         $0.contentMode = .scaleAspectFit
     }
     
