@@ -10,6 +10,9 @@
 		0351380C9A804DC0BE4272D0 /* Pods_Daru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6AC7BA26ADD9431DDE91DB /* Pods_Daru.framework */; };
 		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
 		AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */; };
+		AE2C84902840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */; };
+		AE2C84922840F8F100E2B6E2 /* ManagePostCommunityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C84912840F8F100E2B6E2 /* ManagePostCommunityCell.swift */; };
+		AE2C8494284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C8493284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift */; };
 		AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F4834283259DE008404F1 /* DaruStep.swift */; };
 		AE3F483B283268EE008404F1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F483A283268EE008404F1 /* BaseViewController.swift */; };
 		AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F483C28326C38008404F1 /* HomeFlow.swift */; };
@@ -68,6 +71,9 @@
 		6F042F466EFB7020E9197E7E /* Pods-Daru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daru.debug.xcconfig"; path = "Target Support Files/Pods-Daru/Pods-Daru.debug.xcconfig"; sourceTree = "<group>"; };
 		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineLabel.swift; sourceTree = "<group>"; };
+		AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostCommunitySectionHeaderView.swift; sourceTree = "<group>"; };
+		AE2C84912840F8F100E2B6E2 /* ManagePostCommunityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostCommunityCell.swift; sourceTree = "<group>"; };
+		AE2C8493284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostCommunitySectionBackgroundView.swift; sourceTree = "<group>"; };
 		AE3F4834283259DE008404F1 /* DaruStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaruStep.swift; sourceTree = "<group>"; };
 		AE3F483A283268EE008404F1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AE3F483C28326C38008404F1 /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
@@ -268,6 +274,9 @@
 		AE52F6A6283D3BFD000475EF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */,
+				AE2C84912840F8F100E2B6E2 /* ManagePostCommunityCell.swift */,
+				AE2C8493284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -481,11 +490,13 @@
 				AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */,
 				AE3F483F28326C4A008404F1 /* MyDaruFlow.swift in Sources */,
 				AE52F6A1283D3175000475EF /* ManagePostViewController.swift in Sources */,
+				AE2C84902840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift in Sources */,
 				AE52F694283CE06B000475EF /* MyFavoriteTeaCell.swift in Sources */,
 				AE52F698283D0CB9000475EF /* SecondaryTabViewController.swift in Sources */,
 				AE9A0B002833E3F200FCEC1C /* TeaHouseCell.swift in Sources */,
 				AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */,
 				AE9A0AF62833C06B00FCEC1C /* Constant.swift in Sources */,
+				AE2C84922840F8F100E2B6E2 /* ManagePostCommunityCell.swift in Sources */,
 				AE9A0AFE2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift in Sources */,
 				AE52F69C283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift in Sources */,
 				AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */,
@@ -514,6 +525,7 @@
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */,
 				AE52F6A5283D37B6000475EF /* ManagePostFlow.swift in Sources */,
+				AE2C8494284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 				AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */,
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
