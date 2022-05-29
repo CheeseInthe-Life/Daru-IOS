@@ -63,6 +63,7 @@
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
 		AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */; };
 		AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */; };
+		AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */; };
 		AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,7 @@
 		AEB46C87280F97BF008EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB46C89280F97BF008EF53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseViewController.swift; sourceTree = "<group>"; };
 		AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTeaIExplainationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,6 +303,7 @@
 				AE9A0AFA2833DB6500FCEC1C /* Cells */,
 				AE9A0AF32833AB2D00FCEC1C /* HomeViewController.swift */,
 				AE9A0AF82833D94400FCEC1C /* HomeReactor.swift */,
+				AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */,
 				AE52F6A3283D3410000475EF /* PostListFlow.swift in Sources */,
 				AE4EB7D82839B7E800D556CA /* FavoriteTeaHousesViewController.swift in Sources */,
+				AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */,
 				AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */,
 				AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */,
 				AE9A0AF92833D94400FCEC1C /* HomeReactor.swift in Sources */,
