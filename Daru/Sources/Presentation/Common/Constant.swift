@@ -22,7 +22,7 @@ struct Constant {
     static let profileDefaultImage: UIImage? = UIImage(named: "개구리2_icon")?.withRenderingMode(.alwaysOriginal)
     static let myPostIcon: UIImage? = UIImage(named: "MyPost_icon")?.withRenderingMode(.alwaysOriginal)
     static let communityRoleIcon: UIImage? = UIImage(named: "CommunityRole_icon")?.withRenderingMode(.alwaysOriginal)
-    static let scrapIcon: UIImage? = UIImage(named: "Scrap_Icon")?.withRenderingMode(.alwaysOriginal)
+    static let scrapIcon: UIImage? = UIImage(named: "Scrap_icon")?.withRenderingMode(.alwaysOriginal)
     static let usageRestrictionListIcon: UIImage? = UIImage(named: "UsageRestrictionList_icon")?.withRenderingMode(.alwaysOriginal)
     
     //banner
