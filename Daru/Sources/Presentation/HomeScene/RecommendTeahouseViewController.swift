@@ -21,6 +21,10 @@ final class RecommendTeahouseViewController: BaseViewController, View {
             RecommendTeahouseTitleCell.self,
             forCellWithReuseIdentifier: RecommendTeahouseTitleCell.identifier
         )
+        $0.register(
+            TeaHouseCell.self,
+            forCellWithReuseIdentifier: TeaHouseCell.identifier
+        )
     }
     
     init(reactor: RecommendTeahouseReactor) {
@@ -52,7 +56,8 @@ final class RecommendTeahouseViewController: BaseViewController, View {
         
         Observable.just(
             [
-                RecommendTeahouseSectionModel(model: "", items: ["a"])
+                RecommendTeahouseSectionModel(model: "", items: ["a"]),
+                RecommendTeahouseSectionModel(model: "", items: ["a","b","c","e","f","g","h","t"])
             ]
         ).bind(to: mainCollectionView.rx.items(dataSource: RecommendTeahouseDataSource.dataSource()))
             .disposed(by: disposeBag)

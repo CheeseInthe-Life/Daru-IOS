@@ -21,6 +21,12 @@ struct RecommendTeahouseDataSource {
                     for: indexPath
                 ) as! RecommendTeahouseTitleCell
                 return cell
+            case 1:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: TeaHouseCell.identifier,
+                    for: indexPath
+                ) as! TeaHouseCell
+                return cell
             default:
                 return UICollectionViewCell()
             }
