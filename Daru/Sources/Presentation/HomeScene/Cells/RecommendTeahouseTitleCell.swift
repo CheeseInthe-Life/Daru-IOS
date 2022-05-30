@@ -1,34 +1,34 @@
 //
-//  NearTeahouseTitleCell.swift
+//  RecommendTeahouseTitleCell.swift
 //  Daru
 //
-//  Created by 재영신 on 2022/05/30.
+//  Created by 재영신 on 2022/05/31.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-final class NearTeahouseTitleCell: UICollectionViewCell {
+final class RecommendTeahouseTitleCell: UICollectionViewCell {
     
     static let identifier = "\(type(of: self))"
     
     private let titleLabel = UILabel().then {
-        let str = NSMutableAttributedString(string: "내 주변 찻집")
+        let str = NSMutableAttributedString(string: "나와 잘 맞는 찻집")
         print(str.length)
         str.addAttributes(
             [
                 .foregroundColor: UIColor.tit_brwon!,
                 .font: UIFont.notoSansKR(.medium, size: 22.0)
             ],
-            range: NSRange(location: 0, length: 4)
+            range: NSRange(location: 0, length: str.length - 3)
         )
         str.addAttributes(
             [
                 .foregroundColor: UIColor.tit_brwon!,
                 .font: UIFont.notoSansKR(.bold, size: 24.0)
             ],
-            range: NSRange(location: 5, length: 2)
+            range: NSRange(location: str.length - 2, length: 2)
         )
         $0.attributedText = str
         $0.textAlignment = .center
@@ -36,11 +36,24 @@ final class NearTeahouseTitleCell: UICollectionViewCell {
     
     private let secondaryLabel = UILabel().then {
         let str = NSMutableAttributedString(string: "")
-        let icon = NSTextAttachment(image: Constant.curLocationIcon!)
+        let icon = NSTextAttachment(image: Constant.frogIcon!)
+        str.append(NSAttributedString(string: "나의 MB.Tea.I : 녹차개구리형 "))
         str.append(NSAttributedString(attachment: icon))
-        str.append(NSAttributedString(string: " 현재 위치 : 서울, 관악구"))
+        str.addAttributes(
+            [
+                .foregroundColor: UIColor.tit_brwon!,
+                .font: UIFont.notoSansKR(.bold, size: 14.0)
+            ],
+            range: NSRange(location: 0, length: 11)
+        )
+        str.addAttributes(
+            [
+                .foregroundColor: UIColor.tit_brwon!,
+                .font: UIFont.notoSansKR(.medium, size: 14.0)
+            ],
+            range: NSRange(location: 12, length: str.length - 12)
+        )
         $0.attributedText = str
-        $0.font = .notoSansKR(.medium, size: 14.0)
         $0.textAlignment = .center
     }
     
@@ -103,3 +116,4 @@ final class NearTeahouseTitleCell: UICollectionViewCell {
         }
     }
 }
+

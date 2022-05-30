@@ -1,8 +1,8 @@
 //
-//  NearTeahouseViewController.swift
+//  RecommendTeahouseViewController.swift
 //  Daru
 //
-//  Created by 재영신 on 2022/05/29.
+//  Created by 재영신 on 2022/05/31.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import SnapKit
 import Then
 import ReactorKit
 
-final class NearTeahouseViewController: BaseViewController, View {
+final class RecommendTeahouseViewController: BaseViewController, View {
     
     private let mainCollectionView = UICollectionView(
         frame: .zero,
@@ -18,21 +18,21 @@ final class NearTeahouseViewController: BaseViewController, View {
     ).then {
         $0.showsVerticalScrollIndicator = false
         $0.register(
-            NearTeahouseTitleCell.self,
-            forCellWithReuseIdentifier: NearTeahouseTitleCell.identifier
+            RecommendTeahouseTitleCell.self,
+            forCellWithReuseIdentifier: RecommendTeahouseTitleCell.identifier
+        )
+        $0.register(
+            TeaHouseCell.self,
+            forCellWithReuseIdentifier: TeaHouseCell.identifier
         )
         $0.register(
             TeahouseListHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: TeahouseListHeaderView.identifier
         )
-        $0.register(
-            TeaHouseCell.self,
-            forCellWithReuseIdentifier: TeaHouseCell.identifier
-        )
     }
     
-    init(reactor: NearTeahouseReactor) {
+    init(reactor: RecommendTeahouseReactor) {
         super.init(nibName: nil, bundle: nil)
         self.reactor = reactor
     }
@@ -57,26 +57,26 @@ final class NearTeahouseViewController: BaseViewController, View {
         
     }
     
-    func bind(reactor: NearTeahouseReactor) {
+    func bind(reactor: RecommendTeahouseReactor) {
         
         Observable.just(
             [
-                NearTeahouseSectionModel(model: "", items: ["a"]),
-                NearTeahouseSectionModel(model: "", items: ["a","b","c","e","f","g","h","t"])
+                RecommendTeahouseSectionModel(model: "", items: ["a"]),
+                RecommendTeahouseSectionModel(model: "", items: ["a","b","c","e","f","g","h","t"])
             ]
-        ).bind(to: mainCollectionView.rx.items(dataSource: NearTeahouseDataSource.dataSource()))
+        ).bind(to: mainCollectionView.rx.items(dataSource: RecommendTeahouseDataSource.dataSource()))
             .disposed(by: disposeBag)
     }
 }
 
-private extension NearTeahouseViewController {
+private extension RecommendTeahouseViewController {
     func createLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { [weak self] section, environment -> NSCollectionLayoutSection? in
             switch section {
             case 0:
                 return self?.createTitleSection()
             case 1:
-                return self?.createNearTeaHouseSection()
+                return self?.createRecommendTeaHouseSection()
             default:
                 return nil
             }
@@ -98,7 +98,7 @@ private extension NearTeahouseViewController {
         return section
     }
     
-    func createNearTeaHouseSection() -> NSCollectionLayoutSection {
+    func createRecommendTeaHouseSection() -> NSCollectionLayoutSection {
         //item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -111,21 +111,20 @@ private extension NearTeahouseViewController {
         let section = NSCollectionLayoutSection(group: group)
         //section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [
-            createNearTeaHouseSectionHeader()
+            createRecommendTeaHouseSectionHeader()
         ]
         section.contentInsets = .init(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
         section.interGroupSpacing = 10.0
         return section
     }
     
-    private func createNearTeaHouseSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+    private func createRecommendTeaHouseSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         
         //Section Header 사이즈
         let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
         
         //Section Header layout
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
-        //sectionHeader.contentInsets = .init(top: 0, leading: 20.0, bottom: 0, trailing: 0)
         return sectionHeader
     }
 }

@@ -32,6 +32,8 @@ final class HomeFlow: Flow {
             return navigateToHomeScene()
         case .nearTeahouseIsRequired:
             return navigateToNearTeahouseScene()
+        case .recommendTeahouseIsRequired:
+            return navigateToRecommendTeahouseScene()
         default:
             return .none
         }
@@ -50,6 +52,23 @@ private extension HomeFlow {
         let nearTeahouseReactor = NearTeahouseReactor()
         let nearTeahouseVC = NearTeahouseViewController(reactor: nearTeahouseReactor)
         rootViewController.navigationController?.pushViewController(nearTeahouseVC, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: nearTeahouseVC, withNextStepper: nearTeahouseReactor))
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: nearTeahouseVC,
+                withNextStepper: nearTeahouseReactor
+            )
+        )
+    }
+    
+    func navigateToRecommendTeahouseScene() -> FlowContributors {
+        let recommendTeahouseReactor = RecommendTeahouseReactor()
+        let recommendTeahouseVC = RecommendTeahouseViewController(reactor: recommendTeahouseReactor)
+        rootViewController.navigationController?.pushViewController(recommendTeahouseVC, animated: true)
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: recommendTeahouseVC,
+                withNextStepper: recommendTeahouseReactor
+            )
+        )
     }
 }

@@ -1,5 +1,5 @@
 //
-//  NearTeahouseDataSource.swift
+//  RecommendTeahouseDataSource.swift
 //  Daru
 //
 //  Created by 재영신 on 2022/05/31.
@@ -8,18 +8,18 @@
 import UIKit
 import RxDataSources
 
-typealias NearTeahouseSectionModel = SectionModel<String,String>
+typealias RecommendTeahouseSectionModel = SectionModel<String,String>
 
-struct NearTeahouseDataSource {
-    static func dataSource() -> RxCollectionViewSectionedReloadDataSource<NearTeahouseSectionModel> {
+struct RecommendTeahouseDataSource {
+    static func dataSource() -> RxCollectionViewSectionedReloadDataSource<RecommendTeahouseSectionModel> {
         return .init {
             dataSource, collectionView, indexPath, item in
             switch indexPath.section {
             case 0:
                 let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: NearTeahouseTitleCell.identifier,
+                    withReuseIdentifier: RecommendTeahouseTitleCell.identifier,
                     for: indexPath
-                ) as! NearTeahouseTitleCell
+                ) as! RecommendTeahouseTitleCell
                 return cell
             case 1:
                 let cell = collectionView.dequeueReusableCell(
@@ -39,7 +39,7 @@ struct NearTeahouseDataSource {
                     withReuseIdentifier: TeahouseListHeaderView.identifier,
                     for: indexPath
                 ) as! TeahouseListHeaderView
-                view.update(with: "내 주변 찻집")
+                view.update(with: "나와 잘 맞는 찻집")
                 return view
             default:
                 return UICollectionReusableView()
