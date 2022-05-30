@@ -42,19 +42,18 @@ final class RecommendTeahouseTitleCell: UICollectionViewCell {
         str.addAttributes(
             [
                 .foregroundColor: UIColor.tit_brwon!,
-                .font: UIFont.notoSansKR(.medium, size: 22.0)
+                .font: UIFont.notoSansKR(.bold, size: 14.0)
             ],
             range: NSRange(location: 0, length: 11)
         )
         str.addAttributes(
             [
                 .foregroundColor: UIColor.tit_brwon!,
-                .font: UIFont.notoSansKR(.bold, size: 24.0)
+                .font: UIFont.notoSansKR(.medium, size: 14.0)
             ],
-            range: NSRange(location: 12, length: str.length)
+            range: NSRange(location: 12, length: str.length - 12)
         )
         $0.attributedText = str
-        $0.font = .notoSansKR(.medium, size: 14.0)
         $0.textAlignment = .center
     }
     
