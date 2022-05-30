@@ -54,26 +54,26 @@ struct HomeDataSource {
                 if type == UICollectionView.elementKindSectionHeader {
                     let view = collectionView.dequeueReusableSupplementaryView(
                         ofKind: type,
-                        withReuseIdentifier: RecommendTeaHouseHeaderView.identifier,
+                        withReuseIdentifier: HomeRecommendTeaHouseSectionHeaderView.identifier,
                         for: indexPath
-                    ) as! RecommendTeaHouseHeaderView
+                    ) as! HomeRecommendTeaHouseSectionHeaderView
                     view.delegate = delegate
                     return view
                 } else {
                     let view = collectionView.dequeueReusableSupplementaryView(
                         ofKind: type,
-                        withReuseIdentifier: RecommendTeaHouseFooterView.identifier,
+                        withReuseIdentifier: HomeRecommendTeaHouseSectionFooterView.identifier,
                         for: indexPath
-                    ) as! RecommendTeaHouseFooterView
+                    ) as! HomeRecommendTeaHouseSectionFooterView
                     return view
                 }
             } else if indexPath.section == 2 {
                 if type == UICollectionView.elementKindSectionHeader {
                     let view = collectionView.dequeueReusableSupplementaryView(
                         ofKind: type,
-                        withReuseIdentifier: NearTeaHouseHeaderView.identifier,
+                        withReuseIdentifier: HomeNearTeaHouseSectionHeaderView.identifier,
                         for: indexPath
-                    ) as! NearTeaHouseHeaderView
+                    ) as! HomeNearTeaHouseSectionHeaderView
                     view.delegate = delegate
                     return view
                 }

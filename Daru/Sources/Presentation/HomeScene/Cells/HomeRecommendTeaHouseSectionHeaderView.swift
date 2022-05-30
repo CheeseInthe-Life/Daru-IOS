@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class RecommendTeaHouseHeaderView: UICollectionReusableView {
+final class HomeRecommendTeaHouseSectionHeaderView: UICollectionReusableView {
     
-    static let identifier = "RecommendTeaHouseHeaderView"
+    static let identifier = "HomeRecommendTeaHouseSectionHeaderView"
     
     private let titleLabel = UILabel().then {
         $0.font = .notoSansKR(.bold, size: 18.0)
@@ -90,7 +90,7 @@ final class RecommendTeaHouseHeaderView: UICollectionReusableView {
     }
 }
 
-extension RecommendTeaHouseHeaderView {
+extension HomeRecommendTeaHouseSectionHeaderView {
     @objc func moreButtonDidTap() {
     }
 }

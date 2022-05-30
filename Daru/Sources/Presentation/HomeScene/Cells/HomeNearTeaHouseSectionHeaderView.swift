@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-final class NearTeaHouseHeaderView: UICollectionReusableView {
-    static let identifier = "NearTeaHouseHeaderView"
+final class HomeNearTeaHouseSectionHeaderView: UICollectionReusableView {
+    static let identifier = "HomeNearTeaHouseSectionHeaderView"
 
     private let titleLabel = UILabel().then {
         $0.font = .notoSansKR(.bold, size: 18.0)
@@ -90,7 +90,7 @@ final class NearTeaHouseHeaderView: UICollectionReusableView {
     }
 }
 
-extension NearTeaHouseHeaderView {
+extension HomeNearTeaHouseSectionHeaderView {
     @objc func moreButtonDidTap() {
         delegate?.moreButtonDidTap(2)
     }

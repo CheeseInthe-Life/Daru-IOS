@@ -25,19 +25,19 @@ final class HomeViewController: BaseViewController, View {
         $0.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
         $0.register(TeaHouseCell.self, forCellWithReuseIdentifier: TeaHouseCell.identifier)
         $0.register(
-            RecommendTeaHouseHeaderView.self,
+            HomeRecommendTeaHouseSectionHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: RecommendTeaHouseHeaderView.identifier
+            withReuseIdentifier: HomeRecommendTeaHouseSectionHeaderView.identifier
         )
         $0.register(
-            RecommendTeaHouseFooterView.self,
+            HomeRecommendTeaHouseSectionFooterView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-            withReuseIdentifier: RecommendTeaHouseFooterView.identifier
+            withReuseIdentifier: HomeRecommendTeaHouseSectionFooterView.identifier
         )
         $0.register(
-            NearTeaHouseHeaderView.self,
+            HomeNearTeaHouseSectionHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: NearTeaHouseHeaderView.identifier
+            withReuseIdentifier: HomeNearTeaHouseSectionHeaderView.identifier
         )
         $0.register(PostCollectionViewCell.self,forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
         $0.register(
