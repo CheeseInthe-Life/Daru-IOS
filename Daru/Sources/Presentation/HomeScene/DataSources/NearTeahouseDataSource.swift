@@ -39,6 +39,7 @@ struct NearTeahouseDataSource {
                     withReuseIdentifier: TeahouseListHeaderView.identifier,
                     for: indexPath
                 ) as! TeahouseListHeaderView
+                view.update(with: "내 주변 찻집")
                 return view
             default:
                 return UICollectionReusableView()
