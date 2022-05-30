@@ -1,29 +1,28 @@
 //
-//  RecommendTeaHouseHeaderView.swift
+//  NearByTeaHouseCell.swift
 //  Daru
 //
-//  Created by 재영신 on 2022/05/17.
+//  Created by 재영신 on 2022/05/18.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-final class RecommendTeaHouseHeaderView: UICollectionReusableView {
-    
-    static let identifier = "RecommendTeaHouseHeaderView"
-    
+final class HomeNearTeaHouseSectionHeaderView: UICollectionReusableView {
+    static let identifier = "HomeNearTeaHouseSectionHeaderView"
+
     private let titleLabel = UILabel().then {
         $0.font = .notoSansKR(.bold, size: 18.0)
-        $0.text = "나와 잘 맞는 찻집"
+        $0.text = "내 주변 찻집"
     }
     
     private let secondaryLabel = UILabel().then {
         $0.font = .notoSansKR(.medium, size: 14.0)
-        $0.text = "나의 MB.Tea.I : 녹차개구리형"
+        $0.text = "현재 위치 : 서울, 관악구"
     }
     
-    private let propensityImageView = UIImageView().then {
+    private let locationImageView = UIImageView().then {
         $0.image = Constant.frogIcon
         $0.contentMode = .scaleAspectFit
     }
@@ -40,6 +39,8 @@ final class RecommendTeaHouseHeaderView: UICollectionReusableView {
         $0.layer.cornerRadius = 4.0
     }
     
+    weak var delegate: MoreButtonDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -55,26 +56,26 @@ final class RecommendTeaHouseHeaderView: UICollectionReusableView {
         [
             titleLabel,
             secondaryLabel,
-            propensityImageView,
+            locationImageView,
             moreButton
         ].forEach {
             addSubview($0)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().inset(35.0)
             make.trailing.equalTo(moreButton.snp.leading)
             make.leading.equalToSuperview().inset(20.0)
         }
         
         secondaryLabel.snp.makeConstraints { make in
-            make.leading.equalTo(titleLabel)
+            make.leading.equalTo(locationImageView.snp.trailing).offset(8.0)
             make.top.equalTo(titleLabel.snp.bottom).offset(7.0)
             make.bottom.equalToSuperview()
         }
         
-        propensityImageView.snp.makeConstraints { make in
-            make.leading.equalTo(secondaryLabel.snp.trailing).offset(5.0)
+        locationImageView.snp.makeConstraints { make in
+            make.leading.equalTo(titleLabel)
             make.top.bottom.equalTo(secondaryLabel)
         }
         
@@ -84,5 +85,13 @@ final class RecommendTeaHouseHeaderView: UICollectionReusableView {
             make.height.equalTo(24.0)
             make.top.equalTo(titleLabel)
         }
+        
+        moreButton.addTarget(self, action: #selector(moreButtonDidTap), for: .touchUpInside)
+    }
+}
+
+extension HomeNearTeaHouseSectionHeaderView {
+    @objc func moreButtonDidTap() {
+        delegate?.moreButtonDidTap(2)
     }
 }

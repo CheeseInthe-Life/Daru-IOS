@@ -7,12 +7,21 @@
 
 import Foundation
 import ReactorKit
+import RxFlow
+import RxCocoa
+import RxSwift
 
-final class HomeReactor: Reactor {
+final class HomeReactor: Reactor, Stepper {
+    
+    var steps: PublishRelay<Step> = .init()
     
     let initialState: State = .init()
     
-    struct Action {
+    enum Action {
+        case moreButtonDidTap(section: Int)
+    }
+    
+    enum Mutation {
         
     }
     
@@ -20,4 +29,15 @@ final class HomeReactor: Reactor {
         
     }
     
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case let .moreButtonDidTap(section):
+            if section == 2 {
+                steps.accept(DaruStep.nearTeahouseIsRequired)
+            }
+            return .empty()
+        }
+    }
 }
+
+

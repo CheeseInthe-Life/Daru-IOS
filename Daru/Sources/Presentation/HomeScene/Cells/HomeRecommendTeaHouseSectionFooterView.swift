@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-final class RecommendTeaHouseFooterView: UICollectionReusableView {
-    static let identifier = "RecommendTeaHouseFooterView"
+final class HomeRecommendTeaHouseSectionFooterView: UICollectionReusableView {
+    static let identifier = "HomeRecommendTeaHouseSectionFooterView"
     
     private let mainLabel = UILabel().then {
         $0.font = .notoSansKR(.medium, size: 14.0)

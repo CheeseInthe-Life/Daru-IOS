@@ -18,6 +18,9 @@ final class MyDaruFlow: Flow {
         $0.isNavigationBarHidden = true
     }
     
+    deinit {
+        print("\(type(of: self)) \(#function)")
+    }
     
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DaruStep else { return .none }
@@ -44,7 +47,7 @@ private extension MyDaruFlow {
                     ("MB.Tea.I", flow1Root),
                     ("내가 좋아하는 찻집", flow2Root)
                 ])
-                self.navigationController.pushViewController(myDaruTabVC, animated: false)
+                self.navigationController.setViewControllers([myDaruTabVC], animated: false)
             }
         
         return .multiple(flowContributors: [

@@ -15,6 +15,7 @@ enum DaruStep: Step {
     
     //Home
     case homeIsRequired
+    case nearTeahouseIsRequired
     
     //MyDaru
     case myPageIsRequired

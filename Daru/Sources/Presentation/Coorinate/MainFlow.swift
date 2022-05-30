@@ -11,10 +11,18 @@ import RxFlow
 final class MainFlow: Flow {
     
     var root: Presentable {
-        return self.navigationController
+        return self.rootViewController
     }
     
-    private let navigationController = UINavigationController()
+    private let rootViewController = TabViewController()
+    private let homeFlow: HomeFlow = .init()
+    private let myDaruFlow: MyDaruFlow = .init()
+    private let communityFlow: CommunityFlow = .init()
+    private let teahouseMapFlow: TeahouseMapFlow = .init()
+    
+    deinit {
+        print("\(type(of: self)) \(#function)")
+    }
     
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DaruStep else { return .none }
@@ -30,25 +38,20 @@ final class MainFlow: Flow {
 
 extension MainFlow {
     func navigateToMainScene() -> FlowContributors {
-        let homeFlow = HomeFlow()
-        let myDaruFlow = MyDaruFlow()
-        let communityFlow = CommunityFlow()
-        let teaHouseMapFlow = TeahouseMapFlow()
-        Flows.use(homeFlow, myDaruFlow, communityFlow, teaHouseMapFlow, when: .created) {
+        Flows.use(homeFlow, myDaruFlow, communityFlow, teahouseMapFlow, when: .created) {
             [unowned self] homeRoot, myDaruRoot, communityRoot, teaHouseMapRoot in
-            let tabVC = TabViewController(tabs: [
+            rootViewController.setTabs(tabs: [
                 ("홈", homeRoot),
                 ("나의 다루", myDaruRoot),
                 ("커뮤니티", communityRoot),
                 ("찻집 지도", teaHouseMapRoot)
             ])
-            self.navigationController.pushViewController(tabVC, animated: false)
         }
         return .multiple(flowContributors: [
-            .contribute(withNextPresentable: homeFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.homeIsRequired)),
-            .contribute(withNextPresentable: myDaruFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.myPageIsRequired)),
-            .contribute(withNextPresentable: communityFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.communityIsRequired)),
-            .contribute(withNextPresentable: teaHouseMapFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.teahouseMapIsRequired))
+            .contribute(withNextPresentable: homeFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.homeIsRequired), allowStepWhenDismissed: true),
+            .contribute(withNextPresentable: myDaruFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.myPageIsRequired), allowStepWhenDismissed: true),
+            .contribute(withNextPresentable: communityFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.communityIsRequired), allowStepWhenDismissed: true),
+            .contribute(withNextPresentable: teahouseMapFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.teahouseMapIsRequired), allowStepWhenDismissed: true)
         ]
         )
     }

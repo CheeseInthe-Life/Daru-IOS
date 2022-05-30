@@ -18,6 +18,10 @@ final class PostListFlow: Flow {
         $0.isNavigationBarHidden = true
     }
     
+    deinit {
+        print("\(type(of: self)) \(#function)")
+    }
+    
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DaruStep else { return .none }
         

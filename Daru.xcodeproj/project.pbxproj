@@ -44,6 +44,9 @@
 		AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F6A7283D3D8B000475EF /* PostTableViewCell.swift */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
+		AE88FDDB28450C080050E3DC /* NearTeahouseSceneHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */; };
+		AE88FDDD28450F750050E3DC /* NearTeahouseTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */; };
+		AE88FDDF284514D40050E3DC /* NearTeahouseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */; };
 		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
 		AE9A0AE928339DD200FCEC1C /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */; };
 		AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */; };
@@ -52,16 +55,20 @@
 		AE9A0AF62833C06B00FCEC1C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AF52833C06B00FCEC1C /* Constant.swift */; };
 		AE9A0AF92833D94400FCEC1C /* HomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AF82833D94400FCEC1C /* HomeReactor.swift */; };
 		AE9A0AFC2833DB7700FCEC1C /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AFB2833DB7700FCEC1C /* BannerCell.swift */; };
-		AE9A0AFE2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AFD2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift */; };
+		AE9A0AFE2833E08800FCEC1C /* HomeRecommendTeaHouseSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AFD2833E08800FCEC1C /* HomeRecommendTeaHouseSectionHeaderView.swift */; };
 		AE9A0B002833E3F200FCEC1C /* TeaHouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AFF2833E3F200FCEC1C /* TeaHouseCell.swift */; };
-		AE9A0B022833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0B012833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift */; };
-		AE9F74732834B93600C31F53 /* NearTeaHouseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F74722834B93600C31F53 /* NearTeaHouseHeaderView.swift */; };
+		AE9A0B022833FDA100FCEC1C /* HomeRecommendTeaHouseSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0B012833FDA100FCEC1C /* HomeRecommendTeaHouseSectionFooterView.swift */; };
+		AE9F74732834B93600C31F53 /* HomeNearTeaHouseSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F74722834B93600C31F53 /* HomeNearTeaHouseSectionHeaderView.swift */; };
 		AE9F74752834C65900C31F53 /* RecentPostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F74742834C65900C31F53 /* RecentPostHeaderView.swift */; };
 		AE9F74772834C9D900C31F53 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F74762834C9D900C31F53 /* PostCollectionViewCell.swift */; };
 		AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7B280F97BE008EF53F /* AppDelegate.swift */; };
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
 		AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */; };
+		AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */; };
+		AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */; };
+		AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */; };
+		AEE7C2F02843DE9900FF9CFB /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2EF2843DE9900FF9CFB /* HomeDataSource.swift */; };
 		AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +112,9 @@
 		AE52F6A7283D3D8B000475EF /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
+		AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseSceneHeaderView.swift; sourceTree = "<group>"; };
+		AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseTitleCell.swift; sourceTree = "<group>"; };
+		AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseDataSource.swift; sourceTree = "<group>"; };
 		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		AE9A0AE728339DD200FCEC1C /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
@@ -113,10 +123,10 @@
 		AE9A0AF52833C06B00FCEC1C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AE9A0AF82833D94400FCEC1C /* HomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReactor.swift; sourceTree = "<group>"; };
 		AE9A0AFB2833DB7700FCEC1C /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
-		AE9A0AFD2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTeaHouseHeaderView.swift; sourceTree = "<group>"; };
+		AE9A0AFD2833E08800FCEC1C /* HomeRecommendTeaHouseSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendTeaHouseSectionHeaderView.swift; sourceTree = "<group>"; };
 		AE9A0AFF2833E3F200FCEC1C /* TeaHouseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaHouseCell.swift; sourceTree = "<group>"; };
-		AE9A0B012833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTeaHouseFooterView.swift; sourceTree = "<group>"; };
-		AE9F74722834B93600C31F53 /* NearTeaHouseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeaHouseHeaderView.swift; sourceTree = "<group>"; };
+		AE9A0B012833FDA100FCEC1C /* HomeRecommendTeaHouseSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendTeaHouseSectionFooterView.swift; sourceTree = "<group>"; };
+		AE9F74722834B93600C31F53 /* HomeNearTeaHouseSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNearTeaHouseSectionHeaderView.swift; sourceTree = "<group>"; };
 		AE9F74742834C65900C31F53 /* RecentPostHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPostHeaderView.swift; sourceTree = "<group>"; };
 		AE9F74762834C9D900C31F53 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		AEB46C78280F97BE008EF53F /* Daru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +135,10 @@
 		AEB46C84280F97BF008EF53F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB46C87280F97BF008EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB46C89280F97BF008EF53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseViewController.swift; sourceTree = "<group>"; };
+		AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseReactor.swift; sourceTree = "<group>"; };
+		AEE7C2EF2843DE9900FF9CFB /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTeaIExplainationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +261,7 @@
 			children = (
 				AE3F484E2832AF6D008404F1 /* UIColor+.swift */,
 				AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */,
+				AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,9 +310,12 @@
 		AE9A0AF12833AAF100FCEC1C /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				AEE7C2EE2843DE8A00FF9CFB /* DataSources */,
 				AE9A0AFA2833DB6500FCEC1C /* Cells */,
 				AE9A0AF32833AB2D00FCEC1C /* HomeViewController.swift */,
 				AE9A0AF82833D94400FCEC1C /* HomeReactor.swift */,
+				AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */,
+				AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -306,13 +324,15 @@
 			isa = PBXGroup;
 			children = (
 				AE9A0AFB2833DB7700FCEC1C /* BannerCell.swift */,
-				AE9A0AFD2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift */,
-				AE9A0B012833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift */,
-				AE9F74722834B93600C31F53 /* NearTeaHouseHeaderView.swift */,
+				AE9A0AFD2833E08800FCEC1C /* HomeRecommendTeaHouseSectionHeaderView.swift */,
+				AE9A0B012833FDA100FCEC1C /* HomeRecommendTeaHouseSectionFooterView.swift */,
+				AE9F74722834B93600C31F53 /* HomeNearTeaHouseSectionHeaderView.swift */,
 				AE9F74742834C65900C31F53 /* RecentPostHeaderView.swift */,
 				AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */,
 				AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */,
 				AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */,
+				AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */,
+				AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -342,6 +362,15 @@
 				AE1A7530283123AD000D8144 /* ReSources */,
 			);
 			path = Daru;
+			sourceTree = "<group>";
+		};
+		AEE7C2EE2843DE8A00FF9CFB /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AEE7C2EF2843DE9900FF9CFB /* HomeDataSource.swift */,
+				AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		AEF40C102839D24100E629AD /* Cells */ = {
@@ -497,9 +526,10 @@
 				AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */,
 				AE9A0AF62833C06B00FCEC1C /* Constant.swift in Sources */,
 				AE2C84922840F8F100E2B6E2 /* ManagePostCommunityCell.swift in Sources */,
-				AE9A0AFE2833E08800FCEC1C /* RecommendTeaHouseHeaderView.swift in Sources */,
+				AE9A0AFE2833E08800FCEC1C /* HomeRecommendTeaHouseSectionHeaderView.swift in Sources */,
 				AE52F69C283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift in Sources */,
 				AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */,
+				AE88FDDD28450F750050E3DC /* NearTeahouseTitleCell.swift in Sources */,
 				AE3F484328326C6B008404F1 /* TeahouseMapFlow.swift in Sources */,
 				AE9A0AF42833AB2D00FCEC1C /* HomeViewController.swift in Sources */,
 				AE3F484128326C5D008404F1 /* CommunityFlow.swift in Sources */,
@@ -511,25 +541,31 @@
 				AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */,
 				AE52F6A3283D3410000475EF /* PostListFlow.swift in Sources */,
 				AE4EB7D82839B7E800D556CA /* FavoriteTeaHousesViewController.swift in Sources */,
+				AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */,
 				AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */,
+				AE88FDDF284514D40050E3DC /* NearTeahouseDataSource.swift in Sources */,
 				AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */,
 				AE9A0AF92833D94400FCEC1C /* HomeReactor.swift in Sources */,
 				AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */,
 				AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */,
-				AE9F74732834B93600C31F53 /* NearTeaHouseHeaderView.swift in Sources */,
+				AE9F74732834B93600C31F53 /* HomeNearTeaHouseSectionHeaderView.swift in Sources */,
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
+				AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */,
 				AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */,
 				AE52F68E283CD0FE000475EF /* MyMBTeaIHeaderView.swift in Sources */,
 				AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */,
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
+				AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */,
 				AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */,
+				AEE7C2F02843DE9900FF9CFB /* HomeDataSource.swift in Sources */,
 				AE52F6A5283D37B6000475EF /* ManagePostFlow.swift in Sources */,
+				AE88FDDB28450C080050E3DC /* NearTeahouseSceneHeaderView.swift in Sources */,
 				AE2C8494284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 				AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */,
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
-				AE9A0B022833FDA100FCEC1C /* RecommendTeaHouseFooterView.swift in Sources */,
+				AE9A0B022833FDA100FCEC1C /* HomeRecommendTeaHouseSectionFooterView.swift in Sources */,
 				AE9F74772834C9D900C31F53 /* PostCollectionViewCell.swift in Sources */,
 				AE52F690283CD3F3000475EF /* PrimaryButton.swift in Sources */,
 				AE9A0AFC2833DB7700FCEC1C /* BannerCell.swift in Sources */,

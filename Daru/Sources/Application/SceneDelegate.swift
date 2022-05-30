@@ -7,6 +7,7 @@
 
 import UIKit
 import RxFlow
+import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,8 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         window.backgroundColor = .systemBackground
+        coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
+            print("did navigate to flow=\(flow) and step=\(step)")
+        })
+        
         let appFlow = AppFlow(window: window)
         coordinator.coordinate(flow: appFlow, with: AppStepper())
+        
         window.makeKeyAndVisible()
     }
 
