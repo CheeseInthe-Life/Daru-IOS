@@ -92,5 +92,6 @@ final class HomeRecommendTeaHouseSectionHeaderView: UICollectionReusableView {
 
 extension HomeRecommendTeaHouseSectionHeaderView {
     @objc func moreButtonDidTap() {
+        delegate?.moreButtonDidTap(1)
     }
 }

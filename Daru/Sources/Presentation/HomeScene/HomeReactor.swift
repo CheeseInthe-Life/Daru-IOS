@@ -32,8 +32,13 @@ final class HomeReactor: Reactor, Stepper {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case let .moreButtonDidTap(section):
-            if section == 2 {
+            switch section {
+            case 1:
+                steps.accept(DaruStep.recommendTeahouseIsRequired)
+            case 2:
                 steps.accept(DaruStep.nearTeahouseIsRequired)
+            default:
+                break
             }
             return .empty()
         }
