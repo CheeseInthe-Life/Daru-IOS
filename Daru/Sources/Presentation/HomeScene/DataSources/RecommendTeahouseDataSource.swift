@@ -30,6 +30,20 @@ struct RecommendTeahouseDataSource {
             default:
                 return UICollectionViewCell()
             }
+        }configureSupplementaryView: {
+            dataSource, collectionView, type, indexPath in
+            switch indexPath.section {
+            case 1:
+                let view = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: type,
+                    withReuseIdentifier: TeahouseListHeaderView.identifier,
+                    for: indexPath
+                ) as! TeahouseListHeaderView
+                view.update(with: "나와 잘 맞는 찻집")
+                return view
+            default:
+                return UICollectionReusableView()
+            }
         }
     }
 }

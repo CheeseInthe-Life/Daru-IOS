@@ -25,6 +25,11 @@ final class RecommendTeahouseViewController: BaseViewController, View {
             TeaHouseCell.self,
             forCellWithReuseIdentifier: TeaHouseCell.identifier
         )
+        $0.register(
+            TeahouseListHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: TeahouseListHeaderView.identifier
+        )
     }
     
     init(reactor: RecommendTeahouseReactor) {
