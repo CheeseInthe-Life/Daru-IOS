@@ -36,9 +36,9 @@ struct NearTeahouseDataSource {
             case 1:
                 let view = collectionView.dequeueReusableSupplementaryView(
                     ofKind: type,
-                    withReuseIdentifier: NearTeahouseSceneHeaderView.identifier,
+                    withReuseIdentifier: TeahouseListHeaderView.identifier,
                     for: indexPath
-                ) as! NearTeahouseSceneHeaderView
+                ) as! TeahouseListHeaderView
                 return view
             default:
                 return UICollectionReusableView()

@@ -44,7 +44,7 @@
 		AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F6A7283D3D8B000475EF /* PostTableViewCell.swift */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
-		AE88FDDB28450C080050E3DC /* NearTeahouseSceneHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */; };
+		AE88FDDB28450C080050E3DC /* TeahouseListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDA28450C080050E3DC /* TeahouseListHeaderView.swift */; };
 		AE88FDDD28450F750050E3DC /* NearTeahouseTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */; };
 		AE88FDDF284514D40050E3DC /* NearTeahouseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */; };
 		AE88FDE2284533030050E3DC /* RecommendTeahouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDE1284533030050E3DC /* RecommendTeahouseViewController.swift */; };
@@ -116,7 +116,7 @@
 		AE52F6A7283D3D8B000475EF /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
-		AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseSceneHeaderView.swift; sourceTree = "<group>"; };
+		AE88FDDA28450C080050E3DC /* TeahouseListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseListHeaderView.swift; sourceTree = "<group>"; };
 		AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseTitleCell.swift; sourceTree = "<group>"; };
 		AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseDataSource.swift; sourceTree = "<group>"; };
 		AE88FDE1284533030050E3DC /* RecommendTeahouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTeahouseViewController.swift; sourceTree = "<group>"; };
@@ -341,7 +341,7 @@
 				AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */,
 				AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */,
 				AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */,
-				AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */,
+				AE88FDDA28450C080050E3DC /* TeahouseListHeaderView.swift */,
 				AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */,
 				AE88FDE52845364D0050E3DC /* RecommendTeahouseTitleCell.swift */,
 			);
@@ -575,7 +575,7 @@
 				AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */,
 				AEE7C2F02843DE9900FF9CFB /* HomeDataSource.swift in Sources */,
 				AE52F6A5283D37B6000475EF /* ManagePostFlow.swift in Sources */,
-				AE88FDDB28450C080050E3DC /* NearTeahouseSceneHeaderView.swift in Sources */,
+				AE88FDDB28450C080050E3DC /* TeahouseListHeaderView.swift in Sources */,
 				AE2C8494284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 				AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */,

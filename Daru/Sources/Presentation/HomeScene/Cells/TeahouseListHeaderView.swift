@@ -9,13 +9,12 @@ import UIKit
 import SnapKit
 import Then
 
-final class NearTeahouseSceneHeaderView: UICollectionReusableView {
+final class TeahouseListHeaderView: UICollectionReusableView {
     
     static let identifier = "\(type(of: self))"
     
     private let titleLabel = UILabel().then {
         $0.font = .notoSansKR(.bold, size: 18.0)
-        $0.text = "내 주변 찻집"
     }
     
     override init(frame: CGRect) {
@@ -35,5 +34,9 @@ final class NearTeahouseSceneHeaderView: UICollectionReusableView {
             make.leading.trailing.equalToSuperview()
             make.top.bottom.equalToSuperview().inset(18.0)
         }
+    }
+    
+    func update(with title: String) {
+        titleLabel.text = title
     }
 }

@@ -22,9 +22,9 @@ final class NearTeahouseViewController: BaseViewController, View {
             forCellWithReuseIdentifier: NearTeahouseTitleCell.identifier
         )
         $0.register(
-            NearTeahouseSceneHeaderView.self,
+            TeahouseListHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: NearTeahouseSceneHeaderView.identifier
+            withReuseIdentifier: TeahouseListHeaderView.identifier
         )
         $0.register(
             TeaHouseCell.self,
