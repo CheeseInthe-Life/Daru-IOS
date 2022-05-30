@@ -9,12 +9,28 @@ import UIKit
 import SnapKit
 import Then
 
-final class TeahouseListTitleCell: UICollectionViewCell {
+final class NearTeahouseTitleCell: UICollectionViewCell {
     
     static let identifier = "\(type(of: self))"
     
     private let titleLabel = UILabel().then {
         let str = NSMutableAttributedString(string: "내 주변 찻집")
+        print(str.length)
+        str.addAttributes(
+            [
+                .foregroundColor: UIColor.tit_brwon!,
+                .font: UIFont.notoSansKR(.medium, size: 22.0)
+            ],
+            range: NSRange(location: 0, length: 4)
+        )
+        str.addAttributes(
+            [
+                .foregroundColor: UIColor.tit_brwon!,
+                .font: UIFont.notoSansKR(.bold, size: 24.0)
+            ],
+            range: NSRange(location: 5, length: 2)
+        )
+        $0.attributedText = str
         $0.textAlignment = .center
     }
     
@@ -85,26 +101,5 @@ final class TeahouseListTitleCell: UICollectionViewCell {
             make.height.equalTo(1.0)
             make.bottom.equalToSuperview().inset(35.0)
         }
-    }
-    
-    //TODO: title -> 유효한 데이터
-    func update(with title: String) {
-        let str = NSMutableAttributedString(string: title)
-        print(str.length)
-        str.addAttributes(
-            [
-                .foregroundColor: UIColor.tit_brwon!,
-                .font: UIFont.notoSansKR(.medium, size: 22.0)
-            ],
-            range: NSRange(location: 0, length: title.count - 3)
-        )
-        str.addAttributes(
-            [
-                .foregroundColor: UIColor.tit_brwon!,
-                .font: UIFont.notoSansKR(.bold, size: 24.0)
-            ],
-            range: NSRange(location: title.count - 2, length: 2)
-        )
-        titleLabel.attributedText = str
     }
 }

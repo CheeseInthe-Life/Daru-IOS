@@ -17,6 +17,10 @@ final class RecommendTeahouseViewController: BaseViewController, View {
         collectionViewLayout: UICollectionViewLayout()
     ).then {
         $0.showsVerticalScrollIndicator = false
+        $0.register(
+            RecommendTeahouseTitleCell.self,
+            forCellWithReuseIdentifier: RecommendTeahouseTitleCell.identifier
+        )
     }
     
     init(reactor: RecommendTeahouseReactor) {
@@ -46,6 +50,12 @@ final class RecommendTeahouseViewController: BaseViewController, View {
     
     func bind(reactor: RecommendTeahouseReactor) {
         
+        Observable.just(
+            [
+                RecommendTeahouseSectionModel(model: "", items: ["a"])
+            ]
+        ).bind(to: mainCollectionView.rx.items(dataSource: RecommendTeahouseDataSource.dataSource()))
+            .disposed(by: disposeBag)
     }
 }
 
