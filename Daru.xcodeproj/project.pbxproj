@@ -44,6 +44,9 @@
 		AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52F6A7283D3D8B000475EF /* PostTableViewCell.swift */; };
 		AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */; };
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
+		AE88FDDB28450C080050E3DC /* NearTeahouseSceneHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */; };
+		AE88FDDD28450F750050E3DC /* NearTeahouseTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */; };
+		AE88FDDF284514D40050E3DC /* NearTeahouseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */; };
 		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
 		AE9A0AE928339DD200FCEC1C /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */; };
 		AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */; };
@@ -109,6 +112,9 @@
 		AE52F6A7283D3D8B000475EF /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryHeaderView.swift; sourceTree = "<group>"; };
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
+		AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseSceneHeaderView.swift; sourceTree = "<group>"; };
+		AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseTitleCell.swift; sourceTree = "<group>"; };
+		AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseDataSource.swift; sourceTree = "<group>"; };
 		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		AE9A0AE728339DD200FCEC1C /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
@@ -325,6 +331,8 @@
 				AE68D3662837E8DE0017C8CB /* RegionCategoryHeaderView.swift */,
 				AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */,
 				AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */,
+				AE88FDDA28450C080050E3DC /* NearTeahouseSceneHeaderView.swift */,
+				AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				AEE7C2EF2843DE9900FF9CFB /* HomeDataSource.swift */,
+				AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -520,6 +529,7 @@
 				AE9A0AFE2833E08800FCEC1C /* HomeRecommendTeaHouseSectionHeaderView.swift in Sources */,
 				AE52F69C283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift in Sources */,
 				AEB46C7C280F97BE008EF53F /* AppDelegate.swift in Sources */,
+				AE88FDDD28450F750050E3DC /* NearTeahouseTitleCell.swift in Sources */,
 				AE3F484328326C6B008404F1 /* TeahouseMapFlow.swift in Sources */,
 				AE9A0AF42833AB2D00FCEC1C /* HomeViewController.swift in Sources */,
 				AE3F484128326C5D008404F1 /* CommunityFlow.swift in Sources */,
@@ -533,6 +543,7 @@
 				AE4EB7D82839B7E800D556CA /* FavoriteTeaHousesViewController.swift in Sources */,
 				AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */,
 				AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */,
+				AE88FDDF284514D40050E3DC /* NearTeahouseDataSource.swift in Sources */,
 				AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */,
 				AE9A0AF92833D94400FCEC1C /* HomeReactor.swift in Sources */,
 				AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */,
@@ -549,6 +560,7 @@
 				AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */,
 				AEE7C2F02843DE9900FF9CFB /* HomeDataSource.swift in Sources */,
 				AE52F6A5283D37B6000475EF /* ManagePostFlow.swift in Sources */,
+				AE88FDDB28450C080050E3DC /* NearTeahouseSceneHeaderView.swift in Sources */,
 				AE2C8494284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
 				AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */,
