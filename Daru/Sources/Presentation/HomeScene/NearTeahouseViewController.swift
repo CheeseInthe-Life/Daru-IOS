@@ -8,8 +8,18 @@
 import UIKit
 import SnapKit
 import Then
+import ReactorKit
 
-final class NearTeahouseViewController: BaseViewController {
+final class NearTeahouseViewController: BaseViewController, View {
+    
+    init(reactor: NearTeahouseReactor) {
+        super.init(nibName: nil, bundle: nil)
+        self.reactor = reactor
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,5 +27,9 @@ final class NearTeahouseViewController: BaseViewController {
     
     override func configureUI() {
         super.configureUI()
+    }
+    
+    func bind(reactor: NearTeahouseReactor) {
+        
     }
 }

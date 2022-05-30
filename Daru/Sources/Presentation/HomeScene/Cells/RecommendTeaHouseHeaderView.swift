@@ -40,6 +40,8 @@ final class RecommendTeaHouseHeaderView: UICollectionReusableView {
         $0.layer.cornerRadius = 4.0
     }
     
+    weak var delegate: MoreButtonDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -84,5 +86,11 @@ final class RecommendTeaHouseHeaderView: UICollectionReusableView {
             make.height.equalTo(24.0)
             make.top.equalTo(titleLabel)
         }
+        moreButton.addTarget(self, action: #selector(moreButtonDidTap), for: .touchUpInside)
+    }
+}
+
+extension RecommendTeaHouseHeaderView {
+    @objc func moreButtonDidTap() {
     }
 }

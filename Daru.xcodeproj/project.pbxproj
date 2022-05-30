@@ -64,6 +64,8 @@
 		AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */; };
 		AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */; };
 		AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */; };
+		AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */; };
+		AEE7C2F02843DE9900FF9CFB /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2EF2843DE9900FF9CFB /* HomeDataSource.swift */; };
 		AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +131,8 @@
 		AEB46C89280F97BF008EF53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseViewController.swift; sourceTree = "<group>"; };
+		AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseReactor.swift; sourceTree = "<group>"; };
+		AEE7C2EF2843DE9900FF9CFB /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTeaIExplainationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,10 +304,12 @@
 		AE9A0AF12833AAF100FCEC1C /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				AEE7C2EE2843DE8A00FF9CFB /* DataSources */,
 				AE9A0AFA2833DB6500FCEC1C /* Cells */,
 				AE9A0AF32833AB2D00FCEC1C /* HomeViewController.swift */,
 				AE9A0AF82833D94400FCEC1C /* HomeReactor.swift */,
 				AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */,
+				AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -348,6 +354,14 @@
 				AE1A7530283123AD000D8144 /* ReSources */,
 			);
 			path = Daru;
+			sourceTree = "<group>";
+		};
+		AEE7C2EE2843DE8A00FF9CFB /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AEE7C2EF2843DE9900FF9CFB /* HomeDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		AEF40C102839D24100E629AD /* Cells */ = {
@@ -526,12 +540,14 @@
 				AE9F74732834B93600C31F53 /* NearTeaHouseHeaderView.swift in Sources */,
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
+				AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */,
 				AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */,
 				AE52F68E283CD0FE000475EF /* MyMBTeaIHeaderView.swift in Sources */,
 				AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */,
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */,
 				AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */,
+				AEE7C2F02843DE9900FF9CFB /* HomeDataSource.swift in Sources */,
 				AE52F6A5283D37B6000475EF /* ManagePostFlow.swift in Sources */,
 				AE2C8494284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,

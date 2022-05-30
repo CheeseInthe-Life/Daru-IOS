@@ -16,10 +16,13 @@ final class AppFlow: Flow {
     
     private let rootWindow: UIWindow
     
+    deinit {
+        print("\(type(of: self)) \(#function)")
+    }
+    
     init(window: UIWindow) {
         self.rootWindow = window
     }
-    
     
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DaruStep else { return .none }
@@ -38,8 +41,10 @@ final class AppFlow: Flow {
 extension AppFlow {
     func navigationToMainScene() -> FlowContributors {
         let mainFlow = MainFlow()
-        Flows.use(mainFlow, when: .created) { [weak self] flowRoot in
-            self?.rootWindow.rootViewController = flowRoot
+        let naviVC = UINavigationController()
+        rootWindow.rootViewController = naviVC
+        Flows.use(mainFlow, when: .created) { flowRoot in
+            naviVC.pushViewController(flowRoot, animated: false)
         }
         return .one(flowContributor: .contribute(withNextPresentable: mainFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.mainIsRequired)))
     }

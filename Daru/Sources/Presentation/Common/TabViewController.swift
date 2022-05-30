@@ -13,7 +13,8 @@ import SnapKit
 
 final class TabViewController: TabmanViewController {
     
-    private let tabs: [(name: String, viewController: UIViewController)]
+    private var tabs = [(name: String, viewController: UIViewController)]()
+    
     private let leftTitleLabel = UILabel().then {
         $0.text = "다루"
         $0.font = .notoSansKR(.bold, size: 18.0)
@@ -29,26 +30,18 @@ final class TabViewController: TabmanViewController {
         $0.layer.cornerRadius = 20.0
     }
     
-    init(tabs: [(name: String, viewController: UIViewController)]) {
+    func setTabs(tabs: [(name: String, viewController: UIViewController)]) {
         self.tabs = tabs
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.tabs = []
-        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.dataSource = self
-        
         searchTextField.snp.makeConstraints { make in
             make.height.equalTo(40.0)
             make.width.equalTo(UIScreen.main.bounds.width - 157.0)
         }
-
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftTitleLabel)
         navigationItem.titleView = searchTextField
         navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -57,8 +50,14 @@ final class TabViewController: TabmanViewController {
             target: nil,
             action: nil
         )
-        navigationController?.navigationBar.isTranslucent = false
-
+        //navigationController?.navigationBar.isTranslucent = false
+        let barAppearance = self.navigationController?.navigationBar.standardAppearance
+        barAppearance?.backgroundColor = .systemBackground
+        barAppearance?.shadowColor = nil
+        self.navigationController?.navigationBar.scrollEdgeAppearance = barAppearance
+        self.navigationController?.navigationBar.compactAppearance = barAppearance
+        
+        
         // Create bar
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap // Customize
@@ -87,10 +86,11 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return nil
+        return .at(index: 0)
     }
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         return TMBarItem(title: tabs[index].name)
     }
 }
+

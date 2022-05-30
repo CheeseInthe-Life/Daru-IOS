@@ -39,6 +39,8 @@ final class NearTeaHouseHeaderView: UICollectionReusableView {
         $0.layer.cornerRadius = 4.0
     }
     
+    weak var delegate: MoreButtonDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -83,5 +85,13 @@ final class NearTeaHouseHeaderView: UICollectionReusableView {
             make.height.equalTo(24.0)
             make.top.equalTo(titleLabel)
         }
+        
+        moreButton.addTarget(self, action: #selector(moreButtonDidTap), for: .touchUpInside)
+    }
+}
+
+extension NearTeaHouseHeaderView {
+    @objc func moreButtonDidTap() {
+        delegate?.moreButtonDidTap(2)
     }
 }
