@@ -50,11 +50,13 @@ private extension CommunityFlow {
         return .multiple(flowContributors: [
             .contribute(
                 withNextPresentable: postListFlow,
-                withNextStepper: OneStepper(withSingleStep: DaruStep.postListIsRequired)
+                withNextStepper: OneStepper(withSingleStep: DaruStep.postListIsRequired),
+                allowStepWhenDismissed: true
             ),
             .contribute(
                 withNextPresentable: managePostFlow,
-                withNextStepper: OneStepper(withSingleStep: DaruStep.managePostIsRequired)
+                withNextStepper: OneStepper(withSingleStep: DaruStep.managePostIsRequired),
+                allowStepWhenDismissed: true
             )
         ])
     }
