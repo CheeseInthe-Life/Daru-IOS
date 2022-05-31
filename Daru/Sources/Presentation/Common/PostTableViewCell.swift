@@ -122,6 +122,7 @@ final class PostTableViewCell: UITableViewCell {
         }
         
         contentView.addSubview(outerView)
+        selectionStyle = .none
         
         writerImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(15.0)
