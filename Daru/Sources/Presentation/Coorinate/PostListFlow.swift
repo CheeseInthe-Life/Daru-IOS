@@ -36,8 +36,9 @@ final class PostListFlow: Flow {
 
 private extension PostListFlow {
     func navigateToPostListScene() -> FlowContributors {
-        let postListVC = PostListViewController()
+        let postListReactor = PostListReactor()
+        let postListVC = PostListViewController(reactor: postListReactor)
         self.rootViewController.pushViewController(postListVC, animated: false)
-        return .one(flowContributor: .contribute(withNext: postListVC))
+        return .one(flowContributor: .contribute(withNextPresentable: postListVC, withNextStepper: postListReactor))
     }
 }
