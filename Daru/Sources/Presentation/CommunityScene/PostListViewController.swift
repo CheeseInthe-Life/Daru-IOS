@@ -76,5 +76,9 @@ final class PostListViewController: BaseViewController, View {
         )) { (index: Int, element: String, cell: PostTableViewCell) in
         }.disposed(by: self.disposeBag)
         
+        postListTableView.rx.itemSelected
+            .map { _ in Reactor.Action.postIsPicked }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
 }

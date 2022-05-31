@@ -13,7 +13,7 @@ import RxCocoa
 final class PostListReactor: Reactor, Stepper {
     
     enum Action {
-        
+        case postIsPicked
     }
     
     enum Mutation {
@@ -26,4 +26,13 @@ final class PostListReactor: Reactor, Stepper {
     
     var initialState: State = .init()
     var steps: PublishRelay<Step> = .init()
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        
+        switch action {
+        case .postIsPicked:
+            steps.accept(DaruStep.postDetailIsRequired)
+            return .empty()
+        }
+    }
 }

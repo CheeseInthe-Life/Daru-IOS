@@ -28,6 +28,8 @@ final class PostListFlow: Flow {
         switch step {
         case .postListIsRequired:
             return navigateToPostListScene()
+        case .postDetailIsRequired:
+            return navigateToPostDetailScene()
         default:
             return .none
         }
@@ -35,10 +37,27 @@ final class PostListFlow: Flow {
 }
 
 private extension PostListFlow {
+    
     func navigateToPostListScene() -> FlowContributors {
         let postListReactor = PostListReactor()
         let postListVC = PostListViewController(reactor: postListReactor)
-        self.rootViewController.pushViewController(postListVC, animated: false)
-        return .one(flowContributor: .contribute(withNextPresentable: postListVC, withNextStepper: postListReactor))
+        rootViewController.pushViewController(postListVC, animated: false)
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: postListVC,
+                withNextStepper: postListReactor
+            )
+        )
+    }
+    
+    func navigateToPostDetailScene() -> FlowContributors {
+        let postDetailReactor = PostDetailReactor()
+        let postDetailVC = PostDetailViewController(reactor: postDetailReactor)
+        rootViewController.navigationController?.navigationController?.pushViewController(postDetailVC, animated: true)
+        return .one(flowContributor: .contribute(
+            withNextPresentable: postDetailVC,
+            withNextStepper: postDetailReactor
+        )
+        )
     }
 }

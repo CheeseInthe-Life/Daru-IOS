@@ -10,7 +10,7 @@ import RxFlow
 import ReactorKit
 import RxCocoa
 
-final class PostDetailReactor: Reactor {
+final class PostDetailReactor: Reactor, Stepper {
     
     enum Action {
         
@@ -25,4 +25,5 @@ final class PostDetailReactor: Reactor {
     }
     
     var initialState: State = .init()
+    var steps: PublishRelay<Step> = .init()
 }
