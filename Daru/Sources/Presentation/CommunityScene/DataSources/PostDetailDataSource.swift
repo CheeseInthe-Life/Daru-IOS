@@ -30,6 +30,19 @@ struct PostDetailDataSource {
             default:
                 return UICollectionViewCell()
             }
+        }configureSupplementaryView: {
+            dataSource, collectionView, type, indexPath in
+            switch indexPath.section {
+            case 1:
+                let view = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: type,
+                    withReuseIdentifier: PostCommentHeaderView.identifier,
+                    for: indexPath
+                ) as! PostCommentHeaderView
+                return view
+            default:
+                return UICollectionReusableView()
+            }
         }
     }
 }

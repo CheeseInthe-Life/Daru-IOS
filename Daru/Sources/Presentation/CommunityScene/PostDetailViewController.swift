@@ -19,6 +19,11 @@ final class PostDetailViewController: BaseViewController, View {
     ).then {
         $0.register(PostContentCell.self, forCellWithReuseIdentifier: PostContentCell.identifier)
         $0.register(PostCommentCell.self, forCellWithReuseIdentifier: PostCommentCell.identifier)
+        $0.register(
+            PostCommentHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: PostCommentHeaderView.identifier
+        )
         $0.showsVerticalScrollIndicator = false
     }
     
@@ -95,6 +100,19 @@ private extension PostDetailViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
         //section
         let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [
+            createPostCommentSectionHeader()
+        ]
         return section
+    }
+    
+    private func createPostCommentSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        //Section Header 사이즈
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
+        
+        //Section Header layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        return sectionHeader
     }
 }
