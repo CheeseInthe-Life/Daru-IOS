@@ -27,6 +27,12 @@ final class PostDetailViewController: BaseViewController, View {
         $0.showsVerticalScrollIndicator = false
     }
     
+    private let titleView = UILabel().then {
+        $0.font = .notoSansKR(.bold, size: 18.0)
+        $0.textColor = .tit_brwon
+        $0.text = "다루 커뮤니티"
+    }
+    
     init(reactor: PostDetailReactor) {
         super.init(nibName: nil, bundle: nil)
         self.reactor = reactor
@@ -49,6 +55,8 @@ final class PostDetailViewController: BaseViewController, View {
             make.edges.equalToSuperview()
         }
         mainCollectionView.collectionViewLayout = createLayout()
+        
+        navigationItem.titleView = titleView
     }
     
     func bind(reactor: PostDetailReactor) {
