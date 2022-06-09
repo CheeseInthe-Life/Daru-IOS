@@ -54,6 +54,7 @@
 		AE88FDFE2845EA1B0050E3DC /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDFD2845EA1B0050E3DC /* PostDetailViewController.swift */; };
 		AE88FE002845EA480050E3DC /* PostDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDFF2845EA480050E3DC /* PostDetailReactor.swift */; };
 		AE88FE022845EB5B0050E3DC /* PostListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FE012845EB5B0050E3DC /* PostListReactor.swift */; };
+		AE88FE042845F17F0050E3DC /* PostContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FE032845F17F0050E3DC /* PostContentCell.swift */; };
 		AE9A0AE828339DD200FCEC1C /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */; };
 		AE9A0AE928339DD200FCEC1C /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */; };
 		AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */; };
@@ -72,6 +73,7 @@
 		AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB46C7D280F97BE008EF53F /* SceneDelegate.swift */; };
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
 		AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */; };
+		AEB684E92851E3BC00843D7F /* PostDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB684E82851E3BC00843D7F /* PostDetailDataSource.swift */; };
 		AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */; };
 		AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */; };
 		AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */; };
@@ -129,6 +131,7 @@
 		AE88FDFD2845EA1B0050E3DC /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		AE88FDFF2845EA480050E3DC /* PostDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailReactor.swift; sourceTree = "<group>"; };
 		AE88FE012845EB5B0050E3DC /* PostListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListReactor.swift; sourceTree = "<group>"; };
+		AE88FE032845F17F0050E3DC /* PostContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentCell.swift; sourceTree = "<group>"; };
 		AE9A0AE528339DD100FCEC1C /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		AE9A0AE628339DD100FCEC1C /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		AE9A0AE728339DD200FCEC1C /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		AEB46C84280F97BF008EF53F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB46C87280F97BF008EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB46C89280F97BF008EF53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEB684E82851E3BC00843D7F /* PostDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailDataSource.swift; sourceTree = "<group>"; };
 		AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseViewController.swift; sourceTree = "<group>"; };
 		AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseReactor.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 		AE52F69D283D3037000475EF /* CommunityScene */ = {
 			isa = PBXGroup;
 			children = (
+				AEB684E52851E27800843D7F /* DataSources */,
 				AE52F6A6283D3BFD000475EF /* Cells */,
 				AE52F69E283D3054000475EF /* PostListViewController.swift */,
 				AE88FE012845EB5B0050E3DC /* PostListReactor.swift */,
@@ -309,6 +314,7 @@
 				AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */,
 				AE2C84912840F8F100E2B6E2 /* ManagePostCommunityCell.swift */,
 				AE2C8493284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift */,
+				AE88FE032845F17F0050E3DC /* PostContentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -382,6 +388,14 @@
 				AE1A7530283123AD000D8144 /* ReSources */,
 			);
 			path = Daru;
+			sourceTree = "<group>";
+		};
+		AEB684E52851E27800843D7F /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AEB684E82851E3BC00843D7F /* PostDetailDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		AEE7C2EE2843DE8A00FF9CFB /* DataSources */ = {
@@ -583,6 +597,7 @@
 				AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */,
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */,
+				AE88FE042845F17F0050E3DC /* PostContentCell.swift in Sources */,
 				AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */,
 				AE88FE002845EA480050E3DC /* PostDetailReactor.swift in Sources */,
 				AEE7C2F02843DE9900FF9CFB /* HomeDataSource.swift in Sources */,
@@ -590,6 +605,7 @@
 				AE88FDDB28450C080050E3DC /* TeahouseListHeaderView.swift in Sources */,
 				AE2C8494284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift in Sources */,
 				AEB46C7E280F97BE008EF53F /* SceneDelegate.swift in Sources */,
+				AEB684E92851E3BC00843D7F /* PostDetailDataSource.swift in Sources */,
 				AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */,
 				AE88FDE2284533030050E3DC /* RecommendTeahouseViewController.swift in Sources */,
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,

@@ -52,6 +52,7 @@ final class PostTableViewCell: UITableViewCell {
     private let likeImageView = UIImageView().then {
         $0.image = Constant.likeIcon
         $0.contentMode = .scaleAspectFit
+        $0.tintColor = .gray1
     }
     
     private let likeCountLabel = UILabel().then {
@@ -75,6 +76,7 @@ final class PostTableViewCell: UITableViewCell {
     private let scrapImageView = UIImageView().then {
         $0.image = Constant.scrapCountIcon
         $0.contentMode = .scaleAspectFit
+        $0.tintColor = .gray1
     }
     
     private let scrapCountLabel = UILabel().then {
