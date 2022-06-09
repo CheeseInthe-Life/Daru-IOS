@@ -10,10 +10,10 @@ import RxFlow
 import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
     var coordinator = FlowCoordinator()
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -23,15 +23,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         window.backgroundColor = .systemBackground
-        coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
-            print("did navigate to flow=\(flow) and step=\(step)")
-        })
+        let barAppearance = UINavigationBarAppearance()
+        barAppearance.setBackIndicatorImage(Constant.backIcon, transitionMaskImage: Constant.backIcon)
+        UINavigationBar.appearance().scrollEdgeAppearance = barAppearance
+        UINavigationBar.appearance().compactAppearance = barAppearance
+        UINavigationBar.appearance().standardAppearance = barAppearance
         
         let appFlow = AppFlow(window: window)
         coordinator.coordinate(flow: appFlow, with: AppStepper())
         
         window.makeKeyAndVisible()
     }
-
+    
 }
 

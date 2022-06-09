@@ -45,6 +45,7 @@ final class PostCollectionViewCell: UICollectionViewCell {
     
     private let likeImageView = UIImageView().then {
         $0.image = Constant.likeIcon
+        $0.tintColor = .gray1
     }
     
     private let likeCountLabel = UILabel().then {
@@ -66,6 +67,7 @@ final class PostCollectionViewCell: UICollectionViewCell {
     
     private let scrapImageView = UIImageView().then {
         $0.image = Constant.scrapCountIcon
+        $0.tintColor = .gray1
     }
     
     private let scrapCountLabel = UILabel().then {

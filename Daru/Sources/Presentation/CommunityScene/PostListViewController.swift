@@ -11,8 +11,9 @@ import Then
 import RxFlow
 import RxSwift
 import RxCocoa
+import ReactorKit
 
-final class PostListViewController: BaseViewController, Stepper {
+final class PostListViewController: BaseViewController, View {
     
     private let writeButton = UIButton().then {
         $0.backgroundColor = .brown2
@@ -28,7 +29,14 @@ final class PostListViewController: BaseViewController, Stepper {
         $0.rowHeight = 172.0 + 20.0
     }
     
-    var steps: PublishRelay<Step> = .init()
+    init(reactor: PostListReactor) {
+        super.init(nibName: nil, bundle: nil)
+        self.reactor = reactor
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +64,10 @@ final class PostListViewController: BaseViewController, Stepper {
             make.top.equalTo(writeButton.snp.bottom).offset(14.0)
         }
         
+    }
+    
+    func bind(reactor: PostListReactor) {
+        
         Observable.just([
             "a","b","c","d","e","f","g"
         ]).bind(to: postListTableView.rx.items(
@@ -63,5 +75,10 @@ final class PostListViewController: BaseViewController, Stepper {
             cellType: PostTableViewCell.self
         )) { (index: Int, element: String, cell: PostTableViewCell) in
         }.disposed(by: self.disposeBag)
+        
+        postListTableView.rx.itemSelected
+            .map { _ in Reactor.Action.postIsPicked }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
 }
