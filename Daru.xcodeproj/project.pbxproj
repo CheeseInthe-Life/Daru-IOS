@@ -74,6 +74,7 @@
 		AEB46C85280F97BF008EF53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C84280F97BF008EF53F /* Assets.xcassets */; };
 		AEB46C88280F97BF008EF53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB46C86280F97BF008EF53F /* LaunchScreen.storyboard */; };
 		AEB684E92851E3BC00843D7F /* PostDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB684E82851E3BC00843D7F /* PostDetailDataSource.swift */; };
+		AEB684EB2851F43A00843D7F /* PostCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB684EA2851F43A00843D7F /* PostCommentCell.swift */; };
 		AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */; };
 		AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */; };
 		AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */; };
@@ -153,6 +154,7 @@
 		AEB46C87280F97BF008EF53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB46C89280F97BF008EF53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB684E82851E3BC00843D7F /* PostDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailDataSource.swift; sourceTree = "<group>"; };
+		AEB684EA2851F43A00843D7F /* PostCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentCell.swift; sourceTree = "<group>"; };
 		AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseViewController.swift; sourceTree = "<group>"; };
 		AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseReactor.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				AE2C84912840F8F100E2B6E2 /* ManagePostCommunityCell.swift */,
 				AE2C8493284107D300E2B6E2 /* ManagePostCommunitySectionBackgroundView.swift */,
 				AE88FE032845F17F0050E3DC /* PostContentCell.swift */,
+				AEB684EA2851F43A00843D7F /* PostCommentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
 				AE9A0B022833FDA100FCEC1C /* HomeRecommendTeaHouseSectionFooterView.swift in Sources */,
 				AE9F74772834C9D900C31F53 /* PostCollectionViewCell.swift in Sources */,
+				AEB684EB2851F43A00843D7F /* PostCommentCell.swift in Sources */,
 				AE52F690283CD3F3000475EF /* PrimaryButton.swift in Sources */,
 				AE9A0AFC2833DB7700FCEC1C /* BannerCell.swift in Sources */,
 			);

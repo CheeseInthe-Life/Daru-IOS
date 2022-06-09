@@ -18,6 +18,7 @@ final class PostDetailViewController: BaseViewController, View {
         collectionViewLayout: .init()
     ).then {
         $0.register(PostContentCell.self, forCellWithReuseIdentifier: PostContentCell.identifier)
+        $0.register(PostCommentCell.self, forCellWithReuseIdentifier: PostCommentCell.identifier)
         $0.showsVerticalScrollIndicator = false
     }
     
@@ -48,7 +49,10 @@ final class PostDetailViewController: BaseViewController, View {
     func bind(reactor: PostDetailReactor) {
         
         Observable.just(
-            [SectionModel(model: "", items: ["a"])]
+            [
+                SectionModel(model: "", items: ["a"]),
+                SectionModel(model: "", items: ["a","b","c"])
+            ]
         ).bind(to: mainCollectionView.rx.items(dataSource: PostDetailDataSource.dataSource()))
             .disposed(by: disposeBag)
     }
@@ -62,6 +66,8 @@ private extension PostDetailViewController {
             switch section {
             case 0:
                 return self?.createPostContentSection()
+            case 1:
+                return self?.createPostCommentSection()
             default:
                 return nil
             }
@@ -69,6 +75,18 @@ private extension PostDetailViewController {
     }
     
     func createPostContentSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+    
+    func createPostCommentSection() -> NSCollectionLayoutSection {
         //item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)

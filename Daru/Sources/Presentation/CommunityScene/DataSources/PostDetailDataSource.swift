@@ -21,6 +21,12 @@ struct PostDetailDataSource {
                     for: indexPath
                 ) as! PostContentCell
                 return cell
+            case 1:
+                let cell = collectionview.dequeueReusableCell(
+                    withReuseIdentifier: PostCommentCell.identifier,
+                    for: indexPath
+                ) as! PostCommentCell
+                return cell
             default:
                 return UICollectionViewCell()
             }
