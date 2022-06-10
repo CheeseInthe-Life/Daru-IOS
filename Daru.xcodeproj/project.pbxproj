@@ -185,23 +185,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AE1A7530283123AD000D8144 /* ReSources */ = {
+		AE1A7530283123AD000D8144 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				AE9A0AEE2833A01700FCEC1C /* Font */,
 				AEB46C84280F97BF008EF53F /* Assets.xcassets */,
 			);
-			path = ReSources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		AE1A7531283123B5000D8144 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AE1A753A28312596000D8144 /* Data */,
-				AE1A753928312593000D8144 /* Domain */,
+				AE57A46F28533E5000B05AB2 /* Service */,
+				AE57A46D28533D9C00B05AB2 /* Models */,
+				AE1A753A28312596000D8144 /* Network */,
 				AE1A753428312445000D8144 /* Presentation */,
 				AE1A75332831242C000D8144 /* Application */,
-				AEB46C89280F97BF008EF53F /* Info.plist */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -247,18 +247,11 @@
 			path = Coorinate;
 			sourceTree = "<group>";
 		};
-		AE1A753928312593000D8144 /* Domain */ = {
+		AE1A753A28312596000D8144 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		AE1A753A28312596000D8144 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		AE3F48392832619E008404F1 /* Common */ = {
@@ -291,9 +284,8 @@
 		AE4EB7CD2838D56700D556CA /* MyDaruScene */ = {
 			isa = PBXGroup;
 			children = (
-				AEF40C102839D24100E629AD /* Cells */,
-				AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */,
-				AE4EB7D72839B7E800D556CA /* FavoriteTeaHousesViewController.swift */,
+				AE57A46B28533D5700B05AB2 /* ViewControllers */,
+				AEF40C102839D24100E629AD /* Views */,
 			);
 			path = MyDaruScene;
 			sourceTree = "<group>";
@@ -301,18 +293,14 @@
 		AE52F69D283D3037000475EF /* CommunityScene */ = {
 			isa = PBXGroup;
 			children = (
+				AE57A46A28533D4200B05AB2 /* ViewControllers */,
 				AEB684E52851E27800843D7F /* DataSources */,
-				AE52F6A6283D3BFD000475EF /* Cells */,
-				AE52F69E283D3054000475EF /* PostListViewController.swift */,
-				AE88FE012845EB5B0050E3DC /* PostListReactor.swift */,
-				AE52F6A0283D3175000475EF /* ManagePostViewController.swift */,
-				AE88FDFD2845EA1B0050E3DC /* PostDetailViewController.swift */,
-				AE88FDFF2845EA480050E3DC /* PostDetailReactor.swift */,
+				AE52F6A6283D3BFD000475EF /* Views */,
 			);
 			path = CommunityScene;
 			sourceTree = "<group>";
 		};
-		AE52F6A6283D3BFD000475EF /* Cells */ = {
+		AE52F6A6283D3BFD000475EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */,
@@ -322,7 +310,63 @@
 				AEB684EA2851F43A00843D7F /* PostCommentCell.swift */,
 				AEB684EC285208CB00843D7F /* PostCommentHeaderView.swift */,
 			);
-			path = Cells;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE57A46928533CF300B05AB2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEB46C89280F97BF008EF53F /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE57A46A28533D4200B05AB2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE52F69E283D3054000475EF /* PostListViewController.swift */,
+				AE88FE012845EB5B0050E3DC /* PostListReactor.swift */,
+				AE52F6A0283D3175000475EF /* ManagePostViewController.swift */,
+				AE88FDFD2845EA1B0050E3DC /* PostDetailViewController.swift */,
+				AE88FDFF2845EA480050E3DC /* PostDetailReactor.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AE57A46B28533D5700B05AB2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */,
+				AE4EB7D72839B7E800D556CA /* FavoriteTeaHousesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AE57A46C28533D6A00B05AB2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE9A0AF32833AB2D00FCEC1C /* HomeViewController.swift */,
+				AE9A0AF82833D94400FCEC1C /* HomeReactor.swift */,
+				AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */,
+				AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */,
+				AE88FDE1284533030050E3DC /* RecommendTeahouseViewController.swift */,
+				AE88FDE3284533290050E3DC /* RecommendTeahouseReactor.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AE57A46D28533D9C00B05AB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE57A46F28533E5000B05AB2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		AE9A0AEE2833A01700FCEC1C /* Font */ = {
@@ -339,19 +383,14 @@
 		AE9A0AF12833AAF100FCEC1C /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				AE57A46C28533D6A00B05AB2 /* ViewControllers */,
 				AEE7C2EE2843DE8A00FF9CFB /* DataSources */,
-				AE9A0AFA2833DB6500FCEC1C /* Cells */,
-				AE9A0AF32833AB2D00FCEC1C /* HomeViewController.swift */,
-				AE9A0AF82833D94400FCEC1C /* HomeReactor.swift */,
-				AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */,
-				AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */,
-				AE88FDE1284533030050E3DC /* RecommendTeahouseViewController.swift */,
-				AE88FDE3284533290050E3DC /* RecommendTeahouseReactor.swift */,
+				AE9A0AFA2833DB6500FCEC1C /* Views */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
 		};
-		AE9A0AFA2833DB6500FCEC1C /* Cells */ = {
+		AE9A0AFA2833DB6500FCEC1C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AE9A0AFB2833DB7700FCEC1C /* BannerCell.swift */,
@@ -366,7 +405,7 @@
 				AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */,
 				AE88FDE52845364D0050E3DC /* RecommendTeahouseTitleCell.swift */,
 			);
-			path = Cells;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AEB46C6F280F97BE008EF53F = {
@@ -390,8 +429,9 @@
 		AEB46C7A280F97BE008EF53F /* Daru */ = {
 			isa = PBXGroup;
 			children = (
+				AE57A46928533CF300B05AB2 /* Supporting Files */,
 				AE1A7531283123B5000D8144 /* Sources */,
-				AE1A7530283123AD000D8144 /* ReSources */,
+				AE1A7530283123AD000D8144 /* Resources */,
 			);
 			path = Daru;
 			sourceTree = "<group>";
@@ -414,7 +454,7 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
-		AEF40C102839D24100E629AD /* Cells */ = {
+		AEF40C102839D24100E629AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AEF40C112839D2EB00E629AD /* MBTeaIExplainationCell.swift */,
@@ -425,7 +465,7 @@
 				AE52F695283CEC29000475EF /* MyFavoriteTeaFooterView.swift */,
 				AE52F69B283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift */,
 			);
-			path = Cells;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D25C7C34924EC672CCF3C666 /* Frameworks */ = {
