@@ -197,9 +197,9 @@
 		AE1A7531283123B5000D8144 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AE57A46F28533E5000B05AB2 /* Service */,
 				AE57A46D28533D9C00B05AB2 /* Models */,
 				AE1A753A28312596000D8144 /* Network */,
-				AE1A753928312593000D8144 /* Service */,
 				AE1A753428312445000D8144 /* Presentation */,
 				AE1A75332831242C000D8144 /* Application */,
 			);
@@ -245,14 +245,6 @@
 				AE52F6A4283D37B6000475EF /* ManagePostFlow.swift */,
 			);
 			path = Coorinate;
-			sourceTree = "<group>";
-		};
-		AE1A753928312593000D8144 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Service;
-			path = "하지만";
 			sourceTree = "<group>";
 		};
 		AE1A753A28312596000D8144 /* Network */ = {
@@ -368,6 +360,13 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AE57A46F28533E5000B05AB2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		AE9A0AEE2833A01700FCEC1C /* Font */ = {
