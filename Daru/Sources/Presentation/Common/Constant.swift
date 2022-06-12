@@ -27,6 +27,8 @@ struct Constant {
     static let menuIcon: UIImage? = UIImage(named: "Menu_icon")?.withRenderingMode(.alwaysOriginal)
     static let backIcon: UIImage? = UIImage(named: "back_icon")?.withRenderingMode(.alwaysOriginal)
     static let sendIcon: UIImage? = UIImage(named: "Send_icon")?.withRenderingMode(.alwaysOriginal)
+    static let appleIcon: UIImage? = UIImage(named: "apple_icon")?.withRenderingMode(.alwaysOriginal)
+    static let kakaoIcon: UIImage? = UIImage(named: "kakao_icon")?.withRenderingMode(.alwaysOriginal)
     
     //banner
     static let banner: UIImage? = UIImage(named: "Banner")?.withRenderingMode(.alwaysOriginal)
