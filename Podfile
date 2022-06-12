@@ -18,4 +18,5 @@ target 'Daru' do
   pod 'Swinject'
   pod 'Tabman', '~> 2.12'
   pod 'ImageSlideshow', '~> 1.9.0'
+  pod 'RxKakaoSDK'
 end
