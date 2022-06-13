@@ -23,6 +23,7 @@
 		AE3F484828329A31008404F1 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484728329A31008404F1 /* TabViewController.swift */; };
 		AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484928329FFA008404F1 /* AppStepper.swift */; };
 		AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484E2832AF6D008404F1 /* UIColor+.swift */; };
+		AE3FEC3C2857430D00F87644 /* NetworkLoggerPlugIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3FEC3B2857430D00F87644 /* NetworkLoggerPlugIn.swift */; };
 		AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */; };
 		AE4EB7CB2838C75300D556CA /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */; };
 		AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */; };
@@ -107,6 +108,7 @@
 		AE3F484728329A31008404F1 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		AE3F484928329FFA008404F1 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
 		AE3F484E2832AF6D008404F1 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		AE3FEC3B2857430D00F87644 /* NetworkLoggerPlugIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugIn.swift; sourceTree = "<group>"; };
 		AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterCell.swift; sourceTree = "<group>"; };
 		AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
 		AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTeaIViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				AE3FEC3A285741F800F87644 /* Common */,
 				AE3FEC39285741F200F87644 /* EndPoints */,
+				AE3FEC3B2857430D00F87644 /* NetworkLoggerPlugIn.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				AE9A0B002833E3F200FCEC1C /* TeaHouseCell.swift in Sources */,
 				AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */,
 				AE88FDE9284537BF0050E3DC /* RecommendTeahouseDataSource.swift in Sources */,
+				AE3FEC3C2857430D00F87644 /* NetworkLoggerPlugIn.swift in Sources */,
 				AE9242962856596F0053FCF5 /* LoginButtonCell.swift in Sources */,
 				AE9A0AF62833C06B00FCEC1C /* Constant.swift in Sources */,
 				AE2C84922840F8F100E2B6E2 /* ManagePostCommunityCell.swift in Sources */,
