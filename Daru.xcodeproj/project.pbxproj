@@ -25,6 +25,7 @@
 		AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F484E2832AF6D008404F1 /* UIColor+.swift */; };
 		AE3FEC3C2857430D00F87644 /* NetworkLoggerPlugIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3FEC3B2857430D00F87644 /* NetworkLoggerPlugIn.swift */; };
 		AE3FEC3E2857446E00F87644 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3FEC3D2857446E00F87644 /* Networking.swift */; };
+		AE3FEC41285745B000F87644 /* SecretConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3FEC40285745B000F87644 /* SecretConstant.swift */; };
 		AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */; };
 		AE4EB7CB2838C75300D556CA /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */; };
 		AE4EB7D62839B7A900D556CA /* MBTeaIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */; };
@@ -111,6 +112,7 @@
 		AE3F484E2832AF6D008404F1 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		AE3FEC3B2857430D00F87644 /* NetworkLoggerPlugIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugIn.swift; sourceTree = "<group>"; };
 		AE3FEC3D2857446E00F87644 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AE3FEC40285745B000F87644 /* SecretConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretConstant.swift; sourceTree = "<group>"; };
 		AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterCell.swift; sourceTree = "<group>"; };
 		AE4EB7CA2838C75300D556CA /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
 		AE4EB7D52839B7A900D556CA /* MBTeaIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTeaIViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		AE1A7531283123B5000D8144 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AE3FEC3F285744FF00F87644 /* Secret */,
 				AE9242922856560C0053FCF5 /* Common */,
 				AE57A46F28533E5000B05AB2 /* Service */,
 				AE57A46D28533D9C00B05AB2 /* Models */,
@@ -306,6 +309,14 @@
 			children = (
 			);
 			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		AE3FEC3F285744FF00F87644 /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				AE3FEC40285745B000F87644 /* SecretConstant.swift */,
+			);
+			path = Secret;
 			sourceTree = "<group>";
 		};
 		AE4EB7CD2838D56700D556CA /* MyDaruScene */ = {
@@ -632,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE9F74752834C65900C31F53 /* RecentPostHeaderView.swift in Sources */,
+				AE3FEC41285745B000F87644 /* SecretConstant.swift in Sources */,
 				AE88FDE4284533290050E3DC /* RecommendTeahouseReactor.swift in Sources */,
 				AE52F68C283CCEFB000475EF /* MyMBTeaICell.swift in Sources */,
 				AE88FDE62845364D0050E3DC /* RecommendTeahouseTitleCell.swift in Sources */,
