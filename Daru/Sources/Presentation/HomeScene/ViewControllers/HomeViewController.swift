@@ -10,6 +10,7 @@ import RxFlow
 import RxCocoa
 import ReactorKit
 import RxDataSources
+import KakaoSDKUser
 
 @objc
 protocol MoreButtonDelegate: AnyObject {
@@ -52,6 +53,7 @@ final class HomeViewController: BaseViewController, View {
             withReuseIdentifier: RegionCategoryHeaderView.identifier
         )
         $0.register(HomeFooterCell.self, forCellWithReuseIdentifier: HomeFooterCell.identifier)
+        $0.register(LoginButtonCell.self, forCellWithReuseIdentifier: LoginButtonCell.identifier)
         $0.showsVerticalScrollIndicator = false
     }
     
@@ -92,22 +94,12 @@ final class HomeViewController: BaseViewController, View {
         
         view.addSubview(mainCollectionView)
         
-        let layout = createLayout()
         mainCollectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        mainCollectionView.collectionViewLayout = layout
     }
     
     func bind(reactor: HomeReactor) {
-        let sections = [
-            SectionModel(model: "", items: ["dfasfds"]),
-            SectionModel(model: "", items: ["afsd","Fsdaf","fdsafdsa","fdsafdsa","Fsadfsda"]),
-            SectionModel(model: "", items: ["fdasf","Fsadf","Fsdafasd","fsdafa",]),
-            SectionModel(model: "", items: ["fdasf","Fsadf"]),
-            SectionModel(model: "", items: ["fdasf","Fsadf","FADS","dfa","Fadsfasd","fads","DFas","Adsf","ASDf"]),
-            SectionModel(model: "", items: ["fasd"])
-        ]
         
         rx.methodInvoked(#selector(moreButtonDidTap(_:)))
             .map { $0[0] as! Int }
@@ -118,10 +110,17 @@ final class HomeViewController: BaseViewController, View {
         
         let dataSource = HomeDataSource.dataSource(delegate: self)
         
-        Observable.just(sections)
+        reactor.state.map { $0.sections }
+            .do {
+                if $0[1].items.first == .loginButtonSectionItem {
+                    return self.mainCollectionView.collectionViewLayout = self.createNotLoginLayout()
+                } else {
+                    return self.mainCollectionView.collectionViewLayout = self.createLayout()
+                }
+            }
             .bind(to: mainCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-
+        
     }
     
 }
@@ -148,6 +147,27 @@ private extension HomeViewController {
         }
     }
     
+    func createNotLoginLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { [weak self] section, environment -> NSCollectionLayoutSection? in
+            switch section {
+            case 0:
+                return self?.createBannerSection()
+            case 1:
+                return self?.createLoginButtonSection()
+            case 2:
+                return self?.createNearTeaHouseSection()
+            case 3:
+                return self?.createRecentPostSection()
+            case 4:
+                return self?.createRegionCategorySection()
+            case 5:
+                return self?.createHoomFooterSection()
+            default:
+                return nil
+            }
+        }
+    }
+    
     func createBannerSection() -> NSCollectionLayoutSection {
         //item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
@@ -159,6 +179,27 @@ private extension HomeViewController {
         //section
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = .init(top: 42.0, leading: 0, bottom: 20.0, trailing: 0)
+        
+        return section
+    }
+    
+    func createLoginButtonSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //item.contentInsets = .init(top: 0, leading: 20.0, bottom: 0, trailing: 20.0)
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.2))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        group.contentInsets = .init(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [
+            createRecommendTeaHouseSectionHeader()
+        ]
+        section.orthogonalScrollingBehavior = .none
+        section.contentInsets = .init(top: 18.0, leading: 0.0, bottom: 15.0, trailing: 0)
         
         return section
     }
@@ -284,7 +325,7 @@ private extension HomeViewController {
         return section
     }
     
-     func createRegionCategorySectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+    func createRegionCategorySectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         
         //Section Header 사이즈
         let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
@@ -312,5 +353,12 @@ private extension HomeViewController {
 extension HomeViewController: MoreButtonDelegate {
     func moreButtonDidTap(_ section: Int) {
         print(section, "didTap")
+    }
+}
+
+extension HomeViewController: LoginButtonDelegate {
+    func loginButtonDidtap(type: loginType) {
+       
+        
     }
 }

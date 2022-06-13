@@ -8,46 +8,61 @@
 import UIKit
 import RxDataSources
 
-typealias HomeSectionModel = SectionModel<String,String>
+typealias HomeSectionModel = SectionModel<String,HomeSectionItem>
+
+enum HomeSectionItem {
+    case bannerSectionItem
+    case recommendTeahouseSectionItem
+    case loginButtonSectionItem
+    case nearTeahouseSectionItem
+    case recentPostSectionItem
+    case regionCategorySectionItem
+    case footerSectionItem
+}
 
 struct HomeDataSource {
-    static func dataSource(delegate: MoreButtonDelegate) -> RxCollectionViewSectionedReloadDataSource<HomeSectionModel> {
+    static func dataSource(delegate: HomeViewController) -> RxCollectionViewSectionedReloadDataSource<HomeSectionModel> {
         return .init {
             datasource, collectionView, indexPath, item in
-            switch indexPath.section {
-            case 0:
+            switch item {
+            case .bannerSectionItem:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: BannerCell.identifier,
                     for: indexPath
                 ) as! BannerCell
                 cell.update(with: [Constant.banner!, Constant.banner!, Constant.banner!])
                 return cell
-            case 1, 2:
+            case .nearTeahouseSectionItem, .recommendTeahouseSectionItem:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: TeaHouseCell.identifier,
                     for: indexPath
                 ) as! TeaHouseCell
                 return cell
-            case 3:
+            case .recentPostSectionItem:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: PostCollectionViewCell.identifier,
                     for: indexPath
                 ) as! PostCollectionViewCell
                 return cell
-            case 4:
+            case .regionCategorySectionItem:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: RegionCategoryCell.identifier,
                     for: indexPath
                 ) as! RegionCategoryCell
                 return cell
-            case 5:
+            case .footerSectionItem:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: HomeFooterCell.identifier,
                     for: indexPath
                 ) as! HomeFooterCell
                 return cell
-            default:
-                return UICollectionViewCell()
+            case .loginButtonSectionItem:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: LoginButtonCell.identifier,
+                    for: indexPath
+                ) as! LoginButtonCell
+                cell.delegate = delegate
+                return cell
             }
         }configureSupplementaryView: { dataSource, collectionView, type, indexPath in
             if indexPath.section == 1 {

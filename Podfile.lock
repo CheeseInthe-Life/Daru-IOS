@@ -1,8 +1,20 @@
 PODS:
+  - Alamofire (5.6.1)
   - Differentiator (5.0.0)
   - ImageSlideshow (1.9.2):
     - ImageSlideshow/Core (= 1.9.2)
   - ImageSlideshow/Core (1.9.2)
+  - KakaoSDKAuth (2.10.1):
+    - KakaoSDKCommon (= 2.10.1)
+  - KakaoSDKCommon (2.10.1):
+    - KakaoSDKCommon/Common (= 2.10.1)
+    - KakaoSDKCommon/Network (= 2.10.1)
+  - KakaoSDKCommon/Common (2.10.1)
+  - KakaoSDKCommon/Network (2.10.1):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.10.1)
+  - KakaoSDKUser (2.10.1):
+    - KakaoSDKAuth (= 2.10.1)
   - Kingfisher (7.2.0)
   - Pageboy (3.6.2)
   - ReactorKit (3.2.0):
@@ -36,6 +48,9 @@ PODS:
 
 DEPENDENCIES:
   - ImageSlideshow (~> 1.9.0)
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKUser
   - Kingfisher (~> 7.0)
   - ReactorKit
   - RxAppState
@@ -50,8 +65,12 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Differentiator
     - ImageSlideshow
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKUser
     - Kingfisher
     - Pageboy
     - ReactorKit
@@ -69,8 +88,12 @@ SPEC REPOS:
     - WeakMapTable
 
 SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
+  KakaoSDKAuth: b4fec62192c2ac8a9375847f666c0932e38afeb5
+  KakaoSDKCommon: 4989e3bae5f4884903bc1df7134e13d0e903d587
+  KakaoSDKUser: 5c5fd4b5864e8b5ac9587fdbb473daf2fa675abf
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
@@ -87,6 +110,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 601520a8593bfbff8d8279d759e975d5b795f8bc
+PODFILE CHECKSUM: 83159a2d10c5d247711b03b0db481e27e176870b
 
 COCOAPODS: 1.11.3
