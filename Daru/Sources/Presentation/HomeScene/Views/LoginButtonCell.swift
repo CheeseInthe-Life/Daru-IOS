@@ -9,6 +9,15 @@ import UIKit
 import SnapKit
 import Then
 
+enum loginType: String {
+    case apple
+    case kakao
+}
+
+protocol LoginButtonDelegate: AnyObject {
+    func loginButtonDidtap(type: loginType)
+}
+
 final class LoginButtonCell: UICollectionViewCell {
     
     static let identifier = "\(type(of: LoginButtonCell.self))"
@@ -41,6 +50,8 @@ final class LoginButtonCell: UICollectionViewCell {
         $0.text = "로그인을 하셔야 이용할 수 있습니다."
         $0.textAlignment = .center
     }
+    
+    weak var delegate: LoginButtonDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,6 +88,18 @@ final class LoginButtonCell: UICollectionViewCell {
         guideLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16.0)
             make.top.equalTo(kakaoButton.snp.bottom).offset(8.0)
+        }
+        
+        kakaoButton.addTarget(self, action: #selector(loginButtonDidTap(sender:)), for: .touchUpInside)
+    }
+}
+
+private extension LoginButtonCell {
+    @objc func loginButtonDidTap(sender: UIButton) {
+        if sender == kakaoButton {
+            delegate?.loginButtonDidtap(type: .kakao)
+        } else {
+            delegate?.loginButtonDidtap(type: .apple)
         }
     }
 }

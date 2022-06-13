@@ -21,7 +21,7 @@ enum HomeSectionItem {
 }
 
 struct HomeDataSource {
-    static func dataSource(delegate: MoreButtonDelegate) -> RxCollectionViewSectionedReloadDataSource<HomeSectionModel> {
+    static func dataSource(delegate: HomeViewController) -> RxCollectionViewSectionedReloadDataSource<HomeSectionModel> {
         return .init {
             datasource, collectionView, indexPath, item in
             switch item {
@@ -61,6 +61,7 @@ struct HomeDataSource {
                     withReuseIdentifier: LoginButtonCell.identifier,
                     for: indexPath
                 ) as! LoginButtonCell
+                cell.delegate = delegate
                 return cell
             }
         }configureSupplementaryView: { dataSource, collectionView, type, indexPath in

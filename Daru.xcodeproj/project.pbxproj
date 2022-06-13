@@ -261,6 +261,8 @@
 		AE1A753A28312596000D8144 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AE3FEC3A285741F800F87644 /* Common */,
+				AE3FEC39285741F200F87644 /* EndPoints */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -292,6 +294,20 @@
 				AE92429928565F710053FCF5 /* UIImage+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE3FEC39285741F200F87644 /* EndPoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		AE3FEC3A285741F800F87644 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		AE4EB7CD2838D56700D556CA /* MyDaruScene */ = {

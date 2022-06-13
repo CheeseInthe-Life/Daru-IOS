@@ -10,6 +10,7 @@ import RxFlow
 import RxCocoa
 import ReactorKit
 import RxDataSources
+import KakaoSDKUser
 
 @objc
 protocol MoreButtonDelegate: AnyObject {
@@ -119,7 +120,7 @@ final class HomeViewController: BaseViewController, View {
             }
             .bind(to: mainCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-
+        
     }
     
 }
@@ -324,7 +325,7 @@ private extension HomeViewController {
         return section
     }
     
-     func createRegionCategorySectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+    func createRegionCategorySectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         
         //Section Header 사이즈
         let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
@@ -352,5 +353,12 @@ private extension HomeViewController {
 extension HomeViewController: MoreButtonDelegate {
     func moreButtonDidTap(_ section: Int) {
         print(section, "didTap")
+    }
+}
+
+extension HomeViewController: LoginButtonDelegate {
+    func loginButtonDidtap(type: loginType) {
+       
+        
     }
 }
