@@ -84,6 +84,9 @@
 		AEB684E92851E3BC00843D7F /* PostDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB684E82851E3BC00843D7F /* PostDetailDataSource.swift */; };
 		AEB684EB2851F43A00843D7F /* PostCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB684EA2851F43A00843D7F /* PostCommentCell.swift */; };
 		AEB684ED285208CB00843D7F /* PostCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB684EC285208CB00843D7F /* PostCommentHeaderView.swift */; };
+		AEDA01032859D24300EFBDE7 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA01022859D24300EFBDE7 /* AuthAPI.swift */; };
+		AEDA01062859D2A600EFBDE7 /* SignInRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA01052859D2A600EFBDE7 /* SignInRequestDTO.swift */; };
+		AEDA01082859D4EE00EFBDE7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA01072859D4EE00EFBDE7 /* AuthService.swift */; };
 		AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */; };
 		AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */; };
 		AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */; };
@@ -173,6 +176,9 @@
 		AEB684E82851E3BC00843D7F /* PostDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailDataSource.swift; sourceTree = "<group>"; };
 		AEB684EA2851F43A00843D7F /* PostCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentCell.swift; sourceTree = "<group>"; };
 		AEB684EC285208CB00843D7F /* PostCommentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentHeaderView.swift; sourceTree = "<group>"; };
+		AEDA01022859D24300EFBDE7 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		AEDA01052859D2A600EFBDE7 /* SignInRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequestDTO.swift; sourceTree = "<group>"; };
+		AEDA01072859D4EE00EFBDE7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseViewController.swift; sourceTree = "<group>"; };
 		AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseReactor.swift; sourceTree = "<group>"; };
@@ -268,6 +274,7 @@
 		AE1A753A28312596000D8144 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AEDA01042859D29700EFBDE7 /* DTOs */,
 				AE3FEC39285741F200F87644 /* EndPoints */,
 				AE3FEC3B2857430D00F87644 /* NetworkLoggerPlugIn.swift */,
 				AE3FEC3D2857446E00F87644 /* Networking.swift */,
@@ -307,6 +314,7 @@
 		AE3FEC39285741F200F87644 /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
+				AEDA01022859D24300EFBDE7 /* AuthAPI.swift */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -404,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				AE924290285654040053FCF5 /* KeyChainService.swift */,
+				AEDA01072859D4EE00EFBDE7 /* AuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -490,6 +499,14 @@
 				AEB684E82851E3BC00843D7F /* PostDetailDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		AEDA01042859D29700EFBDE7 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				AEDA01052859D2A600EFBDE7 /* SignInRequestDTO.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		AEE7C2EE2843DE8A00FF9CFB /* DataSources */ = {
@@ -649,6 +666,7 @@
 				AE88FDE62845364D0050E3DC /* RecommendTeahouseTitleCell.swift in Sources */,
 				AE3F483B283268EE008404F1 /* BaseViewController.swift in Sources */,
 				AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */,
+				AEDA01062859D2A600EFBDE7 /* SignInRequestDTO.swift in Sources */,
 				AE3F483F28326C4A008404F1 /* MyDaruFlow.swift in Sources */,
 				AE88FE022845EB5B0050E3DC /* PostListReactor.swift in Sources */,
 				AE52F6A1283D3175000475EF /* ManagePostViewController.swift in Sources */,
@@ -686,6 +704,7 @@
 				AE88FDDF284514D40050E3DC /* NearTeahouseDataSource.swift in Sources */,
 				AE924294285656130053FCF5 /* KeyChain.swift in Sources */,
 				AE52F696283CEC29000475EF /* MyFavoriteTeaFooterView.swift in Sources */,
+				AEDA01082859D4EE00EFBDE7 /* AuthService.swift in Sources */,
 				AE9A0AF92833D94400FCEC1C /* HomeReactor.swift in Sources */,
 				AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */,
 				AEB684ED285208CB00843D7F /* PostCommentHeaderView.swift in Sources */,
@@ -694,6 +713,7 @@
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
 				AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */,
+				AEDA01032859D24300EFBDE7 /* AuthAPI.swift in Sources */,
 				AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */,
 				AE52F68E283CD0FE000475EF /* MyMBTeaIHeaderView.swift in Sources */,
 				AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */,

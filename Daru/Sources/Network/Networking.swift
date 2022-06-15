@@ -9,9 +9,11 @@ import Foundation
 import Moya
 import RxSwift
 
+typealias AuthNetworking = Networking<AuthAPI>
+
 final class Networking<Target: TargetType>: MoyaProvider<Target> {
     
-    init(plugins: [PluginType] = []) {
+    init(plugins: [PluginType] = [NetworkLoggerPlugin()]) {
         let session = MoyaProvider<Target>.defaultAlamofireSession()
         session.sessionConfiguration.timeoutIntervalForRequest = 10
         super.init(session: session, plugins: plugins)

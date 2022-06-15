@@ -42,7 +42,7 @@ final class HomeFlow: Flow {
 
 private extension HomeFlow {
     func navigateToHomeScene() -> FlowContributors {
-        let homeReactor = HomeReactor(keyChainService: KeyChainService())
+        let homeReactor = HomeReactor(keyChainService: KeyChainService(), authService: AuthService(authNetworking: AuthNetworking()))
         let homeVC = HomeViewController(reactor: homeReactor)
         rootViewController.setViewControllers([homeVC], animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: homeVC, withNextStepper: homeReactor))
