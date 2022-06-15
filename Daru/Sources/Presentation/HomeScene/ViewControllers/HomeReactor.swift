@@ -16,14 +16,16 @@ final class HomeReactor: Reactor, Stepper {
     enum Action {
         case moreButtonDidTap(section: Int)
         case refresh
+        case kakaoLogin(accessToken: String)
     }
     
     enum Mutation {
-        
+        case setLoginState(isLogined: Bool)
     }
     
     struct State {
         var sections: [HomeSectionModel]
+        var isLogined: Bool
     }
     
     var steps: PublishRelay<Step> = .init()
@@ -46,13 +48,19 @@ final class HomeReactor: Reactor, Stepper {
                 .regionCategorySectionItem
             ]),
             HomeSectionModel(model: "", items: [.footerSectionItem])
-        ]
+        ],
+        isLogined: false
     )
     
     private let keyChainService: KeyChainServiceType
+    private let authService: AuthServiceType
     
-    init(keyChainService: KeyChainServiceType) {
+    init(
+        keyChainService: KeyChainServiceType,
+        authService: AuthServiceType
+    ) {
         self.keyChainService = keyChainService
+        self.authService = authService
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -69,6 +77,12 @@ final class HomeReactor: Reactor, Stepper {
             return .empty()
         case .refresh:
             return .empty()
+        case .kakaoLogin(let accessToken):
+            return authService.signIn(providerType: .kakao, accessToken: accessToken)
+                .compactMap {
+                    guard case .success() = $0 else { return nil }
+                    return Mutation.setLoginState(isLogined: true)
+                }.asObservable()
         }
     }
     
@@ -76,10 +90,10 @@ final class HomeReactor: Reactor, Stepper {
         
         var newState = state
         
-//        switch mutation {
-//        case .setIsLogined(let isLogined):
-//
-//        }
+        switch mutation {
+        case .setLoginState(let isLogined):
+            newState.isLogined = isLogined
+        }
         
         return newState
     }

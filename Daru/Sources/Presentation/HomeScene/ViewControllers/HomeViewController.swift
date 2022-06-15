@@ -121,6 +121,12 @@ final class HomeViewController: BaseViewController, View {
             .bind(to: mainCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
+        reactor.state.map { $0.isLogined }
+            .distinctUntilChanged()
+            .bind {
+                print($0)
+            }.disposed(by: disposeBag)
+        
     }
     
 }
@@ -358,7 +364,32 @@ extension HomeViewController: MoreButtonDelegate {
 
 extension HomeViewController: LoginButtonDelegate {
     func loginButtonDidtap(type: loginType) {
-       
-        
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {
+                [weak self] (oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    if let accessToken = oauthToken?.accessToken {
+                        self?.reactor?.action.onNext(.kakaoLogin(accessToken: accessToken))
+                    }
+                }
+            }
+        } else {
+            UserApi.shared.loginWithKakaoAccount {
+                [weak self] (oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    if let accessToken = oauthToken?.accessToken {
+                        self?.reactor?.action.onNext(.kakaoLogin(accessToken: accessToken))
+                    }
+                }
+            }
+        }
     }
 }
