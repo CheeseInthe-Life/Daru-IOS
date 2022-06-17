@@ -33,6 +33,16 @@ final class AgreeTermsReactor: Reactor, Stepper {
     var steps: PublishRelay<Step> = .init()
     /// max = 2
     var agreeCount: Int = 0
+    private let providerType: ProviderType
+    private let accessToken: String
+    
+    init(
+        providerType: ProviderType,
+        accessToken: String
+    ) {
+        self.providerType = providerType
+        self.accessToken = accessToken
+    }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
@@ -45,7 +55,7 @@ final class AgreeTermsReactor: Reactor, Stepper {
         case .allUnChecking:
             agreeCount = 0
         case .next:
-            steps.accept(DaruStep.inputInfoIsRequired)
+            steps.accept(DaruStep.inputInfoIsRequired(providerType: providerType, accessToken: accessToken))
             return .empty()
         }
         

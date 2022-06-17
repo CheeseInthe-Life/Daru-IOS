@@ -24,10 +24,10 @@ final class SignUpFlow: Flow {
         guard let step = step as? DaruStep else { return .none }
         
         switch step {
-        case .signUpIsRequired:
-            return navigateToAgreeTermsScene()
-        case .inputInfoIsRequired:
-            return navigateToInputInfoScene()
+        case let .signUpIsRequired(providerType, accessToken):
+            return navigateToAgreeTermsScene(providerType: providerType, accessToken: accessToken)
+        case let .inputInfoIsRequired(providerType, accessToken):
+            return navigateToInputInfoScene(providerType: providerType, accessToken: accessToken)
         default:
             return .none
         }
@@ -36,8 +36,8 @@ final class SignUpFlow: Flow {
 
 private extension SignUpFlow {
     
-    func navigateToAgreeTermsScene() -> FlowContributors {
-        let agreeTermsReactor = AgreeTermsReactor()
+    func navigateToAgreeTermsScene(providerType: ProviderType, accessToken: String) -> FlowContributors {
+        let agreeTermsReactor = AgreeTermsReactor(providerType: providerType, accessToken: accessToken)
         let agreeTermsVC = AgreeTermsViewController(reactor: agreeTermsReactor)
         
         rootViewController.pushViewController(agreeTermsVC, animated: true)
@@ -49,8 +49,13 @@ private extension SignUpFlow {
         )
     }
     
-    func navigateToInputInfoScene() -> FlowContributors {
-        let inputInfoReactor = InputInfoReactor(authService: AuthService(authNetworking: AuthNetworking()))
+    func navigateToInputInfoScene(providerType: ProviderType, accessToken: String) -> FlowContributors {
+        let inputInfoReactor = InputInfoReactor(
+            authService: AuthService(authNetworking: AuthNetworking()),
+            keyChainService: KeyChainService(),
+            providerType: providerType,
+            accessToken: accessToken
+        )
         let inputInfoVC = InputInfoViewController(reactor: inputInfoReactor)
         
         rootViewController.pushViewController(inputInfoVC, animated: true)

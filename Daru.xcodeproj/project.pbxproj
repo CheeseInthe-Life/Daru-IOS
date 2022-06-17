@@ -15,6 +15,8 @@
 		AE09449C285C968100929188 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09449B285C968100929188 /* Gender.swift */; };
 		AE09449E285C9A3900929188 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09449D285C9A3900929188 /* Verification.swift */; };
 		AE0944A0285C9A7700929188 /* VerifyNicknameRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09449F285C9A7700929188 /* VerifyNicknameRequestDTO.swift */; };
+		AE0944A2285CA97E00929188 /* SignUpRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0944A1285CA97E00929188 /* SignUpRequestDTO.swift */; };
+		AE0944A5285CB60E00929188 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0944A4285CB60E00929188 /* NetworkError.swift */; };
 		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
 		AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */; };
 		AE2C84902840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */; };
@@ -116,6 +118,8 @@
 		AE09449B285C968100929188 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		AE09449D285C9A3900929188 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		AE09449F285C9A7700929188 /* VerifyNicknameRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNicknameRequestDTO.swift; sourceTree = "<group>"; };
+		AE0944A1285CA97E00929188 /* SignUpRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestDTO.swift; sourceTree = "<group>"; };
+		AE0944A4285CB60E00929188 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineLabel.swift; sourceTree = "<group>"; };
 		AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostCommunitySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 				AE3FEC39285741F200F87644 /* EndPoints */,
 				AE3FEC3B2857430D00F87644 /* NetworkLoggerPlugIn.swift */,
 				AE3FEC3D2857446E00F87644 /* Networking.swift */,
+				AE0944A4285CB60E00929188 /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 				AEDA01052859D2A600EFBDE7 /* SignInRequestDTO.swift */,
 				AEDA010D285B47A700EFBDE7 /* CommonResponseDTO.swift */,
 				AE09449F285C9A7700929188 /* VerifyNicknameRequestDTO.swift */,
+				AE0944A1285CA97E00929188 /* SignUpRequestDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 				AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */,
 				AE4EB7DA2839B8F200D556CA /* MBTeaIFlow.swift in Sources */,
 				AE3F484828329A31008404F1 /* TabViewController.swift in Sources */,
+				AE0944A5285CB60E00929188 /* NetworkError.swift in Sources */,
 				AE52F69F283D3054000475EF /* PostListViewController.swift in Sources */,
 				AE3F4835283259DE008404F1 /* DaruStep.swift in Sources */,
 				AE52F6A3283D3410000475EF /* PostListFlow.swift in Sources */,
@@ -751,6 +758,7 @@
 				AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */,
 				AE9F74732834B93600C31F53 /* HomeNearTeaHouseSectionHeaderView.swift in Sources */,
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
+				AE0944A2285CA97E00929188 /* SignUpRequestDTO.swift in Sources */,
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
 				AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */,
 				AEDA01032859D24300EFBDE7 /* AuthAPI.swift in Sources */,

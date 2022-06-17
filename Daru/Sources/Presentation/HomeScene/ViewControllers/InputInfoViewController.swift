@@ -94,7 +94,7 @@ final class InputInfoViewController: BaseViewController, View {
     private let startButton = PrimaryButton().then {
         $0.setTitle("다루 시작하기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .gray1
+        $0.backgroundColor = .gray4
         $0.isEnabled = false
     }
     
@@ -216,6 +216,29 @@ final class InputInfoViewController: BaseViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        maleButton.rx.tap
+            .withUnretained(self)
+            .map { _, _ in Reactor.Action.selectGender(gender: .male)}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        femaleButton.rx.tap
+            .withUnretained(self)
+            .map { _, _ in Reactor.Action.selectGender(gender: .female)}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        notSelectGengerButton.rx.tap
+            .withUnretained(self)
+            .map { _, _ in Reactor.Action.selectGender(gender: .notSelectGender)}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        startButton.rx.tap
+            .map { Reactor.Action.signUp }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state.compactMap { $0.isDuplicated }
             .bind {
                 [weak self] isDuplicated in
@@ -229,6 +252,69 @@ final class InputInfoViewController: BaseViewController, View {
                 } else {
                     self?.duplicateCheckLabel.textColor = .blueGreen1
                     self?.duplicateCheckLabel.text = "※ 사용 가능한 닉네임입니다."
+                }
+            }.disposed(by: disposeBag)
+        
+        reactor.state.compactMap { $0.date }
+            .distinctUntilChanged()
+            .bind {
+                [weak self] date in
+                self?.dateOfBirthTextField.text = date
+            }.disposed(by: disposeBag)
+        
+        reactor.state.map { $0.gender }
+            .skip(until: reactor.action.filter{ if case Reactor.Action.selectGender(_) = $0 {
+                return true
+            } else {
+                return false
+            }})
+            .distinctUntilChanged()
+            .bind {
+                [weak self] gender in
+                
+                switch gender {
+                case .male:
+                    self?.maleButton.backgroundColor = .brown1
+                    self?.maleButton.setTitleColor(.white, for: .normal)
+                    self?.femaleButton.backgroundColor = .white
+                    self?.femaleButton.setTitleColor(.black, for: .normal)
+                    self?.notSelectGengerButton.backgroundColor = .white
+                    self?.notSelectGengerButton.setTitleColor(.black, for: .normal)
+                case .female:
+                    self?.femaleButton.backgroundColor = .brown1
+                    self?.femaleButton.setTitleColor(.white, for: .normal)
+                    self?.maleButton.backgroundColor = .white
+                    self?.maleButton.setTitleColor(.black, for: .normal)
+                    self?.notSelectGengerButton.backgroundColor = .white
+                    self?.notSelectGengerButton.setTitleColor(.black, for: .normal)
+                case .notSelectGender:
+                    self?.notSelectGengerButton.backgroundColor = .brown1
+                    self?.notSelectGengerButton.setTitleColor(.white, for: .normal)
+                    self?.femaleButton.backgroundColor = .white
+                    self?.femaleButton.setTitleColor(.black, for: .normal)
+                    self?.maleButton.backgroundColor = .white
+                    self?.maleButton.setTitleColor(.black, for: .normal)
+                default:
+                    break
+                }
+            }.disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isInputCompleted }
+            .distinctUntilChanged()
+            .bind {
+                [weak self] isInputCompleted in
+                if isInputCompleted {
+                    self?.startButton.backgroundColor = .brown2
+                } else {
+                    self?.startButton.backgroundColor = .gray4
+                }
+                self?.startButton.isEnabled = isInputCompleted
+            }.disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isSignUpSuccessed }
+            .bind {
+                if $0 {
+                    print("SignUp Successed!!!!")
                 }
             }.disposed(by: disposeBag)
     }
@@ -248,7 +334,7 @@ extension InputInfoViewController: UIPickerViewDataSource, UIPickerViewDelegate 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        dateOfBirthTextField.text = "\(years[row])"
+        reactor?.action.onNext(.inputDateOfBirth(date: "\(years[row])"))
         dateOfBirthTextField.endEditing(true)
     }
 }
@@ -263,14 +349,14 @@ private extension InputInfoViewController {
 
 extension InputInfoViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            print(string)
-            if let char = string.cString(using: String.Encoding.utf8) {
-                let isBackSpace = strcmp(char, "\\b")
-                if isBackSpace == -92 {
-                    return true
-                }
+        print(string)
+        if let char = string.cString(using: String.Encoding.utf8) {
+            let isBackSpace = strcmp(char, "\\b")
+            if isBackSpace == -92 {
+                return true
             }
-            guard textField.text!.count < 10 else { return false }
-            return true
         }
+        guard textField.text!.count < 10 else { return false }
+        return true
+    }
 }

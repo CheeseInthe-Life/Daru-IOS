@@ -9,9 +9,9 @@ import Foundation
 
 struct CommonResponseDTO<T: Decodable>: Decodable {
     let result: String
-    let data: T?
+    let data: T
     let message: String?
-    let statusCode: Int?
+    let statusCode: Int
     let name: String?
     let timestamp: String
 }

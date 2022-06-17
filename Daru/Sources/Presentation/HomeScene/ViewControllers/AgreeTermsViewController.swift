@@ -94,7 +94,7 @@ final class AgreeTermsViewController: BaseViewController, View {
     
     private let nextButton = PrimaryButton().then {
         $0.setTitle("다음", for: .normal)
-        $0.backgroundColor = .gray1
+        $0.backgroundColor = .gray4
         $0.isEnabled = false
     }
     
@@ -292,7 +292,7 @@ final class AgreeTermsViewController: BaseViewController, View {
                     self?.nextButton.backgroundColor = .brown2
                 } else {
                     self?.allAgreementCheckbox.image = Constant.notCheckedBoxIcon
-                    self?.nextButton.backgroundColor = .gray1
+                    self?.nextButton.backgroundColor = .gray4
                 }
                 self?.nextButton.isEnabled = isAgreeCompleted
             }.disposed(by: disposeBag)

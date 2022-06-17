@@ -81,14 +81,16 @@ final class HomeReactor: Reactor, Stepper {
             return authService.signIn(providerType: .kakao, accessToken: accessToken)
                 .compactMap {
                     [weak self] result -> Mutation? in
-                    guard case let .success(tokenPiar) = result else { return nil }
-                    if tokenPiar == nil {
-                        // 회원 가입 로직 실행
-                        self?.steps.accept(DaruStep.signUpIsRequired)
-                        return nil
-                    } else {
-                        // 로그인 성공
+                    switch result {
+                    case let .success(tokenPiar):
+                        self?.keyChainService.accessToken = tokenPiar?.accessToken
+                        self?.keyChainService.refreshToken = tokenPiar?.refreshToken
                         return .setLoginState(isLogined: true)
+                    case let .failure(error):
+                        if error.statusCode == 401 {
+                            self?.steps.accept(DaruStep.signUpIsRequired(providerType: .kakao, accessToken: accessToken))
+                        }
+                        return nil
                     }
                 }.asObservable()
         }

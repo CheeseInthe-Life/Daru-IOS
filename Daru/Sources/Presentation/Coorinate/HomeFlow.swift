@@ -34,8 +34,8 @@ final class HomeFlow: Flow {
             return navigateToNearTeahouseScene()
         case .recommendTeahouseIsRequired:
             return navigateToRecommendTeahouseScene()
-        case .signUpIsRequired:
-            return navigateToAgreeTermsScene()
+        case let .signUpIsRequired(providerType, accessToken):
+            return navigateToAgreeTermsScene(providerType: providerType, accessToken: accessToken)
         default:
             return .none
         }
@@ -74,7 +74,7 @@ private extension HomeFlow {
         )
     }
     
-    func navigateToAgreeTermsScene() -> FlowContributors {
+    func navigateToAgreeTermsScene(providerType: ProviderType, accessToken: String) -> FlowContributors {
         //TODO: Change Forced Optional Unwrapping
         let signUpFlow = SignUpFlow(rootViewController: rootViewController.navigationController!)
         
@@ -82,7 +82,7 @@ private extension HomeFlow {
             flowContributor: .contribute(
                 withNextPresentable: signUpFlow,
                 withNextStepper: OneStepper(
-                    withSingleStep: DaruStep.signUpIsRequired
+                    withSingleStep: DaruStep.signUpIsRequired(providerType: providerType, accessToken: accessToken)
                 )
             )
         )
