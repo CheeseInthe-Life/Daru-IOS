@@ -18,6 +18,9 @@ enum DaruStep: Step {
     case nearTeahouseIsRequired
     case recommendTeahouseIsRequired
     
+    //SignUp
+    case signUpIsRequired
+    
     //MyDaru
     case myPageIsRequired
     case mbteaiIsRequired

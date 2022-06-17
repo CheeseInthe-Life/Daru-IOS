@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0351380C9A804DC0BE4272D0 /* Pods_Daru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6AC7BA26ADD9431DDE91DB /* Pods_Daru.framework */; };
+		AE094493285C2D5300929188 /* SignUpFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE094492285C2D5300929188 /* SignUpFlow.swift */; };
 		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
 		AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */; };
 		AE2C84902840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */; };
@@ -87,6 +88,10 @@
 		AEDA01032859D24300EFBDE7 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA01022859D24300EFBDE7 /* AuthAPI.swift */; };
 		AEDA01062859D2A600EFBDE7 /* SignInRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA01052859D2A600EFBDE7 /* SignInRequestDTO.swift */; };
 		AEDA01082859D4EE00EFBDE7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA01072859D4EE00EFBDE7 /* AuthService.swift */; };
+		AEDA010A285A51B500EFBDE7 /* AgreeTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA0109285A51B500EFBDE7 /* AgreeTermsViewController.swift */; };
+		AEDA010C285A51C200EFBDE7 /* AgreeTermsReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA010B285A51C200EFBDE7 /* AgreeTermsReactor.swift */; };
+		AEDA010E285B47A700EFBDE7 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA010D285B47A700EFBDE7 /* ResponseDTO.swift */; };
+		AEDA0110285B560000EFBDE7 /* TokenPiar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA010F285B560000EFBDE7 /* TokenPiar.swift */; };
 		AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */; };
 		AEE7C2D82843944000FF9CFB /* NearTeahouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */; };
 		AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */; };
@@ -98,6 +103,7 @@
 		1C46B0AD7157347C67E03D70 /* Pods-Daru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daru.release.xcconfig"; path = "Target Support Files/Pods-Daru/Pods-Daru.release.xcconfig"; sourceTree = "<group>"; };
 		3B6AC7BA26ADD9431DDE91DB /* Pods_Daru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F042F466EFB7020E9197E7E /* Pods-Daru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daru.debug.xcconfig"; path = "Target Support Files/Pods-Daru/Pods-Daru.debug.xcconfig"; sourceTree = "<group>"; };
+		AE094492285C2D5300929188 /* SignUpFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlow.swift; sourceTree = "<group>"; };
 		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineLabel.swift; sourceTree = "<group>"; };
 		AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostCommunitySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -179,6 +185,10 @@
 		AEDA01022859D24300EFBDE7 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		AEDA01052859D2A600EFBDE7 /* SignInRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequestDTO.swift; sourceTree = "<group>"; };
 		AEDA01072859D4EE00EFBDE7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		AEDA0109285A51B500EFBDE7 /* AgreeTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeTermsViewController.swift; sourceTree = "<group>"; };
+		AEDA010B285A51C200EFBDE7 /* AgreeTermsReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeTermsReactor.swift; sourceTree = "<group>"; };
+		AEDA010D285B47A700EFBDE7 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		AEDA010F285B560000EFBDE7 /* TokenPiar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenPiar.swift; sourceTree = "<group>"; };
 		AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		AEE7C2D72843944000FF9CFB /* NearTeahouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseViewController.swift; sourceTree = "<group>"; };
 		AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseReactor.swift; sourceTree = "<group>"; };
@@ -255,10 +265,10 @@
 		AE1A753628312458000D8144 /* Coorinate */ = {
 			isa = PBXGroup;
 			children = (
+				AE3F4834283259DE008404F1 /* DaruStep.swift */,
 				AE1A753B2831289A000D8144 /* AppFlow.swift */,
 				AE3F484928329FFA008404F1 /* AppStepper.swift */,
 				AE3F484428326E1F008404F1 /* MainFlow.swift */,
-				AE3F4834283259DE008404F1 /* DaruStep.swift */,
 				AE3F483C28326C38008404F1 /* HomeFlow.swift */,
 				AE3F483E28326C4A008404F1 /* MyDaruFlow.swift */,
 				AE3F484028326C5D008404F1 /* CommunityFlow.swift */,
@@ -267,6 +277,7 @@
 				AE4EB7DB2839B91600D556CA /* FavoriteTeaHouseFlow.swift */,
 				AE52F6A2283D3410000475EF /* PostListFlow.swift */,
 				AE52F6A4283D37B6000475EF /* ManagePostFlow.swift */,
+				AE094492285C2D5300929188 /* SignUpFlow.swift */,
 			);
 			path = Coorinate;
 			sourceTree = "<group>";
@@ -397,6 +408,8 @@
 				AEE7C2D928439F1700FF9CFB /* NearTeahouseReactor.swift */,
 				AE88FDE1284533030050E3DC /* RecommendTeahouseViewController.swift */,
 				AE88FDE3284533290050E3DC /* RecommendTeahouseReactor.swift */,
+				AEDA0109285A51B500EFBDE7 /* AgreeTermsViewController.swift */,
+				AEDA010B285A51C200EFBDE7 /* AgreeTermsReactor.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -404,6 +417,7 @@
 		AE57A46D28533D9C00B05AB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AEDA010F285B560000EFBDE7 /* TokenPiar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				AEDA01052859D2A600EFBDE7 /* SignInRequestDTO.swift */,
+				AEDA010D285B47A700EFBDE7 /* ResponseDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -676,10 +691,12 @@
 				AE9A0B002833E3F200FCEC1C /* TeaHouseCell.swift in Sources */,
 				AE3F484528326E1F008404F1 /* MainFlow.swift in Sources */,
 				AE88FDE9284537BF0050E3DC /* RecommendTeahouseDataSource.swift in Sources */,
+				AEDA010C285A51C200EFBDE7 /* AgreeTermsReactor.swift in Sources */,
 				AE3FEC3C2857430D00F87644 /* NetworkLoggerPlugIn.swift in Sources */,
 				AE9242962856596F0053FCF5 /* LoginButtonCell.swift in Sources */,
 				AE9A0AF62833C06B00FCEC1C /* Constant.swift in Sources */,
 				AE2C84922840F8F100E2B6E2 /* ManagePostCommunityCell.swift in Sources */,
+				AEDA010E285B47A700EFBDE7 /* ResponseDTO.swift in Sources */,
 				AE9A0AFE2833E08800FCEC1C /* HomeRecommendTeaHouseSectionHeaderView.swift in Sources */,
 				AE88FDFE2845EA1B0050E3DC /* PostDetailViewController.swift in Sources */,
 				AE52F69C283D1EFD000475EF /* FavoriteTeahouseHeaderView.swift in Sources */,
@@ -690,7 +707,9 @@
 				AE3F484328326C6B008404F1 /* TeahouseMapFlow.swift in Sources */,
 				AE3FEC3E2857446E00F87644 /* Networking.swift in Sources */,
 				AE9A0AF42833AB2D00FCEC1C /* HomeViewController.swift in Sources */,
+				AEDA0110285B560000EFBDE7 /* TokenPiar.swift in Sources */,
 				AE3F484128326C5D008404F1 /* CommunityFlow.swift in Sources */,
+				AEDA010A285A51B500EFBDE7 /* AgreeTermsViewController.swift in Sources */,
 				AE4EB7DC2839B91600D556CA /* FavoriteTeaHouseFlow.swift in Sources */,
 				AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */,
 				AE4EB7DA2839B8F200D556CA /* MBTeaIFlow.swift in Sources */,
@@ -714,6 +733,7 @@
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
 				AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */,
 				AEDA01032859D24300EFBDE7 /* AuthAPI.swift in Sources */,
+				AE094493285C2D5300929188 /* SignUpFlow.swift in Sources */,
 				AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */,
 				AE52F68E283CD0FE000475EF /* MyMBTeaIHeaderView.swift in Sources */,
 				AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */,

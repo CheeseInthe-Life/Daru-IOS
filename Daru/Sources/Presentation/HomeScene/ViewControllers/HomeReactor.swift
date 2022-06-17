@@ -80,8 +80,16 @@ final class HomeReactor: Reactor, Stepper {
         case .kakaoLogin(let accessToken):
             return authService.signIn(providerType: .kakao, accessToken: accessToken)
                 .compactMap {
-                    guard case .success() = $0 else { return nil }
-                    return Mutation.setLoginState(isLogined: true)
+                    [weak self] result -> Mutation? in
+                    guard case let .success(tokenPiar) = result else { return nil }
+                    if tokenPiar == nil {
+                        // 회원 가입 로직 실행
+                        self?.steps.accept(DaruStep.signUpIsRequired)
+                        return nil
+                    } else {
+                        // 로그인 성공
+                        return .setLoginState(isLogined: true)
+                    }
                 }.asObservable()
         }
     }

@@ -34,6 +34,8 @@ final class HomeFlow: Flow {
             return navigateToNearTeahouseScene()
         case .recommendTeahouseIsRequired:
             return navigateToRecommendTeahouseScene()
+        case .signUpIsRequired:
+            return navigateToAgreeTermsScene()
         default:
             return .none
         }
@@ -68,6 +70,20 @@ private extension HomeFlow {
             flowContributor: .contribute(
                 withNextPresentable: recommendTeahouseVC,
                 withNextStepper: recommendTeahouseReactor
+            )
+        )
+    }
+    
+    func navigateToAgreeTermsScene() -> FlowContributors {
+        //TODO: Change Forced Optional Unwrapping
+        let signUpFlow = SignUpFlow(rootViewController: rootViewController.navigationController!)
+        
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: signUpFlow,
+                withNextStepper: OneStepper(
+                    withSingleStep: DaruStep.signUpIsRequired
+                )
             )
         )
     }

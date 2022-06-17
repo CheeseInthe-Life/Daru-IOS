@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol AuthServiceType: AnyObject {
-    func signIn(providerType: ProviderType, accessToken: String) -> Single<Result<Void,Error>>
+    func signIn(providerType: ProviderType, accessToken: String) -> Single<Result<TokenPiar?,Error>>
 }
 
 final class AuthService: AuthServiceType {
@@ -20,13 +20,15 @@ final class AuthService: AuthServiceType {
         self.authNetworking = authNetworking
     }
     
-    func signIn(providerType: ProviderType, accessToken: String) -> Single<Result<Void, Error>> {
+    func signIn(providerType: ProviderType, accessToken: String) -> Single<Result<TokenPiar?, Error>> {
         
         let requestDTO = SignInRequestDTO(providerType: providerType, providerAccessToken: accessToken)
         
         return authNetworking.request(.signIn(request: requestDTO))
-            .map{ _ in () }
-            .map{ Result.success($0) }
-            .catch{.just(Result.failure($0))}
+            .map(ResponseDTO<TokenPiar>.self)
+            .debug()
+            .map{ $0.data }
+            .map { Result.success($0) }
+            .catch{ .just(Result.failure($0))}
     }
 }
