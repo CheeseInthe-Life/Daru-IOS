@@ -21,7 +21,6 @@ final class Networking<Target: TargetType>: MoyaProvider<Target> {
     
     func request(_ target: Target) -> Single<Response> {
         return self.rx.request(target)
-            .filterSuccessfulStatusCodes()
             .retry(2)
     }
 }

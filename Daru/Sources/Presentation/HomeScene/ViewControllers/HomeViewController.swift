@@ -363,7 +363,7 @@ extension HomeViewController: MoreButtonDelegate {
 }
 
 extension HomeViewController: LoginButtonDelegate {
-    func loginButtonDidtap(type: loginType) {
+    func loginButtonDidtap(type: LoginType) {
         if (UserApi.isKakaoTalkLoginAvailable()) {
             UserApi.shared.loginWithKakaoTalk {
                 [weak self] (oauthToken, error) in

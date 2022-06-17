@@ -29,6 +29,8 @@ struct Constant {
     static let sendIcon: UIImage? = UIImage(named: "Send_icon")?.withRenderingMode(.alwaysOriginal)
     static let appleIcon: UIImage? = UIImage(named: "apple_icon")?.withRenderingMode(.alwaysOriginal)
     static let kakaoIcon: UIImage? = UIImage(named: "kakao_icon")?.withRenderingMode(.alwaysOriginal)
+    static let notCheckedBoxIcon: UIImage? = UIImage(named: "checkbox_notChecked_icon")?.withRenderingMode(.alwaysOriginal)
+    static let checkedBoxIcon: UIImage? = UIImage(named: "checkbox_checked_icon")?.withRenderingMode(.alwaysOriginal)
     
     //banner
     static let banner: UIImage? = UIImage(named: "Banner")?.withRenderingMode(.alwaysOriginal)

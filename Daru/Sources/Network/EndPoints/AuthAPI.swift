@@ -10,6 +10,8 @@ import Moya
 
 enum AuthAPI {
     case signIn(request: SignInRequestDTO)
+    case verifyNickname(request: VerifyNicknameRequestDTO)
+    case signUp(request: SignUpRequestDTO)
 }
 
 extension AuthAPI: TargetType {
@@ -21,6 +23,10 @@ extension AuthAPI: TargetType {
         switch self {
         case .signIn(_):
             return "api/v1/auth/sign-in"
+        case .verifyNickname(_):
+            return "api/v1/auth/users/nickname/verification"
+        case .signUp(_):
+            return "api/v1/auth/sign-up"
         }
     }
     
@@ -28,12 +34,20 @@ extension AuthAPI: TargetType {
         switch self {
         case .signIn(_):
             return .post
+        case .verifyNickname(_):
+            return .post
+        case .signUp(_):
+            return .post
         }
     }
     
     var task: Task {
         switch self {
         case .signIn(let request):
+            return .requestJSONEncodable(request)
+        case .verifyNickname(let request):
+            return .requestJSONEncodable(request)
+        case .signUp(let request):
             return .requestJSONEncodable(request)
         }
     }

@@ -9,13 +9,13 @@ import UIKit
 import SnapKit
 import Then
 
-enum loginType: String {
+enum LoginType: String, Codable {
     case apple
     case kakao
 }
 
 protocol LoginButtonDelegate: AnyObject {
-    func loginButtonDidtap(type: loginType)
+    func loginButtonDidtap(type: LoginType)
 }
 
 final class LoginButtonCell: UICollectionViewCell {
