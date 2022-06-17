@@ -26,6 +26,8 @@ final class SignUpFlow: Flow {
         switch step {
         case .signUpIsRequired:
             return navigateToAgreeTermsScene()
+        case .inputInfoIsRequired:
+            return navigateToInputInfoScene()
         default:
             return .none
         }
@@ -43,6 +45,19 @@ private extension SignUpFlow {
             flowContributor: .contribute(
                 withNextPresentable: agreeTermsVC,
                 withNextStepper: agreeTermsReactor
+            )
+        )
+    }
+    
+    func navigateToInputInfoScene() -> FlowContributors {
+        let inputInfoReactor = InputInfoReactor()
+        let inputInfoVC = InputInfoViewController(reactor: inputInfoReactor)
+        
+        rootViewController.pushViewController(inputInfoVC, animated: true)
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: inputInfoVC,
+                withNextStepper: inputInfoReactor
             )
         )
     }

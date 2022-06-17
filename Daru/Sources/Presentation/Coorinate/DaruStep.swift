@@ -20,6 +20,7 @@ enum DaruStep: Step {
     
     //SignUp
     case signUpIsRequired
+    case inputInfoIsRequired
     
     //MyDaru
     case myPageIsRequired

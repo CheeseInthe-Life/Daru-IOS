@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0351380C9A804DC0BE4272D0 /* Pods_Daru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6AC7BA26ADD9431DDE91DB /* Pods_Daru.framework */; };
 		AE094493285C2D5300929188 /* SignUpFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE094492285C2D5300929188 /* SignUpFlow.swift */; };
+		AE094495285C40CB00929188 /* InputInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE094494285C40CB00929188 /* InputInfoViewController.swift */; };
+		AE094497285C411100929188 /* InputInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE094496285C411100929188 /* InputInfoReactor.swift */; };
 		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
 		AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */; };
 		AE2C84902840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */; };
@@ -104,6 +106,8 @@
 		3B6AC7BA26ADD9431DDE91DB /* Pods_Daru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F042F466EFB7020E9197E7E /* Pods-Daru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daru.debug.xcconfig"; path = "Target Support Files/Pods-Daru/Pods-Daru.debug.xcconfig"; sourceTree = "<group>"; };
 		AE094492285C2D5300929188 /* SignUpFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlow.swift; sourceTree = "<group>"; };
+		AE094494285C40CB00929188 /* InputInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputInfoViewController.swift; sourceTree = "<group>"; };
+		AE094496285C411100929188 /* InputInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputInfoReactor.swift; sourceTree = "<group>"; };
 		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineLabel.swift; sourceTree = "<group>"; };
 		AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostCommunitySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -410,6 +414,8 @@
 				AE88FDE3284533290050E3DC /* RecommendTeahouseReactor.swift */,
 				AEDA0109285A51B500EFBDE7 /* AgreeTermsViewController.swift */,
 				AEDA010B285A51C200EFBDE7 /* AgreeTermsReactor.swift */,
+				AE094494285C40CB00929188 /* InputInfoViewController.swift */,
+				AE094496285C411100929188 /* InputInfoReactor.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -693,6 +699,7 @@
 				AE88FDE9284537BF0050E3DC /* RecommendTeahouseDataSource.swift in Sources */,
 				AEDA010C285A51C200EFBDE7 /* AgreeTermsReactor.swift in Sources */,
 				AE3FEC3C2857430D00F87644 /* NetworkLoggerPlugIn.swift in Sources */,
+				AE094497285C411100929188 /* InputInfoReactor.swift in Sources */,
 				AE9242962856596F0053FCF5 /* LoginButtonCell.swift in Sources */,
 				AE9A0AF62833C06B00FCEC1C /* Constant.swift in Sources */,
 				AE2C84922840F8F100E2B6E2 /* ManagePostCommunityCell.swift in Sources */,
@@ -741,6 +748,7 @@
 				AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */,
 				AE88FE042845F17F0050E3DC /* PostContentCell.swift in Sources */,
 				AE52F6A8283D3D8B000475EF /* PostTableViewCell.swift in Sources */,
+				AE094495285C40CB00929188 /* InputInfoViewController.swift in Sources */,
 				AE88FE002845EA480050E3DC /* PostDetailReactor.swift in Sources */,
 				AEE7C2F02843DE9900FF9CFB /* HomeDataSource.swift in Sources */,
 				AE52F6A5283D37B6000475EF /* ManagePostFlow.swift in Sources */,

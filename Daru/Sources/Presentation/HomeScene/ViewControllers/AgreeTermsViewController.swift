@@ -95,6 +95,7 @@ final class AgreeTermsViewController: BaseViewController, View {
     private let nextButton = PrimaryButton().then {
         $0.setTitle("다음", for: .normal)
         $0.backgroundColor = .gray1
+        $0.isEnabled = false
     }
     
     init(reactor: AgreeTermsReactor) {
@@ -277,11 +278,15 @@ final class AgreeTermsViewController: BaseViewController, View {
         picuaAgreementView.addGestureRecognizer(picuaCheckBoxGesture)
         allAgreementView.addGestureRecognizer(allCheckBoxGesture)
         
+        nextButton.rx.tap
+            .map { Reactor.Action.next }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state.map { $0.isAgreeCompleted }
             .distinctUntilChanged()
             .bind {
                 [weak self] isAgreeCompleted in
-                
                 if isAgreeCompleted {
                     self?.allAgreementCheckbox.image = Constant.checkedBoxIcon
                     self?.nextButton.backgroundColor = .brown2
@@ -289,6 +294,7 @@ final class AgreeTermsViewController: BaseViewController, View {
                     self?.allAgreementCheckbox.image = Constant.notCheckedBoxIcon
                     self?.nextButton.backgroundColor = .gray1
                 }
+                self?.nextButton.isEnabled = isAgreeCompleted
             }.disposed(by: disposeBag)
     }
 }

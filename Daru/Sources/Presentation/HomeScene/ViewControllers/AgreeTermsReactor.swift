@@ -18,6 +18,7 @@ final class AgreeTermsReactor: Reactor, Stepper {
         case unChecking
         case allChecking
         case allUnChecking
+        case next
     }
     
     enum Mutation {
@@ -43,6 +44,9 @@ final class AgreeTermsReactor: Reactor, Stepper {
             agreeCount = 2
         case .allUnChecking:
             agreeCount = 0
+        case .next:
+            steps.accept(DaruStep.inputInfoIsRequired)
+            return .empty()
         }
         
         if agreeCount == 2 {
