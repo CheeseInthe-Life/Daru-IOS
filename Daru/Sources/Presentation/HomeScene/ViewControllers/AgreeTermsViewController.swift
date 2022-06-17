@@ -94,6 +94,7 @@ final class AgreeTermsViewController: BaseViewController, View {
     
     private let nextButton = PrimaryButton().then {
         $0.setTitle("다음", for: .normal)
+        $0.backgroundColor = .gray1
     }
     
     init(reactor: AgreeTermsReactor) {
@@ -257,5 +258,74 @@ final class AgreeTermsViewController: BaseViewController, View {
     
     func bind(reactor: AgreeTermsReactor) {
         
+        let termsCheckBoxGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(checkBoxDidTap(_:))
+        )
+        
+        let picuaCheckBoxGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(checkBoxDidTap(_:))
+        )
+        
+        let allCheckBoxGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(allCheckBoxDidTap(_:))
+        )
+        
+        termsAgreementView.addGestureRecognizer(termsCheckBoxGesture)
+        picuaAgreementView.addGestureRecognizer(picuaCheckBoxGesture)
+        allAgreementView.addGestureRecognizer(allCheckBoxGesture)
+        
+        reactor.state.map { $0.isAgreeCompleted }
+            .distinctUntilChanged()
+            .bind {
+                [weak self] isAgreeCompleted in
+                
+                if isAgreeCompleted {
+                    self?.allAgreementCheckbox.image = Constant.checkedBoxIcon
+                    self?.nextButton.backgroundColor = .brown2
+                } else {
+                    self?.allAgreementCheckbox.image = Constant.notCheckedBoxIcon
+                    self?.nextButton.backgroundColor = .gray1
+                }
+            }.disposed(by: disposeBag)
+    }
+}
+
+private extension AgreeTermsViewController {
+    
+    @objc func checkBoxDidTap(_ sender: UITapGestureRecognizer) {
+        if sender.view == termsAgreementView {
+            if termsCheckbox.image == Constant.notCheckedBoxIcon {
+                reactor?.action.onNext(.checking)
+                termsCheckbox.image = Constant.checkedBoxIcon
+            } else {
+                reactor?.action.onNext(.unChecking)
+                termsCheckbox.image = Constant.notCheckedBoxIcon
+            }
+        } else {
+            if picuaCheckbox.image == Constant.notCheckedBoxIcon {
+                reactor?.action.onNext(.checking)
+                picuaCheckbox.image = Constant.checkedBoxIcon
+            } else {
+                reactor?.action.onNext(.unChecking)
+                picuaCheckbox.image = Constant.notCheckedBoxIcon
+            }
+        }
+    }
+    
+    @objc func allCheckBoxDidTap(_ sender: UITapGestureRecognizer) {
+        if allAgreementCheckbox.image == Constant.notCheckedBoxIcon {
+            reactor?.action.onNext(.allChecking)
+            allAgreementCheckbox.image = Constant.checkedBoxIcon
+            termsCheckbox.image = Constant.checkedBoxIcon
+            picuaCheckbox.image = Constant.checkedBoxIcon
+        } else {
+            reactor?.action.onNext(.allUnChecking)
+            allAgreementCheckbox.image = Constant.notCheckedBoxIcon
+            termsCheckbox.image = Constant.notCheckedBoxIcon
+            picuaCheckbox.image = Constant.notCheckedBoxIcon
+        }
     }
 }
