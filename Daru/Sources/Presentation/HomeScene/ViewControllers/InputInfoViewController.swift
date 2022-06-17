@@ -155,6 +155,7 @@ final class InputInfoViewController: BaseViewController, View {
             make.leading.trailing.equalTo(nickNameTitleLabel)
             make.top.equalTo(nickNameTitleLabel.snp.bottom).offset(15.0)
         }
+        nickNameTextField.delegate = self
         
         duplicateCheckLabel.snp.makeConstraints { make in
             make.leading.equalTo(nickNameTextField)
@@ -209,6 +210,27 @@ final class InputInfoViewController: BaseViewController, View {
     
     func bind(reactor: InputInfoReactor) {
         
+        duplicateCheckButton.rx.tap
+            .withLatestFrom(nickNameTextField.rx.text.orEmpty)
+            .map { Reactor.Action.duplicateCheck(nickname: $0)}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        reactor.state.compactMap { $0.isDuplicated }
+            .bind {
+                [weak self] isDuplicated in
+                
+                if let self = self, self.duplicateCheckLabel.isHidden {
+                    self.duplicateCheckLabel.isHidden = false
+                }
+                if isDuplicated{
+                    self?.duplicateCheckLabel.textColor = .red
+                    self?.duplicateCheckLabel.text = "※ 중복된 닉네임입니다."
+                } else {
+                    self?.duplicateCheckLabel.textColor = .blueGreen1
+                    self?.duplicateCheckLabel.text = "※ 사용 가능한 닉네임입니다."
+                }
+            }.disposed(by: disposeBag)
     }
 }
 
@@ -236,4 +258,19 @@ private extension InputInfoViewController {
     @objc func selectToolbarButtonDidTap() {
         
     }
+    
+}
+
+extension InputInfoViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            print(string)
+            if let char = string.cString(using: String.Encoding.utf8) {
+                let isBackSpace = strcmp(char, "\\b")
+                if isBackSpace == -92 {
+                    return true
+                }
+            }
+            guard textField.text!.count < 10 else { return false }
+            return true
+        }
 }

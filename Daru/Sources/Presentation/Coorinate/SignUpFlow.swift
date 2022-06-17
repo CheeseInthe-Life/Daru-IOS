@@ -50,7 +50,7 @@ private extension SignUpFlow {
     }
     
     func navigateToInputInfoScene() -> FlowContributors {
-        let inputInfoReactor = InputInfoReactor()
+        let inputInfoReactor = InputInfoReactor(authService: AuthService(authNetworking: AuthNetworking()))
         let inputInfoVC = InputInfoViewController(reactor: inputInfoReactor)
         
         rootViewController.pushViewController(inputInfoVC, animated: true)
