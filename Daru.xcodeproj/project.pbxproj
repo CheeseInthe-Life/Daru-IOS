@@ -11,6 +11,7 @@
 		AE094493285C2D5300929188 /* SignUpFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE094492285C2D5300929188 /* SignUpFlow.swift */; };
 		AE094495285C40CB00929188 /* InputInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE094494285C40CB00929188 /* InputInfoViewController.swift */; };
 		AE094497285C411100929188 /* InputInfoReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE094496285C411100929188 /* InputInfoReactor.swift */; };
+		AE094499285C8F6E00929188 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE094498285C8F6E00929188 /* PaddingTextField.swift */; };
 		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
 		AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */; };
 		AE2C84902840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */; };
@@ -108,6 +109,7 @@
 		AE094492285C2D5300929188 /* SignUpFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlow.swift; sourceTree = "<group>"; };
 		AE094494285C40CB00929188 /* InputInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputInfoViewController.swift; sourceTree = "<group>"; };
 		AE094496285C411100929188 /* InputInfoReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputInfoReactor.swift; sourceTree = "<group>"; };
+		AE094498285C8F6E00929188 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineLabel.swift; sourceTree = "<group>"; };
 		AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostCommunitySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				AE9A0AFF2833E3F200FCEC1C /* TeaHouseCell.swift */,
 				AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */,
 				AE92429728565A2E0053FCF5 /* LeftAlignButton.swift */,
+				AE094498285C8F6E00929188 /* PaddingTextField.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				AE52F692283CDCD6000475EF /* MyFavoriteTeaHeaderView.swift in Sources */,
 				AE88FDE2284533030050E3DC /* RecommendTeahouseViewController.swift in Sources */,
 				AE3F484A28329FFA008404F1 /* AppStepper.swift in Sources */,
+				AE094499285C8F6E00929188 /* PaddingTextField.swift in Sources */,
 				AE9A0B022833FDA100FCEC1C /* HomeRecommendTeaHouseSectionFooterView.swift in Sources */,
 				AE9F74772834C9D900C31F53 /* PostCollectionViewCell.swift in Sources */,
 				AEB684EB2851F43A00843D7F /* PostCommentCell.swift in Sources */,
