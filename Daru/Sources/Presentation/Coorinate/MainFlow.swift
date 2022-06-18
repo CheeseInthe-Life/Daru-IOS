@@ -14,11 +14,15 @@ final class MainFlow: Flow {
         return self.rootViewController
     }
     
-    private let rootViewController = TabViewController()
+    private let rootViewController: TabViewController
     private let homeFlow: HomeFlow = .init()
     private let myDaruFlow: MyDaruFlow = .init()
     private let communityFlow: CommunityFlow = .init()
     private let teahouseMapFlow: TeahouseMapFlow = .init()
+    
+    init(tabViewController: TabViewController) {
+        self.rootViewController = tabViewController
+    }
     
     deinit {
         print("\(type(of: self)) \(#function)")
@@ -30,6 +34,8 @@ final class MainFlow: Flow {
         switch step {
         case .mainIsRequired:
             return navigateToMainScene()
+        case .settingIsRequired:
+            return navigateToSettingScene()
         default:
             return .none
         }
@@ -54,5 +60,19 @@ extension MainFlow {
             .contribute(withNextPresentable: teahouseMapFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.teahouseMapIsRequired), allowStepWhenDismissed: true)
         ]
         )
+    }
+    
+    func navigateToSettingScene() -> FlowContributors {
+        let settingFlow = SettingFlow(rootViewController: rootViewController.navigationController!)
+        
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: settingFlow,
+                withNextStepper: OneStepper(
+                    withSingleStep: DaruStep.settingIsRequired
+                )
+            )
+        )
+        
     }
 }

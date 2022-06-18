@@ -17,6 +17,7 @@ final class HomeReactor: Reactor, Stepper {
         case moreButtonDidTap(section: Int)
         case refresh
         case kakaoLogin(accessToken: String)
+        case settingIsRequired
     }
     
     enum Mutation {
@@ -93,6 +94,9 @@ final class HomeReactor: Reactor, Stepper {
                         return nil
                     }
                 }.asObservable()
+        case .settingIsRequired:
+            steps.accept(DaruStep.settingIsRequired)
+            return .empty()
         }
     }
     

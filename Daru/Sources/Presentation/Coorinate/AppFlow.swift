@@ -40,12 +40,16 @@ final class AppFlow: Flow {
 
 extension AppFlow {
     func navigationToMainScene() -> FlowContributors {
-        let mainFlow = MainFlow()
+        let tabVC = TabViewController()
+        let mainFlow = MainFlow(tabViewController: tabVC)
         let naviVC = UINavigationController()
         rootWindow.rootViewController = naviVC
         Flows.use(mainFlow, when: .created) { flowRoot in
             naviVC.pushViewController(flowRoot, animated: false)
         }
-        return .one(flowContributor: .contribute(withNextPresentable: mainFlow, withNextStepper: OneStepper(withSingleStep: DaruStep.mainIsRequired)))
+        return .one(flowContributor: .contribute(withNextPresentable: mainFlow, withNextStepper: CompositeStepper(steppers: [
+            OneStepper(withSingleStep: DaruStep.mainIsRequired),
+            tabVC
+        ])))
     }
 }

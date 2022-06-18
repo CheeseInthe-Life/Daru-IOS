@@ -10,8 +10,12 @@ import Tabman
 import Pageboy
 import Then
 import SnapKit
+import RxFlow
+import RxCocoa
 
-final class TabViewController: TabmanViewController {
+final class TabViewController: TabmanViewController, Stepper {
+    
+    var steps: PublishRelay<Step> = .init()
     
     private var tabs = [(name: String, viewController: UIViewController)]()
     
@@ -47,8 +51,8 @@ final class TabViewController: TabmanViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: Constant.settingIcon,
             style: .plain,
-            target: nil,
-            action: nil
+            target: self,
+            action: #selector(settingButtonDidTap)
         )
         //navigationController?.navigationBar.isTranslucent = false
         let barAppearance = self.navigationController?.navigationBar.standardAppearance
@@ -73,6 +77,7 @@ final class TabViewController: TabmanViewController {
         // Add to view
         addBar(bar, dataSource: self, at: .top)
     }
+
 }
 
 extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
@@ -94,3 +99,9 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
     }
 }
 
+
+extension TabViewController {
+    @objc func settingButtonDidTap() {
+        steps.accept(DaruStep.settingIsRequired)
+    }
+}
