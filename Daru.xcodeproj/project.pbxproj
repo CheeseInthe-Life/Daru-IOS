@@ -58,6 +58,8 @@
 		AE68D3692837E9BE0017C8CB /* RegionCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */; };
 		AE834445285DB3A90061F178 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE834444285DB3A90061F178 /* SettingViewController.swift */; };
 		AE834447285DB3AF0061F178 /* SettingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE834446285DB3AF0061F178 /* SettingReactor.swift */; };
+		AE834449285DB57D0061F178 /* SettingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE834448285DB57D0061F178 /* SettingFlow.swift */; };
+		AE83444B285DBF560061F178 /* TabReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83444A285DBF560061F178 /* TabReactor.swift */; };
 		AE88FDDB28450C080050E3DC /* TeahouseListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDA28450C080050E3DC /* TeahouseListHeaderView.swift */; };
 		AE88FDDD28450F750050E3DC /* NearTeahouseTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */; };
 		AE88FDDF284514D40050E3DC /* NearTeahouseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */; };
@@ -163,6 +165,8 @@
 		AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCategoryCell.swift; sourceTree = "<group>"; };
 		AE834444285DB3A90061F178 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AE834446285DB3AF0061F178 /* SettingReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReactor.swift; sourceTree = "<group>"; };
+		AE834448285DB57D0061F178 /* SettingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFlow.swift; sourceTree = "<group>"; };
+		AE83444A285DBF560061F178 /* TabReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabReactor.swift; sourceTree = "<group>"; };
 		AE88FDDA28450C080050E3DC /* TeahouseListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseListHeaderView.swift; sourceTree = "<group>"; };
 		AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseTitleCell.swift; sourceTree = "<group>"; };
 		AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseDataSource.swift; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 				AE52F6A2283D3410000475EF /* PostListFlow.swift */,
 				AE52F6A4283D37B6000475EF /* ManagePostFlow.swift */,
 				AE094492285C2D5300929188 /* SignUpFlow.swift */,
+				AE834448285DB57D0061F178 /* SettingFlow.swift */,
 			);
 			path = Coorinate;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */,
 				AE92429728565A2E0053FCF5 /* LeftAlignButton.swift */,
 				AE094498285C8F6E00929188 /* PaddingTextField.swift */,
+				AE83444A285DBF560061F178 /* TabReactor.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -721,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE9F74752834C65900C31F53 /* RecentPostHeaderView.swift in Sources */,
+				AE83444B285DBF560061F178 /* TabReactor.swift in Sources */,
 				AE3FEC41285745B000F87644 /* SecretConstant.swift in Sources */,
 				AE88FDE4284533290050E3DC /* RecommendTeahouseReactor.swift in Sources */,
 				AE834447285DB3AF0061F178 /* SettingReactor.swift in Sources */,
@@ -778,6 +785,7 @@
 				AE9A0AF92833D94400FCEC1C /* HomeReactor.swift in Sources */,
 				AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */,
 				AEB684ED285208CB00843D7F /* PostCommentHeaderView.swift in Sources */,
+				AE834449285DB57D0061F178 /* SettingFlow.swift in Sources */,
 				AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */,
 				AE9F74732834B93600C31F53 /* HomeNearTeaHouseSectionHeaderView.swift in Sources */,
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,

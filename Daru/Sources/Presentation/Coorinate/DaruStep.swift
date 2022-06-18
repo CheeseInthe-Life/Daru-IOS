@@ -35,4 +35,7 @@ enum DaruStep: Step {
     
     //teahouseMap
     case teahouseMapIsRequired
+    
+    //Setting
+    case settingIsRequired
 }

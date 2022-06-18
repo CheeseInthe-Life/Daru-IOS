@@ -25,6 +25,6 @@ final class SettingReactor: Reactor, Stepper {
     }
     
     var initialState: State = .init()
-    var steps: PublishRelay<Step>
+    var steps: PublishRelay<Step> = .init()
     
 }
