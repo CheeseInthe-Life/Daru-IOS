@@ -59,7 +59,10 @@
 		AE834445285DB3A90061F178 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE834444285DB3A90061F178 /* SettingViewController.swift */; };
 		AE834447285DB3AF0061F178 /* SettingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE834446285DB3AF0061F178 /* SettingReactor.swift */; };
 		AE834449285DB57D0061F178 /* SettingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE834448285DB57D0061F178 /* SettingFlow.swift */; };
-		AE83444B285DBF560061F178 /* TabReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83444A285DBF560061F178 /* TabReactor.swift */; };
+		AE83444D285DC66C0061F178 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83444C285DC66C0061F178 /* SettingItemCell.swift */; };
+		AE83444F285DC8650061F178 /* SettingItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83444E285DC8650061F178 /* SettingItemType.swift */; };
+		AE834452285DCACF0061F178 /* SettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE834451285DCACF0061F178 /* SettingHeaderView.swift */; };
+		AE834454285DCD9F0061F178 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE834453285DCD9F0061F178 /* UITableViewCell+.swift */; };
 		AE88FDDB28450C080050E3DC /* TeahouseListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDA28450C080050E3DC /* TeahouseListHeaderView.swift */; };
 		AE88FDDD28450F750050E3DC /* NearTeahouseTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */; };
 		AE88FDDF284514D40050E3DC /* NearTeahouseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */; };
@@ -166,7 +169,10 @@
 		AE834444285DB3A90061F178 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AE834446285DB3AF0061F178 /* SettingReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReactor.swift; sourceTree = "<group>"; };
 		AE834448285DB57D0061F178 /* SettingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFlow.swift; sourceTree = "<group>"; };
-		AE83444A285DBF560061F178 /* TabReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabReactor.swift; sourceTree = "<group>"; };
+		AE83444C285DC66C0061F178 /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
+		AE83444E285DC8650061F178 /* SettingItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemType.swift; sourceTree = "<group>"; };
+		AE834451285DCACF0061F178 /* SettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeaderView.swift; sourceTree = "<group>"; };
+		AE834453285DCD9F0061F178 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		AE88FDDA28450C080050E3DC /* TeahouseListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseListHeaderView.swift; sourceTree = "<group>"; };
 		AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseTitleCell.swift; sourceTree = "<group>"; };
 		AE88FDDE284514D40050E3DC /* NearTeahouseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearTeahouseDataSource.swift; sourceTree = "<group>"; };
@@ -335,7 +341,6 @@
 				AE52F697283D0CB9000475EF /* SecondaryTabViewController.swift */,
 				AE92429728565A2E0053FCF5 /* LeftAlignButton.swift */,
 				AE094498285C8F6E00929188 /* PaddingTextField.swift */,
-				AE83444A285DBF560061F178 /* TabReactor.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				AE9A0AEB28339E5800FCEC1C /* UIFont+.swift */,
 				AEE7C2D4284392FB00FF9CFB /* CALayer+.swift */,
 				AE92429928565F710053FCF5 /* UIImage+.swift */,
+				AE834453285DCD9F0061F178 /* UITableViewCell+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,6 +483,9 @@
 		AE834443285DB3910061F178 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE83444C285DC66C0061F178 /* SettingItemCell.swift */,
+				AE83444E285DC8650061F178 /* SettingItemType.swift */,
+				AE834451285DCACF0061F178 /* SettingHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -727,7 +736,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE9F74752834C65900C31F53 /* RecentPostHeaderView.swift in Sources */,
-				AE83444B285DBF560061F178 /* TabReactor.swift in Sources */,
 				AE3FEC41285745B000F87644 /* SecretConstant.swift in Sources */,
 				AE88FDE4284533290050E3DC /* RecommendTeahouseReactor.swift in Sources */,
 				AE834447285DB3AF0061F178 /* SettingReactor.swift in Sources */,
@@ -736,9 +744,12 @@
 				AE3F483B283268EE008404F1 /* BaseViewController.swift in Sources */,
 				AE09449C285C968100929188 /* Gender.swift in Sources */,
 				AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */,
+				AE834454285DCD9F0061F178 /* UITableViewCell+.swift in Sources */,
 				AEDA01062859D2A600EFBDE7 /* SignInRequestDTO.swift in Sources */,
+				AE834452285DCACF0061F178 /* SettingHeaderView.swift in Sources */,
 				AE3F483F28326C4A008404F1 /* MyDaruFlow.swift in Sources */,
 				AE88FE022845EB5B0050E3DC /* PostListReactor.swift in Sources */,
+				AE83444D285DC66C0061F178 /* SettingItemCell.swift in Sources */,
 				AE52F6A1283D3175000475EF /* ManagePostViewController.swift in Sources */,
 				AE2C84902840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift in Sources */,
 				AE52F694283CE06B000475EF /* MyFavoriteTeaCell.swift in Sources */,
@@ -789,6 +800,7 @@
 				AEF40C122839D2EB00E629AD /* MBTeaIExplainationCell.swift in Sources */,
 				AE9F74732834B93600C31F53 /* HomeNearTeaHouseSectionHeaderView.swift in Sources */,
 				AE3F484F2832AF6D008404F1 /* UIColor+.swift in Sources */,
+				AE83444F285DC8650061F178 /* SettingItemType.swift in Sources */,
 				AE0944A2285CA97E00929188 /* SignUpRequestDTO.swift in Sources */,
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
 				AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */,

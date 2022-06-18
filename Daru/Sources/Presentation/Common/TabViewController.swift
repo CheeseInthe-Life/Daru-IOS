@@ -77,10 +77,7 @@ final class TabViewController: TabmanViewController, Stepper {
         // Add to view
         addBar(bar, dataSource: self, at: .top)
     }
-    
-    func bind(reactor: TabReactor) {
-        
-    }
+
 }
 
 extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
@@ -105,7 +102,6 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
 
 extension TabViewController {
     @objc func settingButtonDidTap() {
-        print("test")
         steps.accept(DaruStep.settingIsRequired)
     }
 }
