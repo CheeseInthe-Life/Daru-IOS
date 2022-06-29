@@ -11,7 +11,7 @@ import Then
 
 final class NearTeahouseTitleCell: UICollectionViewCell {
     
-    static let identifier = "\(type(of: self))"
+    static let identifier = "\(type(of: NearTeahouseTitleCell.self))"
     
     private let titleLabel = UILabel().then {
         let str = NSMutableAttributedString(string: "내 주변 찻집")
@@ -34,12 +34,9 @@ final class NearTeahouseTitleCell: UICollectionViewCell {
         $0.textAlignment = .center
     }
     
+    private let locationIcon = NSTextAttachment(image: Constant.curLocationIcon!)
+    
     private let secondaryLabel = UILabel().then {
-        let str = NSMutableAttributedString(string: "")
-        let icon = NSTextAttachment(image: Constant.curLocationIcon!)
-        str.append(NSAttributedString(attachment: icon))
-        str.append(NSAttributedString(string: " 현재 위치 : 서울, 관악구"))
-        $0.attributedText = str
         $0.font = .notoSansKR(.medium, size: 14.0)
         $0.textAlignment = .center
     }
@@ -101,5 +98,17 @@ final class NearTeahouseTitleCell: UICollectionViewCell {
             make.height.equalTo(1.0)
             make.bottom.equalToSuperview().inset(35.0)
         }
+    }
+    
+    func update(with type: LocationPermissionType, _ location: String?) {
+        let attrStr = NSMutableAttributedString(string: "")
+        attrStr.append(NSAttributedString(attachment: locationIcon))
+        switch type {
+        case .denied, .notDetermined:
+            attrStr.append(NSAttributedString(string: " 위치 접근 활성화가 필요합니다"))
+        case .allow:
+            attrStr.append(NSAttributedString(string: " \(location ?? "위치를 가져올 수 없습니다.")"))
+        }
+        secondaryLabel.attributedText = attrStr
     }
 }
