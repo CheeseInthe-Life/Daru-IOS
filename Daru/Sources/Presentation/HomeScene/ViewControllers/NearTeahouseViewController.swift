@@ -74,7 +74,7 @@ final class NearTeahouseViewController: BaseViewController, View {
         
         // MARK: - State
         reactor.pulse(\.$sections)
-            .bind(to: mainCollectionView.rx.items(dataSource: NearTeahouseDataSource.dataSource()))
+            .bind(to: mainCollectionView.rx.items(dataSource: NearTeahouseDataSource.dataSource(delegate: self)))
             .disposed(by: disposeBag)
         
         reactor.state.map(\.locationPermissionType)
@@ -210,5 +210,43 @@ private extension NearTeahouseViewController {
                 return .notDetermined
             }
         }
+    }
+    
+    func requestAllowLocationPermission() {
+        if #available(iOS 14.0, *) {
+            switch locationManager.authorizationStatus {
+            case .notDetermined, .restricted:
+                locationManager.requestWhenInUseAuthorization()
+            case .denied:
+                sendSettingAlertAction()
+                break
+            case .authorizedAlways, .authorizedWhenInUse:
+                break
+            @unknown default:
+                return
+            }
+        } else {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted:
+                locationManager.requestWhenInUseAuthorization()
+            case .denied:
+                sendSettingAlertAction()
+                break
+            case .authorizedAlways, .authorizedWhenInUse:
+                break
+            @unknown default:
+                return
+            }
+        }
+    }
+    
+    func sendSettingAlertAction() {
+        reactor?.action.onNext(.settingAlertIsRequired)
+    }
+}
+
+extension NearTeahouseViewController: LocationPermissionButtonDelegate {
+    func locationPermissionButtonDidTap() {
+        requestAllowLocationPermission()
     }
 }

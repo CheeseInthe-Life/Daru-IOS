@@ -38,4 +38,7 @@ enum DaruStep: Step {
     
     //Setting
     case settingIsRequired
+    
+    //Alert
+    case settingAlertIsRequired
 }

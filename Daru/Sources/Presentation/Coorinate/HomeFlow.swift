@@ -36,6 +36,8 @@ final class HomeFlow: Flow {
             return navigateToRecommendTeahouseScene()
         case let .signUpIsRequired(providerType, accessToken):
             return navigateToAgreeTermsScene(providerType: providerType, accessToken: accessToken)
+        case .settingAlertIsRequired:
+            return navigateToSettingAlert()
         default:
             return .none
         }
@@ -87,4 +89,29 @@ private extension HomeFlow {
             )
         )
     }
+    
+    func navigateToSettingAlert() -> FlowContributors {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return .none }
+        
+        let alert = UIAlertController(
+            title: "위치 사용 권환이 필요합니다.",
+            message: "위치 권환을 허용해야만 내 주변 찻집을 확인할 수 있습니다.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(
+            title: "설정하러가기",
+            style: .default,
+            handler: {
+                _ in
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+        ))
+        
+        rootViewController.present(alert, animated: true)
+        return .none
+    }
+
 }

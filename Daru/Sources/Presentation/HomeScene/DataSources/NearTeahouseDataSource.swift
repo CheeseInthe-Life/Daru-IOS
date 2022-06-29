@@ -17,7 +17,7 @@ enum NearTeahouseSectionItem {
 }
 
 struct NearTeahouseDataSource {
-    static func dataSource() -> RxCollectionViewSectionedReloadDataSource<NearTeahouseSectionModel> {
+    static func dataSource(delegate: LocationPermissionButtonDelegate) -> RxCollectionViewSectionedReloadDataSource<NearTeahouseSectionModel> {
         return .init {
             dataSource, collectionView, indexPath, item in
             switch item {
@@ -39,6 +39,7 @@ struct NearTeahouseDataSource {
                     withReuseIdentifier: LocationPermissionButtonCell.identifier,
                     for: indexPath
                 ) as! LocationPermissionButtonCell
+                cell.delegate = delegate
                 return cell
             }
         }configureSupplementaryView: {

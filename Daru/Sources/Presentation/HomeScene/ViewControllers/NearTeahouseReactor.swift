@@ -15,6 +15,7 @@ final class NearTeahouseReactor: Reactor, Stepper {
     
     enum Action {
         case refresh(locationPermissionType: LocationPermissionType)
+        case settingAlertIsRequired
     }
     
     enum Mutation {
@@ -65,6 +66,9 @@ final class NearTeahouseReactor: Reactor, Stepper {
                     .just(Mutation.setSections(sections: dummySections))
                 ])
             }
+        case .settingAlertIsRequired:
+            steps.accept(DaruStep.settingAlertIsRequired)
+            return .empty()
         }
     }
     

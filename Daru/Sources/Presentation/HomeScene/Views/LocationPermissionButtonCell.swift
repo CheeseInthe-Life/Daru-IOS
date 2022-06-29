@@ -9,6 +9,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol LocationPermissionButtonDelegate: AnyObject {
+    func locationPermissionButtonDidTap()
+}
+
 final class LocationPermissionButtonCell: UICollectionViewCell {
     
     static let identifier = "\(type(of:LocationPermissionButtonCell.self))"
@@ -27,6 +31,8 @@ final class LocationPermissionButtonCell: UICollectionViewCell {
         $0.textAlignment = .center
         $0.numberOfLines = 2
     }
+    
+    weak var delegate: LocationPermissionButtonDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,11 +61,19 @@ final class LocationPermissionButtonCell: UICollectionViewCell {
             make.top.equalToSuperview().inset(38.0)
             make.height.equalTo(38.0)
         }
+        locationPermissionButton.addTarget(self, action: #selector(locationPermissionButtonDidTap), for: .touchUpInside)
         
         guideLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20.0)
             make.top.equalTo(locationPermissionButton.snp.bottom).offset(7.0)
             make.bottom.equalToSuperview()
         }
+        
+    }
+}
+
+private extension LocationPermissionButtonCell {
+    @objc func locationPermissionButtonDidTap() {
+        delegate?.locationPermissionButtonDidTap()
     }
 }
