@@ -11,7 +11,7 @@ import RxDataSources
 typealias NearTeahouseSectionModel = SectionModel<String,NearTeahouseSectionItem>
 
 enum NearTeahouseSectionItem {
-    case titleSectionItem(type: LocationPermissionType)
+    case titleSectionItem(type: LocationPermissionType, location: String?)
     case teaHouseSectionItem
     case locationPermissionButtonSectionItem
 }
@@ -21,12 +21,12 @@ struct NearTeahouseDataSource {
         return .init {
             dataSource, collectionView, indexPath, item in
             switch item {
-            case .titleSectionItem(let type):
+            case let .titleSectionItem(type, location):
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: NearTeahouseTitleCell.identifier,
                     for: indexPath
                 ) as! NearTeahouseTitleCell
-                cell.update(with: type)
+                cell.update(with: type, location)
                 return cell
             case .teaHouseSectionItem:
                 let cell = collectionView.dequeueReusableCell(

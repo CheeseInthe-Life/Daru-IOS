@@ -243,6 +243,26 @@ private extension NearTeahouseViewController {
     func sendSettingAlertAction() {
         reactor?.action.onNext(.settingAlertIsRequired)
     }
+    
+    func findAddr(location: CLLocation){
+        let geocoder = CLGeocoder()
+        let locale = Locale(identifier: "Ko-kr")
+        
+        geocoder.reverseGeocodeLocation(location, preferredLocale: locale, completionHandler: {
+            [weak self] (placemarks, error) in
+            if let address: [CLPlacemark] = placemarks {
+                var myAdd: String = ""
+                if let area: String = address.last?.locality{
+                    myAdd += area
+                }
+                if let name: String = address.last?.subLocality {
+                    myAdd += " "
+                    myAdd += name
+                }
+                self?.reactor?.action.onNext(.changeLocation(location: myAdd))
+            }
+        })
+    }
 }
 
 extension NearTeahouseViewController: LocationPermissionButtonDelegate {
@@ -256,7 +276,11 @@ extension NearTeahouseViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .authorizedWhenInUse ||
             manager.authorizationStatus == .authorizedAlways {
+            if let location = manager.location {
+                findAddr(location: location)
+            }
             reactor?.action.onNext(.refresh(locationPermissionType: .allow))
+            
         } else if manager.authorizationStatus == .denied {
             sendSettingAlertAction()
         }
@@ -266,6 +290,9 @@ extension NearTeahouseViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse ||
             status == .authorizedAlways {
+            if let location = manager.location {
+                findAddr(location: location)
+            } 
             reactor?.action.onNext(.refresh(locationPermissionType: .allow))
         } else if status == .denied {
             sendSettingAlertAction()

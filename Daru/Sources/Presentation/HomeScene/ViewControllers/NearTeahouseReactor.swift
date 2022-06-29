@@ -15,29 +15,30 @@ final class NearTeahouseReactor: Reactor, Stepper {
     
     enum Action {
         case refresh(locationPermissionType: LocationPermissionType)
+        case changeLocation(location: String)
         case settingAlertIsRequired
     }
     
     enum Mutation {
         case setSections(sections: [NearTeahouseSectionModel])
         case setLocationPermissionType(type: LocationPermissionType)
+        case setLocation(String)
     }
     
     struct State {
         @Pulse var sections: [NearTeahouseSectionModel] = []
         var locationPermissionType: LocationPermissionType = .notDetermined
+        var location: String?
     }
     
     let initialState: State = .init()
     let steps: PublishRelay<Step> = .init()
     
     let notAllowLocationPermissionSections = [
-        NearTeahouseSectionModel(model: "", items: [.titleSectionItem(type: .notDetermined)]),
         NearTeahouseSectionModel(model: "", items: [.locationPermissionButtonSectionItem])
     ]
     
     let dummySections = [
-        NearTeahouseSectionModel(model: "", items: [.titleSectionItem(type: .allow)]),
         NearTeahouseSectionModel(
             model: "",
             items: [
@@ -58,17 +59,30 @@ final class NearTeahouseReactor: Reactor, Stepper {
             case .notDetermined, .denied:
                 return .concat([
                     .just(Mutation.setLocationPermissionType(type: locationPermissionType)),
-                    .just(Mutation.setSections(sections: notAllowLocationPermissionSections))
+                    .just(Mutation.setSections(sections: [
+                        NearTeahouseSectionModel(model: "", items: [.titleSectionItem(type: currentState.locationPermissionType, location: currentState.location)])
+                    ] + notAllowLocationPermissionSections))
                     ])
             case .allow:
                 return .concat([
                     .just(Mutation.setLocationPermissionType(type: locationPermissionType)),
-                    .just(Mutation.setSections(sections: dummySections))
+                    .just(Mutation.setSections(sections: [
+                        NearTeahouseSectionModel(model: "", items: [.titleSectionItem(type: currentState.locationPermissionType, location: currentState.location)])
+                    ] + dummySections))
                 ])
             }
         case .settingAlertIsRequired:
             steps.accept(DaruStep.settingAlertIsRequired)
             return .empty()
+        case .changeLocation(let location):
+            var newSection = currentState.sections
+            newSection[0] = NearTeahouseSectionModel(model: "", items: [
+                .titleSectionItem(type: currentState.locationPermissionType, location: location)
+            ])
+            return .concat([
+                .just(Mutation.setLocation(location)),
+                .just(Mutation.setSections(sections: newSection))
+            ])
         }
     }
     
@@ -80,6 +94,8 @@ final class NearTeahouseReactor: Reactor, Stepper {
             newState.sections = sections
         case .setLocationPermissionType(let type):
             newState.locationPermissionType = type
+        case .setLocation(let location):
+            newState.location = location
         }
         
         return newState

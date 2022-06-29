@@ -100,14 +100,14 @@ final class NearTeahouseTitleCell: UICollectionViewCell {
         }
     }
     
-    func update(with type: LocationPermissionType) {
+    func update(with type: LocationPermissionType, _ location: String?) {
         let attrStr = NSMutableAttributedString(string: "")
         attrStr.append(NSAttributedString(attachment: locationIcon))
         switch type {
         case .denied, .notDetermined:
             attrStr.append(NSAttributedString(string: " 위치 접근 활성화가 필요합니다"))
         case .allow:
-            attrStr.append(NSAttributedString(string: " 현재 위치 : 서울, 관악구"))
+            attrStr.append(NSAttributedString(string: " \(location ?? "위치를 가져올 수 없습니다.")"))
         }
         secondaryLabel.attributedText = attrStr
     }

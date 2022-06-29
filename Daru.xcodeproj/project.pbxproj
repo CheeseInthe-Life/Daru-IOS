@@ -544,8 +544,8 @@
 				AE68D3682837E9BE0017C8CB /* RegionCategoryCell.swift */,
 				AE4EB7C82838C56500D556CA /* HomeFooterCell.swift */,
 				AE88FDDA28450C080050E3DC /* TeahouseListHeaderView.swift */,
-				AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */,
 				AE88FDE52845364D0050E3DC /* RecommendTeahouseTitleCell.swift */,
+				AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */,
 				AE9242952856596F0053FCF5 /* LoginButtonCell.swift */,
 				AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */,
 			);
