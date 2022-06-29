@@ -9,8 +9,11 @@ import UIKit
 import SnapKit
 import Then
 import ReactorKit
+import MapKit
 
 final class NearTeahouseViewController: BaseViewController, View {
+    
+    let locationManager = CLLocationManager()
     
     private let mainCollectionView = UICollectionView(
         frame: .zero,
@@ -30,6 +33,9 @@ final class NearTeahouseViewController: BaseViewController, View {
             TeaHouseCell.self,
             forCellWithReuseIdentifier: TeaHouseCell.identifier
         )
+        $0.register(LocationPermissionButtonCell.self,
+                    forCellWithReuseIdentifier: LocationPermissionButtonCell.identifier
+        )
     }
     
     init(reactor: NearTeahouseReactor) {
@@ -43,6 +49,7 @@ final class NearTeahouseViewController: BaseViewController, View {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func configureUI() {
@@ -53,19 +60,35 @@ final class NearTeahouseViewController: BaseViewController, View {
         mainCollectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        mainCollectionView.collectionViewLayout = createLayout()
         
+        //mainCollectionView.collectionViewLayout = createLayout()
     }
     
     func bind(reactor: NearTeahouseReactor) {
         
-        Observable.just(
-            [
-                NearTeahouseSectionModel(model: "", items: ["a"]),
-                NearTeahouseSectionModel(model: "", items: ["a","b","c","e","f","g","h","t"])
-            ]
-        ).bind(to: mainCollectionView.rx.items(dataSource: NearTeahouseDataSource.dataSource()))
+        // MARK: - Action
+        Observable.just(getCurrentLocationPermission())
+            .map{ Reactor.Action.refresh(locationPermissionType: $0) }
+            .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        // MARK: - State
+        reactor.pulse(\.$sections)
+            .bind(to: mainCollectionView.rx.items(dataSource: NearTeahouseDataSource.dataSource()))
+            .disposed(by: disposeBag)
+        
+        reactor.state.map(\.locationPermissionType)
+            .distinctUntilChanged()
+            .withUnretained(self)
+            .bind {
+                owner, type in
+                switch type {
+                case .allow:
+                    owner.mainCollectionView.collectionViewLayout = owner.createLayout()
+                case .notDetermined, .denied:
+                    owner.mainCollectionView.collectionViewLayout = owner.createNotAllowLocationPermissionLayout()
+                }
+            }.disposed(by: disposeBag)
     }
 }
 
@@ -83,6 +106,19 @@ private extension NearTeahouseViewController {
         }
     }
     
+    func createNotAllowLocationPermissionLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { [weak self] section, environment -> NSCollectionLayoutSection? in
+            switch section {
+            case 0:
+                return self?.createTitleSection()
+            case 1:
+                return self?.createLocationPermissionButtonSection()
+            default:
+                return nil
+            }
+        }
+    }
+    
     func createTitleSection() -> NSCollectionLayoutSection {
         //item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(70.0))
@@ -94,7 +130,7 @@ private extension NearTeahouseViewController {
         
         //section
         let section = NSCollectionLayoutSection(group: group)
-       
+        
         return section
     }
     
@@ -127,5 +163,52 @@ private extension NearTeahouseViewController {
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
         //sectionHeader.contentInsets = .init(top: 0, leading: 20.0, bottom: 0, trailing: 0)
         return sectionHeader
+    }
+    
+    private func createLocationPermissionButtonSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        //section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [
+            createNearTeaHouseSectionHeader()
+        ]
+        section.contentInsets = .init(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
+        //section.interGroupSpacing = 10.0
+        return section
+    }
+}
+
+private extension NearTeahouseViewController {
+    func getCurrentLocationPermission() -> LocationPermissionType {
+        if #available(iOS 14.0, *) {
+            switch locationManager.authorizationStatus {
+            case .authorizedAlways, .authorizedWhenInUse:
+                return .allow
+            case .denied, .restricted:
+                return .denied
+            case .notDetermined:
+                return .notDetermined
+            @unknown default:
+                return .notDetermined
+            }
+        } else {
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedAlways, .authorizedWhenInUse:
+                return .allow
+            case .denied, .restricted:
+                return .denied
+            case .notDetermined:
+                return .notDetermined
+            @unknown default:
+                return .notDetermined
+            }
+        }
     }
 }

@@ -17,6 +17,8 @@
 		AE0944A0285C9A7700929188 /* VerifyNicknameRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09449F285C9A7700929188 /* VerifyNicknameRequestDTO.swift */; };
 		AE0944A2285CA97E00929188 /* SignUpRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0944A1285CA97E00929188 /* SignUpRequestDTO.swift */; };
 		AE0944A5285CB60E00929188 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0944A4285CB60E00929188 /* NetworkError.swift */; };
+		AE11C6E9286C3A8F0061A697 /* LocationPermissionButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */; };
+		AE11C6EC286C5ABA0061A697 /* LocationPermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE11C6EB286C5ABA0061A697 /* LocationPermissionType.swift */; };
 		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
 		AE1C70C7283BA192008EB099 /* UnderLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */; };
 		AE2C84902840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */; };
@@ -127,6 +129,8 @@
 		AE09449F285C9A7700929188 /* VerifyNicknameRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNicknameRequestDTO.swift; sourceTree = "<group>"; };
 		AE0944A1285CA97E00929188 /* SignUpRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestDTO.swift; sourceTree = "<group>"; };
 		AE0944A4285CB60E00929188 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionButtonCell.swift; sourceTree = "<group>"; };
+		AE11C6EB286C5ABA0061A697 /* LocationPermissionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionType.swift; sourceTree = "<group>"; };
 		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		AE1C70C6283BA192008EB099 /* UnderLineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineLabel.swift; sourceTree = "<group>"; };
 		AE2C848F2840F66A00E2B6E2 /* ManagePostCommunitySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostCommunitySectionHeaderView.swift; sourceTree = "<group>"; };
@@ -247,6 +251,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AE11C6EA286C5AAC0061A697 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				AE11C6EB286C5ABA0061A697 /* LocationPermissionType.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 		AE1A7530283123AD000D8144 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +271,7 @@
 		AE1A7531283123B5000D8144 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AE11C6EA286C5AAC0061A697 /* Types */,
 				AE3FEC3F285744FF00F87644 /* Secret */,
 				AE9242922856560C0053FCF5 /* Common */,
 				AE57A46F28533E5000B05AB2 /* Service */,
@@ -534,6 +547,7 @@
 				AE88FDDC28450F750050E3DC /* NearTeahouseTitleCell.swift */,
 				AE88FDE52845364D0050E3DC /* RecommendTeahouseTitleCell.swift */,
 				AE9242952856596F0053FCF5 /* LoginButtonCell.swift */,
+				AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -805,10 +819,12 @@
 				AE68D3672837E8DE0017C8CB /* RegionCategoryHeaderView.swift in Sources */,
 				AEE7C2DA28439F1700FF9CFB /* NearTeahouseReactor.swift in Sources */,
 				AEDA01032859D24300EFBDE7 /* AuthAPI.swift in Sources */,
+				AE11C6E9286C3A8F0061A697 /* LocationPermissionButtonCell.swift in Sources */,
 				AE094493285C2D5300929188 /* SignUpFlow.swift in Sources */,
 				AE9A0AEC28339E5800FCEC1C /* UIFont+.swift in Sources */,
 				AE52F68E283CD0FE000475EF /* MyMBTeaIHeaderView.swift in Sources */,
 				AE4EB7C92838C56500D556CA /* HomeFooterCell.swift in Sources */,
+				AE11C6EC286C5ABA0061A697 /* LocationPermissionType.swift in Sources */,
 				AE3F483D28326C38008404F1 /* HomeFlow.swift in Sources */,
 				AE0944A0285C9A7700929188 /* VerifyNicknameRequestDTO.swift in Sources */,
 				AEE7C2D5284392FB00FF9CFB /* CALayer+.swift in Sources */,

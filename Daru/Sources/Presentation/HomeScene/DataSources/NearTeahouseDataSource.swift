@@ -8,27 +8,38 @@
 import UIKit
 import RxDataSources
 
-typealias NearTeahouseSectionModel = SectionModel<String,String>
+typealias NearTeahouseSectionModel = SectionModel<String,NearTeahouseSectionItem>
+
+enum NearTeahouseSectionItem {
+    case titleSectionItem(type: LocationPermissionType)
+    case teaHouseSectionItem
+    case locationPermissionButtonSectionItem
+}
 
 struct NearTeahouseDataSource {
     static func dataSource() -> RxCollectionViewSectionedReloadDataSource<NearTeahouseSectionModel> {
         return .init {
             dataSource, collectionView, indexPath, item in
-            switch indexPath.section {
-            case 0:
+            switch item {
+            case .titleSectionItem(let type):
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: NearTeahouseTitleCell.identifier,
                     for: indexPath
                 ) as! NearTeahouseTitleCell
+                cell.update(with: type)
                 return cell
-            case 1:
+            case .teaHouseSectionItem:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: TeaHouseCell.identifier,
                     for: indexPath
                 ) as! TeaHouseCell
                 return cell
-            default:
-                return UICollectionViewCell()
+            case .locationPermissionButtonSectionItem:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: LocationPermissionButtonCell.identifier,
+                    for: indexPath
+                ) as! LocationPermissionButtonCell
+                return cell
             }
         }configureSupplementaryView: {
             dataSource, collectionView, type, indexPath in
