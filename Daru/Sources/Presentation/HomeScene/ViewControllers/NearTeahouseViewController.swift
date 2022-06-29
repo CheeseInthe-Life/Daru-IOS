@@ -61,7 +61,7 @@ final class NearTeahouseViewController: BaseViewController, View {
             make.edges.equalToSuperview()
         }
         
-        //mainCollectionView.collectionViewLayout = createLayout()
+        locationManager.delegate = self
     }
     
     func bind(reactor: NearTeahouseReactor) {
@@ -248,5 +248,27 @@ private extension NearTeahouseViewController {
 extension NearTeahouseViewController: LocationPermissionButtonDelegate {
     func locationPermissionButtonDidTap() {
         requestAllowLocationPermission()
+    }
+}
+
+extension NearTeahouseViewController: CLLocationManagerDelegate {
+    @available(iOS 14, *)
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if manager.authorizationStatus == .authorizedWhenInUse ||
+            manager.authorizationStatus == .authorizedAlways {
+            reactor?.action.onNext(.refresh(locationPermissionType: .allow))
+        } else if manager.authorizationStatus == .denied {
+            sendSettingAlertAction()
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse ||
+            status == .authorizedAlways {
+            reactor?.action.onNext(.refresh(locationPermissionType: .allow))
+        } else if status == .denied {
+            sendSettingAlertAction()
+        }
     }
 }
