@@ -17,6 +17,8 @@
 		AE0944A0285C9A7700929188 /* VerifyNicknameRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09449F285C9A7700929188 /* VerifyNicknameRequestDTO.swift */; };
 		AE0944A2285CA97E00929188 /* SignUpRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0944A1285CA97E00929188 /* SignUpRequestDTO.swift */; };
 		AE0944A5285CB60E00929188 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0944A4285CB60E00929188 /* NetworkError.swift */; };
+		AE10426D2873397600522766 /* TeahouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10426C2873397600522766 /* TeahouseDetailViewController.swift */; };
+		AE10426F2873398100522766 /* TeahouseDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10426E2873398100522766 /* TeahouseDetailReactor.swift */; };
 		AE11C6E9286C3A8F0061A697 /* LocationPermissionButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */; };
 		AE11C6EC286C5ABA0061A697 /* LocationPermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE11C6EB286C5ABA0061A697 /* LocationPermissionType.swift */; };
 		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
@@ -129,6 +131,8 @@
 		AE09449F285C9A7700929188 /* VerifyNicknameRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyNicknameRequestDTO.swift; sourceTree = "<group>"; };
 		AE0944A1285CA97E00929188 /* SignUpRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestDTO.swift; sourceTree = "<group>"; };
 		AE0944A4285CB60E00929188 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AE10426C2873397600522766 /* TeahouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseDetailViewController.swift; sourceTree = "<group>"; };
+		AE10426E2873398100522766 /* TeahouseDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseDetailReactor.swift; sourceTree = "<group>"; };
 		AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionButtonCell.swift; sourceTree = "<group>"; };
 		AE11C6EB286C5ABA0061A697 /* LocationPermissionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionType.swift; sourceTree = "<group>"; };
 		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
@@ -460,6 +464,8 @@
 				AEDA010B285A51C200EFBDE7 /* AgreeTermsReactor.swift */,
 				AE094494285C40CB00929188 /* InputInfoViewController.swift */,
 				AE094496285C411100929188 /* InputInfoReactor.swift */,
+				AE10426C2873397600522766 /* TeahouseDetailViewController.swift */,
+				AE10426E2873398100522766 /* TeahouseDetailReactor.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 				AE88FDE4284533290050E3DC /* RecommendTeahouseReactor.swift in Sources */,
 				AE834447285DB3AF0061F178 /* SettingReactor.swift in Sources */,
 				AE52F68C283CCEFB000475EF /* MyMBTeaICell.swift in Sources */,
+				AE10426F2873398100522766 /* TeahouseDetailReactor.swift in Sources */,
 				AE88FDE62845364D0050E3DC /* RecommendTeahouseTitleCell.swift in Sources */,
 				AE3F483B283268EE008404F1 /* BaseViewController.swift in Sources */,
 				AE09449C285C968100929188 /* Gender.swift in Sources */,
@@ -790,6 +797,7 @@
 				AE3FEC3E2857446E00F87644 /* Networking.swift in Sources */,
 				AE9A0AF42833AB2D00FCEC1C /* HomeViewController.swift in Sources */,
 				AEDA0110285B560000EFBDE7 /* TokenPiar.swift in Sources */,
+				AE10426D2873397600522766 /* TeahouseDetailViewController.swift in Sources */,
 				AE3F484128326C5D008404F1 /* CommunityFlow.swift in Sources */,
 				AEDA010A285A51B500EFBDE7 /* AgreeTermsViewController.swift in Sources */,
 				AE4EB7DC2839B91600D556CA /* FavoriteTeaHouseFlow.swift in Sources */,
