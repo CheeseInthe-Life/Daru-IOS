@@ -101,6 +101,7 @@ final class HomeViewController: BaseViewController, View {
     
     func bind(reactor: HomeReactor) {
         
+        // MARK: - Action
         rx.methodInvoked(#selector(moreButtonDidTap(_:)))
             .map { $0[0] as! Int }
             .map { Reactor.Action.moreButtonDidTap(section: $0) }
@@ -108,6 +109,18 @@ final class HomeViewController: BaseViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        mainCollectionView.rx.modelSelected(HomeSectionItem.self)
+            .compactMap {
+                switch $0 {
+                case .nearTeahouseSectionItem, .recommendTeahouseSectionItem:
+                    return Reactor.Action.teahouseDetailIsRequired
+                default:
+                    return nil
+                }
+            }.bind(to: reactor.action)
+            .disposed(by: disposeBag)
+            
+        // MARK: - State
         let dataSource = HomeDataSource.dataSource(delegate: self)
         
         reactor.state.map { $0.sections }

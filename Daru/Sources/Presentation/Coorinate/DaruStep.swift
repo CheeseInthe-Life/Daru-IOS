@@ -17,6 +17,7 @@ enum DaruStep: Step {
     case homeIsRequired
     case nearTeahouseIsRequired
     case recommendTeahouseIsRequired
+    case teahouseDetailIsRequred
     
     //SignUp
     case signUpIsRequired(providerType: ProviderType, accessToken: String)
