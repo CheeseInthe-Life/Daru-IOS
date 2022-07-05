@@ -25,6 +25,7 @@ final class TeahouseDetailViewController: BaseViewController, View {
             withReuseIdentifier: TeahouseDetailHeaderView.identifier
         )
         $0.contentInsetAdjustmentBehavior = .never
+        $0.backgroundColor = .systemBackground
     }
     
     init(reactor: TeahouseDetailReactor) {
@@ -92,7 +93,7 @@ private extension TeahouseDetailViewController {
         
         //section
         let section = NSCollectionLayoutSection(group: group)
-       
+        
         return section
     }
     

@@ -55,11 +55,6 @@ final class TabViewController: TabmanViewController, Stepper {
             action: #selector(settingButtonDidTap)
         )
         //navigationController?.navigationBar.isTranslucent = false
-        let barAppearance = self.navigationController?.navigationBar.standardAppearance
-        barAppearance?.backgroundColor = .systemBackground
-        barAppearance?.shadowColor = nil
-        self.navigationController?.navigationBar.scrollEdgeAppearance = barAppearance
-        self.navigationController?.navigationBar.compactAppearance = barAppearance
         
         
         // Create bar
