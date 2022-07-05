@@ -22,6 +22,7 @@
 		AE1042712873725100522766 /* TeahouseDetailTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1042702873725100522766 /* TeahouseDetailTitleCell.swift */; };
 		AE1042732874640C00522766 /* CommonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1042722874640C00522766 /* CommonItemView.swift */; };
 		AE1042752874784300522766 /* TeahouseDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1042742874784300522766 /* TeahouseDetailDataSource.swift */; };
+		AE1042772874808600522766 /* TeahouseDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1042762874808600522766 /* TeahouseDetailHeaderView.swift */; };
 		AE11C6E9286C3A8F0061A697 /* LocationPermissionButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */; };
 		AE11C6EC286C5ABA0061A697 /* LocationPermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE11C6EB286C5ABA0061A697 /* LocationPermissionType.swift */; };
 		AE1A753C2831289A000D8144 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A753B2831289A000D8144 /* AppFlow.swift */; };
@@ -139,6 +140,7 @@
 		AE1042702873725100522766 /* TeahouseDetailTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseDetailTitleCell.swift; sourceTree = "<group>"; };
 		AE1042722874640C00522766 /* CommonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonItemView.swift; sourceTree = "<group>"; };
 		AE1042742874784300522766 /* TeahouseDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseDetailDataSource.swift; sourceTree = "<group>"; };
+		AE1042762874808600522766 /* TeahouseDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeahouseDetailHeaderView.swift; sourceTree = "<group>"; };
 		AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionButtonCell.swift; sourceTree = "<group>"; };
 		AE11C6EB286C5ABA0061A697 /* LocationPermissionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionType.swift; sourceTree = "<group>"; };
 		AE1A753B2831289A000D8144 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 				AE9242952856596F0053FCF5 /* LoginButtonCell.swift */,
 				AE11C6E8286C3A8F0061A697 /* LocationPermissionButtonCell.swift */,
 				AE1042702873725100522766 /* TeahouseDetailTitleCell.swift */,
+				AE1042762874808600522766 /* TeahouseDetailHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				AEB684EB2851F43A00843D7F /* PostCommentCell.swift in Sources */,
 				AE92429A28565F710053FCF5 /* UIImage+.swift in Sources */,
 				AE52F690283CD3F3000475EF /* PrimaryButton.swift in Sources */,
+				AE1042772874808600522766 /* TeahouseDetailHeaderView.swift in Sources */,
 				AE9A0AFC2833DB7700FCEC1C /* BannerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
