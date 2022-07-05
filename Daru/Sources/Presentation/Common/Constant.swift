@@ -36,6 +36,7 @@ struct Constant {
     static let instagramIcon: UIImage? = UIImage(named: "Instagram_icon")
     static let homepageIcon: UIImage? = UIImage(named: "Homepage_icon")
     static let shareIcon: UIImage? = UIImage(named: "Share_icon")
+    static let mapIcon: UIImage? = UIImage(named: "map_icon")
     
     //banner
     static let banner: UIImage? = UIImage(named: "Banner")?.withRenderingMode(.alwaysOriginal)

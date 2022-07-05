@@ -18,6 +18,12 @@ final class TeahouseDetailViewController: BaseViewController, View {
     ).then {
         $0.showsVerticalScrollIndicator = false
         $0.register(TeahouseDetailTitleCell.self, forCellWithReuseIdentifier: TeahouseDetailTitleCell.identifier)
+        $0.register(TeahouseDetailAddressCell.self, forCellWithReuseIdentifier: TeahouseDetailAddressCell.identifier)
+        $0.register(
+            TeahouseDetailHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: TeahouseDetailHeaderView.identifier
+        )
         $0.contentInsetAdjustmentBehavior = .never
     }
     
@@ -66,6 +72,8 @@ private extension TeahouseDetailViewController {
             switch section {
             case 0:
                 return self?.createTitleSection()
+            case 1:
+                return self?.createAddressSection()
             default:
                 return nil
             }
@@ -86,5 +94,33 @@ private extension TeahouseDetailViewController {
         let section = NSCollectionLayoutSection(group: group)
        
         return section
+    }
+    
+    func createAddressSection() -> NSCollectionLayoutSection {
+        //0.443
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
+        section.boundarySupplementaryItems = [
+            createHeaderLayout()
+        ]
+        return section
+    }
+    
+    func createHeaderLayout() -> NSCollectionLayoutBoundarySupplementaryItem {
+        //Section Header 사이즈
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(46.0))
+        
+        //Section Header layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        return sectionHeader
     }
 }

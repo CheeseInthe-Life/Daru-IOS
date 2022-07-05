@@ -22,7 +22,8 @@ final class TeahouseDetailReactor: Reactor, Stepper {
     
     struct State {
         @Pulse var sections: [TeahouseDetailSectionModel] = [
-            .init(model: "", items: [.titleSection])
+            .init(model: "", items: [.titleSection]),
+            .init(model: "주소", items: [.addressSection])
         ]
     }
     

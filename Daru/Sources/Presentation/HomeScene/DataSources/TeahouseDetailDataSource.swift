@@ -12,6 +12,7 @@ typealias TeahouseDetailSectionModel = SectionModel<String, TeahouseDetailSectio
 
 enum TeahouseDetailSectionItem {
     case titleSection
+    case addressSection
 }
 
 struct TeahouseDetailDataSource {
@@ -25,6 +26,25 @@ struct TeahouseDetailDataSource {
                     for: indexPath
                 ) as! TeahouseDetailTitleCell
                 return cell
+            case .addressSection:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: TeahouseDetailAddressCell.identifier,
+                    for: indexPath
+                ) as! TeahouseDetailAddressCell
+                return cell
+            }
+        }configureSupplementaryView: {
+            dataSource, collectionView, type, indexPath in
+            switch indexPath.section {
+            case 1:
+                let view = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: type,
+                    withReuseIdentifier: TeahouseDetailHeaderView.identifier,
+                    for: indexPath) as! TeahouseDetailHeaderView
+                view.update(with: dataSource.sectionModels[indexPath.section].model)
+                return view
+            default:
+                return UICollectionReusableView()
             }
         }
     }

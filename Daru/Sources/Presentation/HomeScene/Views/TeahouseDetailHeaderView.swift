@@ -32,8 +32,10 @@ final class TeahouseDetailHeaderView: UICollectionReusableView {
         
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.bottom.equalToSuperview().inset(10.0)
+            make.bottom.equalToSuperview().inset(10.0)
+            make.top.equalToSuperview().inset(30.0)
         }
+        layer.addBorder([.bottom], color: .brown3!.withAlphaComponent(0.6), width: 1.0)
     }
     
     func update(with title: String) {
