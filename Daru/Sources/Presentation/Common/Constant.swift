@@ -32,6 +32,11 @@ struct Constant {
     static let notCheckedBoxIcon: UIImage? = UIImage(named: "checkbox_notChecked_icon")?.withRenderingMode(.alwaysOriginal)
     static let checkedBoxIcon: UIImage? = UIImage(named: "checkbox_checked_icon")?.withRenderingMode(.alwaysOriginal)
     static let chevronIcon: UIImage? = UIImage(named: "chevron_icon")?.withRenderingMode(.alwaysOriginal)
+    static let likeIcon2: UIImage? = UIImage(named: "Like_icon2")
+    static let instagramIcon: UIImage? = UIImage(named: "Instagram_icon")
+    static let homepageIcon: UIImage? = UIImage(named: "Homepage_icon")
+    static let shareIcon: UIImage? = UIImage(named: "Share_icon")
+    static let mapIcon: UIImage? = UIImage(named: "map_icon")
     
     //banner
     static let banner: UIImage? = UIImage(named: "Banner")?.withRenderingMode(.alwaysOriginal)
@@ -39,6 +44,7 @@ struct Constant {
     //Dummy
     static let dummyTeaHouseImage: UIImage? = UIImage(named: "더미찻집이미지")?.withRenderingMode(.alwaysOriginal)
     static let dummyRegionImage: UIImage? = UIImage(named: "더미서울이미지")?.withRenderingMode(.alwaysOriginal)
+    static let dummyTeahouseBackgroudImage: UIImage? = UIImage(named: "더미배경이미지")?.withRenderingMode(.alwaysOriginal)
     
     //MBTeaI Image
     static let rabbitTypeImage: UIImage? = UIImage(named: "Rabbit_image")?.withRenderingMode(.alwaysOriginal)

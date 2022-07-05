@@ -20,6 +20,10 @@ final class HomeFlow: Flow {
         $0.isNavigationBarHidden = true
     }
     
+    private var mainNavigationController: UINavigationController? {
+        return rootViewController.navigationController
+    }
+    
     deinit {
         print("\(type(of: self)) \(#function)")
     }
@@ -38,6 +42,8 @@ final class HomeFlow: Flow {
             return navigateToAgreeTermsScene(providerType: providerType, accessToken: accessToken)
         case .settingAlertIsRequired:
             return navigateToSettingAlert()
+        case .teahouseDetailIsRequred:
+            return navigateToTeahouseDetailScene()
         default:
             return .none
         }
@@ -114,4 +120,13 @@ private extension HomeFlow {
         return .none
     }
 
+    func navigateToTeahouseDetailScene() -> FlowContributors {
+        let teahouseDetailReactor = TeahouseDetailReactor()
+        let teahouseDetailVC = TeahouseDetailViewController(reactor: teahouseDetailReactor)
+        
+        mainNavigationController?.pushViewController(teahouseDetailVC, animated: true)
+        return .one(flowContributor: .contribute(
+            withNextPresentable: teahouseDetailVC, withNextStepper: teahouseDetailReactor
+        ))
+    }
 }
