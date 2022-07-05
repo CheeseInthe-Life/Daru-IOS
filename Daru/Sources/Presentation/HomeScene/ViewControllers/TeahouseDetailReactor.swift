@@ -13,7 +13,7 @@ import RxFlow
 final class TeahouseDetailReactor: Reactor, Stepper {
     
     enum Action {
-        
+        case refresh
     }
     
     enum Mutation {
@@ -21,7 +21,9 @@ final class TeahouseDetailReactor: Reactor, Stepper {
     }
     
     struct State {
-        
+        @Pulse var sections: [TeahouseDetailSectionModel] = [
+            .init(model: "", items: [.titleSection])
+        ]
     }
     
     var steps: PublishRelay<Step> = .init()
