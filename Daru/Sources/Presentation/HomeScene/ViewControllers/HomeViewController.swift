@@ -55,6 +55,7 @@ final class HomeViewController: BaseViewController, View {
         $0.register(HomeFooterCell.self, forCellWithReuseIdentifier: HomeFooterCell.identifier)
         $0.register(LoginButtonCell.self, forCellWithReuseIdentifier: LoginButtonCell.identifier)
         $0.showsVerticalScrollIndicator = false
+        $0.backgroundColor = .systemBackground
     }
     
     init(reactor: HomeReactor) {

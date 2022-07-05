@@ -25,6 +25,7 @@ final class PostDetailViewController: BaseViewController, View {
             withReuseIdentifier: PostCommentHeaderView.identifier
         )
         $0.showsVerticalScrollIndicator = false
+        $0.backgroundColor = .systemBackground
     }
     
     private let titleView = UILabel().then {
